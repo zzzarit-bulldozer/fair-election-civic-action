@@ -1,4 +1,5 @@
 import './globals.css';
+import GoogleAnalytics from './_components/GoogleAnalytics';
 import { absoluteUrl, assetPath, siteUrl } from './_lib/site';
 
 export const metadata = {
@@ -22,7 +23,12 @@ export const metadata = {
     images: [absoluteUrl('/images/civic-action-hero.jpg')],
   },
   icons: {
-    icon: assetPath('/favicon.svg'),
+    icon: [
+      { url: assetPath('/favicon.ico'), sizes: 'any' },
+      { url: assetPath('/favicon.svg'), type: 'image/svg+xml' },
+    ],
+    shortcut: assetPath('/favicon.ico'),
+    apple: [{ url: assetPath('/apple-touch-icon.png'), sizes: '180x180', type: 'image/png' }],
   },
 };
 
@@ -35,7 +41,10 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

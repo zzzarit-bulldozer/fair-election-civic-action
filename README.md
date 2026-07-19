@@ -21,6 +21,10 @@ npm run build
 
 `main` 브랜치에 푸시하면 GitHub Actions가 테스트와 정적 빌드를 실행하고 GitHub Pages에 자동 배포합니다.
 
+## Google Analytics 4
+
+저장소 설정의 Actions 변수 `GA_MEASUREMENT_ID`에 `G-`로 시작하는 GA4 측정 ID를 등록하면 다음 배포부터 페이지 조회가 수집됩니다. ID가 없거나 형식이 올바르지 않으면 분석 스크립트는 로드되지 않습니다.
+
 ## 게시 전 교체할 정보
 
 - 공식 대표 이메일과 SNS 채널

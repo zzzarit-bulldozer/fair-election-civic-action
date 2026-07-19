@@ -12,6 +12,9 @@ export default function manifest() {
     background_color: '#10110f',
     theme_color: '#c9ff2e',
     lang: 'ko',
-    icons: [{ src: assetPath('/favicon.svg'), sizes: 'any', type: 'image/svg+xml' }],
+    icons: [
+      { src: assetPath('/icon-192.png'), sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+      { src: assetPath('/icon-512.png'), sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+    ],
   };
 }

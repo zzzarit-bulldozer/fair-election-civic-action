@@ -38,6 +38,7 @@ jobs:
           PAGES_BASE_PATH: /fair-election-civic-action
           NEXT_PUBLIC_BASE_PATH: /fair-election-civic-action
           NEXT_PUBLIC_SITE_URL: https://zzzarit-bulldozer.github.io/fair-election-civic-action
+          NEXT_PUBLIC_GA_ID: ${{ vars.GA_MEASUREMENT_ID }}
         run: npm run check
 
       - name: Upload Pages artifact

@@ -38,6 +38,16 @@ test('모든 언론 기록에 출처가 표시된 로컬 이미지가 연결된�
   )));
 });
 
+test('브라우저와 모바일용 아이콘 파일이 준비된다', async () => {
+  await Promise.all([
+    'favicon.svg',
+    'favicon.ico',
+    'apple-touch-icon.png',
+    'icon-192.png',
+    'icon-512.png',
+  ].map((icon) => access(`${projectRoot}public/${icon}`)));
+});
+
 test('표시 날짜를 ISO 날짜로 변환한다', () => {
   assert.equal(toIsoDate('2026. 06. 13'), '2026-06-13');
   [...timeline, ...historyEvidence, ...reports].forEach((item) => {
