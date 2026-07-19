@@ -29,12 +29,15 @@ export default function HomePage() {
               <span>끝까지 <em>지킵니다.</em></span>
             </h1>
             <p className="hero-copy">
-              선거의 모든 과정이 투명해질 때까지.
-              <br />
-              우리는 감시하고, 알리고, 함께 행동합니다.
+              공개 자료와 현장 기록을 바탕으로 질문하고, 확인하고, 평화롭게 움직입니다.
             </p>
+            <ul className="hero-proof" aria-label="활동 원칙">
+              <li>근거 기반</li>
+              <li>공개 기록</li>
+              <li>평화적 참여</li>
+            </ul>
             <div className="hero-actions">
-              <a className="button button-accent" href="#action">지금 하는 일 <span>↓</span></a>
+              <a className="button button-accent" href="#action">활동 방식 보기 <span>↓</span></a>
               <Link className="text-link" href="/about">우리를 더 알아보기 <span>↗</span></Link>
             </div>
           </div>
@@ -55,14 +58,12 @@ export default function HomePage() {
         <section className="manifesto section-pad" id="about">
           <SectionLabel number="01">우리는 누구인가</SectionLabel>
           <div className="manifesto-copy reveal">
-            <p className="kicker">선거는 하루지만,<br />민주주의는 매일입니다.</p>
+            <p className="kicker">선거는 하루지만 민주주의는 매일입니다.</p>
             <h2>
-              정파가 아니라 <em>원칙</em>을,<br />
-              의심이 아니라 <em>검증</em>을,<br />
-              침묵이 아니라 <em>행동</em>을 선택합니다.
+              정파가 아니라 <em>원칙</em>을, 의심이 아니라 <em>검증</em>을, 침묵이 아니라 <em>행동</em>을 선택합니다.
             </h2>
             <div className="manifesto-detail">
-              <p>공정선거시민행동은 수원에서 시작된 시민 네트워크입니다. 사실에 근거해 질문하고, 현장을 기록하며, 평화로운 시민 참여의 문을 넓힙니다.</p>
+              <p>공정선거시민행동은 수원에서 시작된 시민 네트워크입니다. 현장을 기록하고 공개 자료를 확인하며, 누구나 참여할 수 있는 평화로운 행동의 문을 넓힙니다.</p>
               <Link className="detail-link" href="/about">단체 소개 자세히 보기 <span>↗</span></Link>
             </div>
           </div>
@@ -73,7 +74,7 @@ export default function HomePage() {
             <SectionLabel number="02" inverse>우리가 하는 일</SectionLabel>
             <div className="actions-heading reveal">
               <p className="eyebrow"><span /> WHAT WE DO</p>
-              <h2 id="action-title">질문에서 멈추지 않고,<br /><em>현장에서 답을 만듭니다.</em></h2>
+              <h2 id="action-title">질문을 기록으로 남기고, <em>현장에서 답을 만듭니다.</em></h2>
             </div>
           </div>
           <div className="action-list section-pad">
@@ -137,13 +138,13 @@ export default function HomePage() {
           <div className="journey-preview-content">
             <div className="journey-preview-copy reveal">
               <p className="eyebrow"><span /> OUR JOURNEY</p>
-              <h2 id="journey-preview-title">한 번의 집회가<br /><em>이어지는 행동이 되었습니다.</em></h2>
-              <p>수원 올림픽공원에서 시작해 나혜석거리 6회차까지. 시민이 만들고 시민이 이어온 기록입니다.</p>
+              <h2 id="journey-preview-title">한 번의 집회가 <em>이어지는 행동이 되었습니다.</em></h2>
+              <p>수원 올림픽공원에서 시작해 나혜석거리 여섯 번째 행동까지. 날짜, 장소, 포스터, 보도를 함께 남긴 공개 기록입니다.</p>
               <Link className="button button-accent" href="/history">전체 발자취 보기 <span>↗</span></Link>
             </div>
             <div className="journey-numbers reveal" aria-label="활동 기록 요약">
               <div><strong>06</strong><span>이어진 수원 행동</span></div>
-              <div><strong>300</strong><span>첫날 언론 보도 누적 참여</span></div>
+              <div><strong>300</strong><span>첫날 보도 기준 누적 참여</span></div>
               <div><strong>04</strong><span>감시·검증·행동·연대</span></div>
             </div>
           </div>
@@ -153,9 +154,9 @@ export default function HomePage() {
           <div className="join-noise" aria-hidden="true" />
           <div className="join-content reveal">
             <p className="eyebrow"><span /> JOIN THE ACTION</p>
-            <h2 id="join-title">민주주의는<br /><em>구경하는 것이 아니라</em><br />함께 만드는 것.</h2>
-            <p>당신의 질문, 기록, 목소리가 다음 행동의 시작입니다.</p>
-            <a className="button button-dark" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer">전시언 공식 Threads <span>↗</span></a>
+            <h2 id="join-title">민주주의는 <em>구경하는 것이 아니라</em> 함께 만드는 것.</h2>
+            <p>다음 행동과 현장 공지는 공식 Threads에서 가장 먼저 확인할 수 있습니다.</p>
+            <a className="button button-dark" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer">공식 Threads 보기 <span>↗</span></a>
           </div>
           <div className="join-word" aria-hidden="true">ACTION</div>
         </section>

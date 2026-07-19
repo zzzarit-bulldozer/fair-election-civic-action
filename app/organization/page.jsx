@@ -17,7 +17,7 @@ export default function OrganizationPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main">
-        <DetailHero index="04" eyebrow="ORGANIZATION" title={<>누구나 제안하고,<br />함께 결정합니다</>} description="시민의 자발성과 투명한 운영을 중심에 둔 열린 조직을 지향합니다." word="PEOPLE" />
+        <DetailHero index="04" eyebrow="ORGANIZATION" title="누구나 제안하고, 함께 결정합니다" description="시민의 자발성과 투명한 운영을 중심에 둔 열린 조직을 지향합니다." word="PEOPLE" />
 
         <section className="leader-detail detail-section">
           <div className="leader-detail-mark reveal" aria-hidden="true">전</div>

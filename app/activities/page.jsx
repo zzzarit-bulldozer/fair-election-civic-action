@@ -17,7 +17,7 @@ export default function ActivitiesPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main">
-        <DetailHero index="02" eyebrow="WHAT WE DO" title={<>질문을 기록으로,<br />기록을 행동으로</>} description="현장을 지켜보고, 자료를 검증하고, 시민이 참여할 수 있는 방식으로 공론장을 엽니다." word="ACTION" />
+        <DetailHero index="02" eyebrow="WHAT WE DO" title="질문을 기록으로, 기록을 행동으로" description="현장을 지켜보고, 자료를 검증하고, 시민이 참여할 수 있는 방식으로 공론장을 엽니다." word="ACTION" />
 
         <section className="activity-detail-list detail-section" aria-label="주요 활동">
           {actions.map((item) => (
@@ -30,10 +30,10 @@ export default function ActivitiesPage() {
         </section>
 
         <section className="field-content detail-section">
-          <div className="field-content-index reveal"><span>FIELD CONTENT</span><strong>올공<br />두컷</strong></div>
+          <div className="field-content-index reveal"><span>FIELD CONTENT</span><strong>올공두컷</strong></div>
           <div className="field-content-copy reveal">
             <p className="eyebrow"><span /> A NEW WAY TO GATHER</p>
-            <h2>참여하고 싶고,<br />기억하고 싶은 광장</h2>
+            <h2>참여하고 싶고 기억하고 싶은 광장</h2>
             <p>올공두컷은 집회 현장에서 시민의 표정을 즉석사진으로 남긴 참여형 콘텐츠입니다. 가족과 청년이 자연스럽게 머물고 서로의 기억을 나누는 새로운 현장 문화를 보여줬습니다.</p>
             <a className="detail-link" href="https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02145126645481720" target="_blank" rel="noreferrer">관련 보도 보기 <span>↗</span></a>
           </div>

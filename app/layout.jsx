@@ -11,7 +11,7 @@ export const metadata = {
   manifest: assetPath('/manifest.webmanifest'),
   openGraph: {
     title: '공정선거시민행동',
-    description: '한 표의 무게를 지키는 시민들. 감시하고, 알리고, 함께 행동합니다.',
+    description: '한 표의 무게를 지키는 시민들. 공개 자료와 현장 기록을 바탕으로 질문하고, 확인하고, 평화롭게 행동합니다.',
     type: 'website',
     locale: 'ko_KR',
     images: [{ url: absoluteUrl('/images/civic-action-hero.jpg'), width: 1672, height: 941, alt: '공정선거시민행동 시민들의 행진' }],
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '공정선거시민행동',
-    description: '한 표의 무게를 지키는 시민들. 감시하고, 알리고, 함께 행동합니다.',
+    description: '한 표의 무게를 지키는 시민들. 공개 자료와 현장 기록을 바탕으로 질문하고, 확인하고, 평화롭게 행동합니다.',
     images: [absoluteUrl('/images/civic-action-hero.jpg')],
   },
   icons: {
