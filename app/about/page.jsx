@@ -23,12 +23,12 @@ export default function AboutPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main">
-        <DetailHero index="01" eyebrow="ABOUT US" title={<>한 표의 무게를<br />지키는 시민들</>} description="공정선거시민행동은 선거 과정의 투명성과 시민의 온전한 참정권을 위해 수원에서 질문하고 기록하고 행동합니다." word="ABOUT" />
+        <DetailHero index="01" eyebrow="ABOUT US" title="한 표의 무게를 지키는 시민들" description="공정선거시민행동은 선거 과정의 투명성과 시민의 온전한 참정권을 위해 수원에서 질문하고 기록하고 행동합니다." word="ABOUT" />
 
         <section className="detail-section intro-statement">
           <p className="detail-kicker reveal">WHY WE ACT</p>
           <div className="intro-statement-copy reveal">
-            <h2>선거는 결과만이 아니라<br /><em>과정으로 신뢰받아야 합니다.</em></h2>
+            <h2>선거는 결과만이 아니라 <em>과정으로 신뢰받아야 합니다.</em></h2>
             <div>
               <p>우리는 막연한 의심을 확산하는 대신 현장을 보고, 공개 자료를 확인하고, 설명이 필요한 지점을 시민의 언어로 질문합니다.</p>
               <p>한 사람의 목소리가 광장의 기록이 되고, 그 기록이 더 투명한 제도를 만드는 근거가 되도록 행동합니다.</p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
         </section>
 
         <section className="detail-quote">
-          <blockquote className="reveal">“의심을 키우는 단체가 아니라,<br /><em>신뢰를 확인하는 시민</em>이 되겠습니다.”</blockquote>
+          <blockquote className="reveal">“의심을 키우는 단체가 아니라, <em>신뢰를 확인하는 시민</em>이 되겠습니다.”</blockquote>
         </section>
 
         <nav className="page-next section-pad" aria-label="다음 페이지">

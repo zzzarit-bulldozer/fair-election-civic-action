@@ -20,7 +20,7 @@ export default function NewsPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main">
-        <DetailHero index="05" eyebrow="PRESS & RECORDS" title={<>언론이 기록한<br />시민행동의 현장</>} description="직접 보도, 재전송 기사, 소셜 기록을 구분해 출처와 함께 모았습니다." word="PRESS" />
+        <DetailHero index="05" eyebrow="PRESS & RECORDS" title="언론이 기록한 시민행동의 현장" description="직접 보도, 재전송 기사, 소셜 기록을 구분해 출처와 함께 모았습니다." word="PRESS" />
 
         <section className="reports-section detail-section" aria-labelledby="reports-title">
           <div className="detail-section-head reveal"><span>PRESS ARCHIVE</span><h2 id="reports-title">주요 보도</h2></div>
@@ -54,7 +54,7 @@ export default function NewsPage() {
 
         <section className="source-policy detail-section">
           <p className="reveal">EDITORIAL RULE</p>
-          <div className="reveal"><h2>주장과 사실,<br />현장과 누적을 구분합니다.</h2><p>단체명 표기와 참가 인원은 기사마다 차이가 있습니다. 홈페이지는 하나의 숫자로 단정하지 않고 보도 시점과 출처를 함께 밝힙니다.</p><Link className="detail-link" href="/history">발자취에서 기준 보기 <span>↗</span></Link></div>
+          <div className="reveal"><h2>주장과 사실, 현장과 누적을 구분합니다.</h2><p>단체명 표기와 참가 인원은 기사마다 차이가 있습니다. 홈페이지는 하나의 숫자로 단정하지 않고 보도 시점과 출처를 함께 밝힙니다.</p><Link className="detail-link" href="/history">발자취에서 기준 보기 <span>↗</span></Link></div>
         </section>
       </main>
       <SiteFooter />

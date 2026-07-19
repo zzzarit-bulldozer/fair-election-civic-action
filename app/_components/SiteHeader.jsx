@@ -80,9 +80,9 @@ export default function SiteHeader() {
         ))}
       </nav>
 
-      <button className="header-cta" type="button" aria-disabled="true">
-        오픈 카톡방 입장하기
-      </button>
+      <a className="header-cta" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer">
+        공식 Threads 보기
+      </a>
 
       <button
         ref={toggleRef}
@@ -104,9 +104,9 @@ export default function SiteHeader() {
               {label}
             </Link>
           ))}
-          <button className="mobile-join" type="button" aria-disabled="true" onClick={() => setMenuOpen(false)}>
-            오픈 카톡방 입장하기
-          </button>
+          <a className="mobile-join" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
+            공식 Threads 보기
+          </a>
         </nav>
       </div>
     </header>

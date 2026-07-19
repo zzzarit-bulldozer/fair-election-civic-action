@@ -2,19 +2,19 @@ export const actions = [
   {
     number: '01',
     title: '현장 감시와 기록',
-    description: '투·개표 과정과 시민의 목소리를 현장에서 관찰하고 정확하게 기록합니다.',
+    description: '투·개표 과정과 시민의 목소리를 현장에서 관찰하고 출처가 남는 기록으로 정리합니다.',
     tag: 'WATCH',
   },
   {
     number: '02',
     title: '정보 검증과 공유',
-    description: '확인 가능한 자료와 근거를 모아 누구나 이해할 수 있는 언어로 나눕니다.',
+    description: '공개 자료와 언론 보도를 교차 확인해 누구나 따라갈 수 있는 근거로 나눕니다.',
     tag: 'VERIFY',
   },
   {
     number: '03',
     title: '평화로운 시민행동',
-    description: '집회, 캠페인, 공론장을 통해 더 투명한 선거 제도를 요구합니다.',
+    description: '집회, 캠페인, 공론장을 통해 안전하고 질서 있는 참여의 장을 만듭니다.',
     tag: 'ACT',
   },
   {
