@@ -1,0 +1,11 @@
+.next/
+node_modules/
+out/
+.DS_Store
+*.log
+.omx/
+.playwright-cli/
+.playwright-mcp/
+output/
+source-assets/
+ux-audit-*.png
