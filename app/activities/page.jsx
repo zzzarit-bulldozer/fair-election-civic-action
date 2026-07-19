@@ -3,7 +3,7 @@ import DetailHero from '../_components/DetailHero';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
-import { actions } from '../_data/content';
+import { actions, olgongTwoCut } from '../_data/content';
 
 export const metadata = {
   title: '주요 활동 | 공정선거시민행동',
@@ -32,10 +32,20 @@ export default function ActivitiesPage() {
         <section className="field-content detail-section">
           <div className="field-content-index reveal"><span>FIELD CONTENT</span><strong>올공두컷</strong></div>
           <div className="field-content-copy reveal">
-            <p className="eyebrow"><span /> A NEW WAY TO GATHER</p>
-            <h2>참여하고 싶고 기억하고 싶은 광장</h2>
-            <p>올공두컷은 집회 현장에서 시민의 표정을 즉석사진으로 남긴 참여형 콘텐츠입니다. 가족과 청년이 자연스럽게 머물고 서로의 기억을 나누는 새로운 현장 문화를 보여줬습니다.</p>
-            <a className="detail-link" href="https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02145126645481720" target="_blank" rel="noreferrer">관련 보도 보기 <span>↗</span></a>
+            <p className="eyebrow"><span /> {olgongTwoCut.eyebrow}</p>
+            <h2>{olgongTwoCut.title}</h2>
+            <p>{olgongTwoCut.summary}</p>
+            <p>{olgongTwoCut.principle}</p>
+            <ul className="field-content-points" aria-label="올공두컷 핵심 메시지">
+              {olgongTwoCut.points.map(([label, text]) => (
+                <li key={label}><span>{label}</span><strong>{text}</strong></li>
+              ))}
+            </ul>
+            <div className="field-content-links" aria-label="올공두컷 링크">
+              <a className="detail-link" href={olgongTwoCut.appUrl} target="_blank" rel="noreferrer">올공두컷 찍기 <span>↗</span></a>
+              <a className="detail-link" href={olgongTwoCut.sourceUrl} target="_blank" rel="noreferrer">원문 보기 <span>↗</span></a>
+              <a className="detail-link" href={olgongTwoCut.stepsUrl} target="_blank" rel="noreferrer">사용법 보기 <span>↗</span></a>
+            </div>
           </div>
         </section>
 
