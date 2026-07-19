@@ -4,7 +4,7 @@ import RevealController from './_components/RevealController';
 import SectionLabel from './_components/SectionLabel';
 import SiteFooter from './_components/SiteFooter';
 import SiteHeader from './_components/SiteHeader';
-import { actions, reports } from './_data/content';
+import { actions, olgongTwoCut, reports } from './_data/content';
 import { toIsoDate } from './_lib/date';
 import { assetPath } from './_lib/site';
 
@@ -113,9 +113,9 @@ export default function HomePage() {
             </article>
 
             <article className="campaign-feature reveal">
-              <a href="https://www.joongang.co.kr/article/25436607" target="_blank" rel="noreferrer">
+              <a href={olgongTwoCut.appUrl} target="_blank" rel="noreferrer">
                 <div className="campaign-index"><span>CONTENT</span><strong>01</strong></div>
-                <div className="campaign-copy"><p>시민이 만든 현장 콘텐츠</p><h3>올공두컷</h3><span>집회의 기억을 시민의 사진으로 남긴 즉석사진 프로젝트.</span></div>
+                <div className="campaign-copy"><p>시민이 만든 현장 콘텐츠</p><h3>올공두컷</h3><span>{olgongTwoCut.title}. 누구나 휴대폰으로 찍고, 평화로운 기억을 남기는 공개 포토부스.</span></div>
                 <div className="campaign-symbol" aria-hidden="true">▣</div><span className="view-arrow">↗</span>
               </a>
             </article>

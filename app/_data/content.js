@@ -114,6 +114,21 @@ export const timeline = [
   },
 ];
 
+export const olgongTwoCut = {
+  eyebrow: 'A NEW WAY TO GATHER',
+  title: '사진을 찍는 순간만큼은 웃을 수 있게',
+  summary: '올공두컷은 현장 부스에서 시작해, 누구나 휴대폰으로 찍을 수 있는 공개 포토부스로 확장된 시민 콘텐츠입니다. 분노만 남는 광장이 아니라 가족과 친구가 함께 웃는 기억도 남기자는 마음을 담았습니다.',
+  principle: '사진값은 돈이 아니라 서로를 달래는 말 한마디입니다. 언성이 높아지는 순간에도 심판처럼 서기보다 “괜찮아, 그 마음 이해해”라고 다독이는 평화로운 참여를 요청합니다.',
+  appUrl: 'https://photobooth-ecru-phi.vercel.app',
+  sourceUrl: 'https://www.threads.com/@gibalza_/post/DZyjAFyj-Rw',
+  stepsUrl: 'https://www.threads.com/@gibalza_/post/DZyjAazD7sX',
+  points: [
+    ['OPEN', '부스 이후에도 누구나 휴대폰에서 찍을 수 있게 공개했습니다.'],
+    ['PLAY', '프레임을 고르고 5장을 찍은 뒤, 마음에 드는 2장을 내려받습니다.'],
+    ['PEACE', '밝은 사진 한 장으로 현장의 긴장을 낮추는 참여 문화를 만듭니다.'],
+  ],
+};
+
 const pressVisuals = {
   'https://n.news.naver.com/article/003/0014004541': {
     image: '/images/news/newsis-suwon-speaker.jpg',
