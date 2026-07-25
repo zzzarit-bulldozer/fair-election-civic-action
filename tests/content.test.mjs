@@ -7,9 +7,9 @@ import { toIsoDate } from '../app/_lib/date.js';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 
-test('모든 회차와 14장 포스터가 연결된다', async () => {
-  assert.equal(timeline.length, 6);
-  assert.equal(timeline.reduce((total, item) => total + item.posters.length, 0), 14);
+test('모든 회차와 16장 포스터가 연결된다', async () => {
+  assert.equal(timeline.length, 7);
+  assert.equal(timeline.reduce((total, item) => total + item.posters.length, 0), 16);
 
   await Promise.all(timeline.flatMap((item) => item.posters.map((poster) => (
     access(`${projectRoot}public${poster.src}`)

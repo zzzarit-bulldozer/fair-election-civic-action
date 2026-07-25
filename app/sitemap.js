@@ -7,7 +7,7 @@ const routes = ['/', '/about', '/activities', '/history', '/organization', '/new
 export default function sitemap() {
   return routes.map((route) => ({
     url: absoluteUrl(route),
-    lastModified: new Date('2026-07-19'),
+    lastModified: new Date('2026-07-25'),
     changeFrequency: route === '/' ? 'weekly' : 'monthly',
     priority: route === '/' ? 1 : 0.8,
   }));

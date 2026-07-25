@@ -112,6 +112,20 @@ export const timeline = [
       { src: '/images/posters/suwon-action-06-main.jpeg', width: 360, height: 510, alt: '공정선거 재선거 당일투표 수개표 시민행동 6회차 포스터', label: '대표 포스터' },
     ],
   },
+  {
+    date: '2026. 07. 25',
+    session: '7회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '낮과 밤, 함께 만드는 일곱 번째 광장',
+    body: '가족이 함께하는 낮의 활기와 청년이 연결되는 밤의 에너지를 담은 두 시안으로 일곱 번째 수원 행동을 알렸습니다.',
+    link: 'https://www.threads.com/@fairly_evenly?hl=ko',
+    source: '전시언 공식 Threads',
+    posters: [
+      { src: '/images/posters/suwon-action-07-day.jpeg', width: 1024, height: 1535, alt: '가족이 수박을 나누는 공정선거 시민행동 7회차 낮 포스터', label: '낮 시안' },
+      { src: '/images/posters/suwon-action-07-night.jpeg', width: 1024, height: 1536, alt: '시민들이 응원봉을 든 공정선거 시민행동 7회차 밤 포스터', label: '밤 시안' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {

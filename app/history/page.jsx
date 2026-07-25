@@ -15,13 +15,15 @@ export const metadata = {
 };
 
 export default function HistoryPage() {
+  const posterCount = timeline.reduce((total, item) => total + item.posters.length, 0);
+
   return (
     <>
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main">
-        <DetailHero index="03" eyebrow="OUR JOURNEY" title="수원의 광장을 이어온 여섯 번의 행동" description="전시언의 공식 Threads 포스터와 공개 언론 보도를 기준으로 정리한 수원 시민행동 타임라인입니다." word="JOURNEY" />
+        <DetailHero index="03" eyebrow="OUR JOURNEY" title="수원의 광장을 잇는 일곱 번의 기록" description="전시언의 공식 Threads 포스터와 공개 언론 보도를 기준으로 정리한 수원 시민행동 타임라인입니다." word="JOURNEY" />
 
         <section className="history-detail detail-section" aria-label="활동 연혁">
           <div className="history-rail" aria-hidden="true" />
@@ -73,7 +75,7 @@ export default function HistoryPage() {
 
         <section className="history-note detail-section">
           <p className="reveal">기록의 기준</p>
-          <div className="reveal"><h2>포스터와 기사, 두 기록을 함께 봅니다.</h2><p>1~6회차의 날짜·시간·장소는 전시언의 공식 Threads 게시물과 직접 제공된 원본 포스터를 기준으로 정리했습니다. 같은 날 제작된 여러 시안까지 14장의 포스터를 회차별로 함께 보존합니다. 첫날 참가 인원은 보도 시점별로 약 40명·50명, 하루 누적 약 300명으로 집계 기준이 달라 출처와 함께 밝힙니다.</p></div>
+          <div className="reveal"><h2>포스터와 기사, 두 기록을 함께 봅니다.</h2><p>1~{timeline.length}회차의 날짜·시간·장소는 전시언의 공식 Threads 게시물과 직접 제공된 원본 포스터를 기준으로 정리했습니다. 같은 날 제작된 여러 시안까지 {posterCount}장의 포스터를 회차별로 함께 보존합니다. 첫날 참가 인원은 보도 시점별로 약 40명·50명, 하루 누적 약 300명으로 집계 기준이 달라 출처와 함께 밝힙니다.</p></div>
         </section>
 
         <nav className="page-next section-pad" aria-label="다음 페이지">
