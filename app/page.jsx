@@ -4,7 +4,7 @@ import RevealController from './_components/RevealController';
 import SectionLabel from './_components/SectionLabel';
 import SiteFooter from './_components/SiteFooter';
 import SiteHeader from './_components/SiteHeader';
-import { actions, olgongTwoCut, reports } from './_data/content';
+import { actions, olgongTwoCut, reports, timeline } from './_data/content';
 import { toIsoDate } from './_lib/date';
 import { assetPath } from './_lib/site';
 
@@ -139,11 +139,11 @@ export default function HomePage() {
             <div className="journey-preview-copy reveal">
               <p className="eyebrow"><span /> OUR JOURNEY</p>
               <h2 id="journey-preview-title">한 번의 집회가 <em>이어지는 행동이 되었습니다.</em></h2>
-              <p>수원 올림픽공원에서 시작해 나혜석거리 여섯 번째 행동까지. 날짜, 장소, 포스터, 보도를 함께 남긴 공개 기록입니다.</p>
+              <p>수원 올림픽공원 첫 행동부터 나혜석거리 7회차 안내까지. 날짜, 장소, 포스터, 보도를 함께 남긴 공개 기록입니다.</p>
               <Link className="button button-accent" href="/history">전체 발자취 보기 <span>↗</span></Link>
             </div>
             <div className="journey-numbers reveal" aria-label="활동 기록 요약">
-              <div><strong>06</strong><span>이어진 수원 행동</span></div>
+              <div><strong>{String(timeline.length).padStart(2, '0')}</strong><span>수원 행동 기록</span></div>
               <div><strong>300</strong><span>첫날 보도 기준 누적 참여</span></div>
               <div><strong>04</strong><span>감시·검증·행동·연대</span></div>
             </div>
