@@ -17,7 +17,7 @@ export default function ActivitiesPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main">
-        <DetailHero index="02" eyebrow="WHAT WE DO" title="질문을 기록으로, 기록을 행동으로" description="현장을 지켜보고, 자료를 검증하고, 시민이 참여할 수 있는 방식으로 공론장을 엽니다." word="ACTION" />
+        <DetailHero index="02" eyebrow="FAIR ELECTION CIVIC ACTION" title="공정선거시민행동" description="공정과 자유의 가치를 바탕으로 질문하고, 답을 요구하고, 기록으로 남깁니다." word="ACTION" />
 
         <section className="activity-detail-list detail-section" aria-label="주요 활동">
           {actions.map((item) => (

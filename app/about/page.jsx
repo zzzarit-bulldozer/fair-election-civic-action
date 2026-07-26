@@ -23,15 +23,15 @@ export default function AboutPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main">
-        <DetailHero index="01" eyebrow="ABOUT US" title="한 표의 무게를 지키는 시민들" description="공정선거시민행동은 선거 과정의 투명성과 시민의 온전한 참정권을 위해 수원에서 질문하고 기록하고 행동합니다." word="ABOUT" />
+        <DetailHero index="01" eyebrow="GYEONGGI RIGHT-WING YOUTH" title="경기우파청년들" description="공정과 자유의 가치를 바탕으로 듣고, 묻고, 확인하고, 행동하는 경기 청년 시민 네트워크입니다." word="ABOUT" />
 
         <section className="detail-section intro-statement">
           <p className="detail-kicker reveal">WHY WE ACT</p>
           <div className="intro-statement-copy reveal">
-            <h2>공정한 한 표가 <em>국민의 권리입니다.</em></h2>
+            <h2>좌우가 아닌 원칙을, <em>침묵이 아닌 행동을 향합니다.</em></h2>
             <div>
-              <p>우리는 의심보다 확인을, 침묵보다 질문을 선택합니다. 시민이 쉽게 접근할 수 있는 공개 기록을 쌓습니다.</p>
-              <p>한 사람의 목소리를 기록의 기반으로 삼아, 더 투명한 제도와 책임 있는 선거가 되도록 행동합니다.</p>
+              <p>우리의 첫 행동은 공정선거시민행동입니다. 아직 한 표를 행사하지 못한 유권자의 목소리를 듣고, 현장을 기록하고, 설명과 대안을 요구합니다.</p>
+              <p>한 사람의 목소리가 시민의 참여로 이어지고, 그 참여가 자유민주주의를 더 단단하게 만들도록 움직입니다.</p>
             </div>
           </div>
         </section>

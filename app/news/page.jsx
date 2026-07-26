@@ -14,6 +14,27 @@ export const metadata = {
 };
 
 export default function NewsPage() {
+  const olgongReports = reports.filter((item) => (
+    item.href.includes('25436607') || item.category === '현장 콘텐츠'
+  ));
+  const civicReports = reports.filter((item) => !olgongReports.includes(item));
+  const reportGroups = [
+    {
+      id: 'civic-action',
+      eyebrow: 'ACTION 01',
+      title: '공정선거시민행동',
+      description: '수원에서 시작한 집회와 선거 현장의 질문, 전시언의 공개 발언을 모았습니다.',
+      items: civicReports,
+    },
+    {
+      id: 'olgong-two-cut',
+      eyebrow: 'ACTION 02',
+      title: '올공두컷',
+      description: '광장에 웃음과 기억을 남긴 시민 참여형 포토 콘텐츠의 보도를 모았습니다.',
+      items: olgongReports,
+    },
+  ];
+
   return (
     <>
       <a className="skip-link" href="#main">본문 바로가기</a>
@@ -23,23 +44,32 @@ export default function NewsPage() {
         <DetailHero index="05" eyebrow="PRESS & RECORDS" title="언론이 기록한 시민행동의 현장" description="직접 보도, 재전송 기사, 소셜 기록을 구분해 출처와 함께 모았습니다." word="PRESS" />
 
         <section className="reports-section detail-section" aria-labelledby="reports-title">
-          <div className="detail-section-head reveal"><span>PRESS ARCHIVE</span><h2 id="reports-title">주요 보도</h2></div>
-          <div className="report-list">
-            {reports.map((item, index) => (
-              <article className="report-row reveal" key={item.href}>
-                <a href={item.href} target="_blank" rel="noreferrer">
-                  <span className="report-number">{String(index + 1).padStart(2, '0')}</span>
-                  <div className="report-meta"><strong>{item.category}</strong><span>{item.media} · <time dateTime={toIsoDate(item.date)}>{item.date}</time></span></div>
-                  <figure className="report-visual" data-image-focus={item.imageFocus}>
-                    <Image src={assetPath(item.image)} alt={item.imageAlt} fill sizes="(max-width: 760px) 80vw, 220px" />
-                    <figcaption>{item.imageCredit}</figcaption>
-                  </figure>
-                  <div className="report-copy"><h2>{item.title}</h2><p>{item.summary}</p></div>
-                  <span className="view-arrow">↗</span>
-                </a>
-              </article>
-            ))}
-          </div>
+          <div className="detail-section-head reveal"><span>PRESS ARCHIVE</span><h2 id="reports-title">행동별 언론보도</h2></div>
+          {reportGroups.map((group) => (
+            <section className="report-group" id={group.id} aria-labelledby={`${group.id}-title`} key={group.id}>
+              <div className="report-group-head reveal">
+                <span>{group.eyebrow}</span>
+                <h2 id={`${group.id}-title`}>{group.title}</h2>
+                <p>{group.description}</p>
+              </div>
+              <div className="report-list">
+                {group.items.map((item, index) => (
+                  <article className="report-row reveal" key={item.href}>
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      <span className="report-number">{String(index + 1).padStart(2, '0')}</span>
+                      <div className="report-meta"><strong>{item.category}</strong><span>{item.media} · <time dateTime={toIsoDate(item.date)}>{item.date}</time></span></div>
+                      <figure className="report-visual" data-image-focus={item.imageFocus}>
+                        <Image src={assetPath(item.image)} alt={item.imageAlt} fill sizes="(max-width: 760px) 80vw, 220px" />
+                        <figcaption>{item.imageCredit}</figcaption>
+                      </figure>
+                      <div className="report-copy"><h2>{item.title}</h2><p>{item.summary}</p></div>
+                      <span className="view-arrow">↗</span>
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))}
           <p className="report-note reveal">기사 제목 일부는 홈페이지 문맥에 맞게 요약했습니다. 원문은 각 링크에서 확인할 수 있습니다.</p>
         </section>
 
