@@ -2,7 +2,13 @@ import assert from 'node:assert/strict';
 import { access } from 'node:fs/promises';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
-import { historyEvidence, reports, timeline } from '../app/_data/content.js';
+import {
+  historyEvidence,
+  organization,
+  organizationPlans,
+  reports,
+  timeline,
+} from '../app/_data/content.js';
 import { toIsoDate } from '../app/_lib/date.js';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
@@ -73,6 +79,23 @@ test('브라우저와 모바일용 아이콘 파일이 준비된다', async () =
     'icon-192.png',
     'icon-512.png',
   ].map((icon) => access(`${projectRoot}public/${icon}`)));
+});
+
+test('창립 회의 자료의 임원진과 운영계획이 정확히 반영된다', () => {
+  assert.deepEqual(organization, [
+    ['01', '감사', '최문영'],
+    ['02', '재무', '이철우'],
+    ['03', '사무국장', '김민섭'],
+    ['04', '특별위원장', '한동원'],
+    ['05', '조직위원장', '박보환'],
+    ['06', '청년위원장', '박장훈'],
+    ['07', '기획위원장', '장동재'],
+  ]);
+  assert.deepEqual(organizationPlans.map(([, plan]) => plan), [
+    '고유번호증 발급 추진',
+    '단체 명의 통장 개설',
+    '회원 및 후원회원 모집',
+  ]);
 });
 
 test('표시 날짜를 ISO 날짜로 변환한다', () => {

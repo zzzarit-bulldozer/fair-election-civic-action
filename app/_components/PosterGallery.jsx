@@ -6,14 +6,13 @@ import { createPortal } from 'react-dom';
 import { assetPath } from '../_lib/site';
 
 export default function PosterGallery({ posters, photos = [], session }) {
-  const [posterIndex, setPosterIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [archiveType, setArchiveType] = useState('posters');
   const [isOpen, setIsOpen] = useState(false);
   const closeButtonRef = useRef(null);
   const lightboxRef = useRef(null);
   const openerRef = useRef(null);
-  const poster = posters[posterIndex];
+  const poster = posters[0];
   const archive = archiveType === 'photos' ? photos : posters;
   const active = archive[lightboxIndex] ?? archive[0];
   const archiveLabel = archiveType === 'photos' ? 'FIELD PHOTO ARCHIVE' : 'POSTER ARCHIVE';
@@ -21,7 +20,7 @@ export default function PosterGallery({ posters, photos = [], session }) {
   const openGallery = (event, type, index = 0) => {
     openerRef.current = event.currentTarget;
     setArchiveType(type);
-    setLightboxIndex(type === 'posters' ? posterIndex : index);
+    setLightboxIndex(index);
     setIsOpen(true);
   };
 
@@ -57,50 +56,26 @@ export default function PosterGallery({ posters, photos = [], session }) {
 
   return (
     <div className="poster-gallery">
-      <div className="poster-gallery-head">
-        <div>
-          <b>ORIGINAL POSTERS</b>
-          <span>{session} · {posters.length}장</span>
+      <div className="archive-strip-head">
+        <div><b>SESSION ARCHIVE</b><span>{session}</span></div>
+        <div className="archive-strip-actions">
+          <button type="button" onClick={(event) => openGallery(event, 'posters')}>포스터 {posters.length}장</button>
+          {photos.length > 0 && <button type="button" onClick={(event) => openGallery(event, 'photos')}>현장 사진 {photos.length}장 ↗</button>}
         </div>
-        {photos.length > 0 ? (
-          <button type="button" onClick={(event) => openGallery(event, 'photos')}>현장 사진 {photos.length}장 ↗</button>
-        ) : (
-          <button type="button" onClick={(event) => openGallery(event, 'posters')}>포스터 크게 보기 ↗</button>
-        )}
       </div>
 
-      <button className="poster-gallery-feature" type="button" onClick={(event) => openGallery(event, 'posters')} aria-label={`${session} ${poster.label} 크게 보기`}>
-        <Image src={assetPath(poster.src)} alt={poster.alt} width={poster.width} height={poster.height} sizes="(max-width: 760px) 82vw, 320px" priority={session === '1회차'} />
-        <span>{String(posterIndex + 1).padStart(2, '0')} / {String(posters.length).padStart(2, '0')} · {poster.label}</span>
-      </button>
-
-      {posters.length > 1 && (
-        <div className="poster-gallery-thumbs" aria-label={`${session} 포스터 시안 선택`}>
-          {posters.map((poster, index) => (
-            <button className={index === posterIndex ? 'is-active' : ''} type="button" key={poster.src} onClick={() => setPosterIndex(index)} aria-label={`${poster.label} 선택`} aria-pressed={index === posterIndex}>
-              <Image src={assetPath(poster.src)} alt="" width={poster.width} height={poster.height} sizes="72px" />
-              <span>{String(index + 1).padStart(2, '0')}</span>
-            </button>
-          ))}
-        </div>
-      )}
-
-      {photos.length > 0 && (
-        <div className="field-gallery">
-          <div className="field-gallery-head">
-            <b>FIELD ARCHIVE</b>
-            <span>{photos.length} PHOTOS</span>
-          </div>
-          <div className="field-gallery-grid">
-            {photos.slice(0, 4).map((photo, index) => (
-              <button type="button" key={photo.src} onClick={(event) => openGallery(event, 'photos', index)} aria-label={`${session} ${photo.label} 크게 보기`}>
-                <Image src={assetPath(photo.src)} alt="" width={photo.width} height={photo.height} sizes="(max-width: 760px) 42vw, 160px" />
-                <span>{index === 3 && photos.length > 4 ? `+${photos.length - 4}` : String(index + 1).padStart(2, '0')}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+      <div className="archive-media-grid">
+        <button className="archive-media-item is-poster" type="button" onClick={(event) => openGallery(event, 'posters')} aria-label={`${session} ${poster.label} 크게 보기`}>
+          <Image src={assetPath(poster.src)} alt={poster.alt} width={poster.width} height={poster.height} sizes="(max-width: 760px) 44vw, 260px" priority={session === '1회차'} />
+          <span>POSTER · {String(posters.length).padStart(2, '0')}</span>
+        </button>
+        {photos.slice(0, 2).map((photo, index) => (
+          <button className="archive-media-item is-photo" type="button" key={photo.src} onClick={(event) => openGallery(event, 'photos', index)} aria-label={`${session} ${photo.label} 크게 보기`}>
+            <Image src={assetPath(photo.src)} alt="" width={photo.width} height={photo.height} sizes="(max-width: 760px) 38vw, 240px" />
+            <span>{index === 1 && photos.length > 2 ? `PHOTO · +${photos.length - 2}` : `PHOTO · ${String(index + 1).padStart(2, '0')}`}</span>
+          </button>
+        ))}
+      </div>
 
       {isOpen ? createPortal(
         <div className="poster-lightbox" role="dialog" aria-modal="true" aria-labelledby={`poster-lightbox-${session}`}>
