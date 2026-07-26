@@ -207,7 +207,9 @@ a:focus-visible {
   font-family: inherit;
   font-size: 13px;
   font-weight: 800;
+  border-radius: 999px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .menu-toggle,
@@ -738,6 +740,10 @@ a:focus-visible {
   object-position: 77% center;
 }
 
+.featured-visual[data-image-focus='speaker-center'] img {
+  object-position: 52% center;
+}
+
 .featured-news a:hover img {
   transform: scale(1.045);
   filter: grayscale(0.65);
@@ -888,6 +894,14 @@ a:focus-visible {
 
 .campaign-feature a:hover .campaign-symbol {
   transform: rotate(-8deg) scale(1.07);
+}
+
+.history-evidence-visual[data-image-focus='speaker-center'] img {
+  object-position: 52% center;
+}
+
+.report-visual[data-image-focus='speaker-center'] img {
+  object-position: 52% center;
 }
 
 .news-list {
@@ -1384,6 +1398,7 @@ a:focus-visible {
   .mobile-menu[aria-hidden='false'] {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .mobile-menu nav {
@@ -1396,6 +1411,7 @@ a:focus-visible {
     font-size: clamp(28px, 5vw, 48px);
     font-weight: 800;
     letter-spacing: 0;
+    text-align: center;
     opacity: 0;
     pointer-events: auto;
     transform: translateY(18px);
@@ -1416,6 +1432,7 @@ a:focus-visible {
     font-family: inherit;
     font-size: 15px;
     font-weight: 800;
+    align-self: center;
   }
 
   .menu-open .site-header,
@@ -2944,14 +2961,23 @@ body.is-gallery-open {
   border-bottom: 1px solid var(--line);
 }
 
-.social-link-list a {
+.social-link-list a,
+.social-link-list button {
   display: grid;
   grid-template-columns: minmax(130px, 0.55fr) 2fr 30px;
   align-items: center;
   gap: 30px;
+  width: 100%;
   min-height: 110px;
   padding-inline: var(--interactive-inset);
   border-top: 1px solid var(--line);
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  appearance: none;
 }
 
 .social-link-list span {
@@ -2968,6 +2994,16 @@ body.is-gallery-open {
 
 .social-link-list b {
   color: #829b27;
+}
+
+.social-link-list button:hover,
+.social-link-list button:focus-visible {
+  color: var(--ink);
+}
+
+.social-link-list button:hover b,
+.social-link-list button:focus-visible b {
+  color: #4a5d19;
 }
 
 .source-policy .detail-link {
@@ -3302,7 +3338,8 @@ body.is-gallery-open {
     grid-row: 1;
   }
 
-  .social-link-list a {
+  .social-link-list a,
+  .social-link-list button {
     grid-template-columns: 1fr 25px;
     gap: 10px;
     padding: 24px var(--interactive-inset);

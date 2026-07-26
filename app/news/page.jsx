@@ -9,8 +9,8 @@ import { toIsoDate } from '../_lib/date';
 import { assetPath } from '../_lib/site';
 
 export const metadata = {
-  title: '언론보도 | 공정선거시민행동',
-  description: '수원 공정선거시민행동, 전시언, 올공두컷과 관련된 공개 보도를 모았습니다.',
+  title: '언론보도 | 경기우파청년들',
+  description: '수원 발언·집회·보도 기록을 공정선거시민행동 중심으로 분류해 모았습니다.',
 };
 
 export default function NewsPage() {
@@ -46,9 +46,10 @@ export default function NewsPage() {
         <section className="social-records detail-section" aria-labelledby="social-title">
           <div className="detail-section-head reveal"><span>SOCIAL RECORDS</span><h2 id="social-title">직접 전하는 활동 기록</h2></div>
           <div className="social-link-list">
-            <a className="reveal" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer"><span>OFFICIAL THREADS</span><strong>전시언 · 공정선거 시민행동 from 수원</strong><b>↗</b></a>
+            <a className="reveal" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer"><span>OFFICIAL THREADS</span><strong>전시언 · 공정선거 시민행동 공식 채널</strong><b>↗</b></a>
             <a className="reveal" href="https://www.threads.com/%40gibalza_" target="_blank" rel="noreferrer"><span>THREADS</span><strong>올공두컷 운영 기록</strong><b>↗</b></a>
             <a className="reveal" href="https://revotemapkr.netlify.app/" target="_blank" rel="noreferrer"><span>PUBLIC MAP</span><strong>전국 시민행동 일정 지도</strong><b>↗</b></a>
+            <button className="reveal" type="button" aria-label="오픈 카톡방(준비중)"><span>OPEN CHAT</span><strong>오픈 카톡방 입장하기</strong><b>↗</b></button>
           </div>
         </section>
 

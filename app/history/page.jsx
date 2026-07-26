@@ -10,8 +10,8 @@ import { toIsoDate } from '../_lib/date';
 import { assetPath } from '../_lib/site';
 
 export const metadata = {
-  title: '걸어온 발자취 | 공정선거시민행동',
-  description: '수원 올림픽공원 첫 집회부터 이어진 공정선거시민행동의 공개 활동 기록입니다.',
+  title: '우리의 여정 | 경기우파청년들',
+  description: '수원 올림픽공원 첫 집회부터 이어진 공개 활동 기록과 포스터·보도를 정리합니다.',
 };
 
 export default function HistoryPage() {

@@ -6,8 +6,8 @@ import SiteHeader from '../_components/SiteHeader';
 import { organization } from '../_data/content';
 
 export const metadata = {
-  title: '조직과 운영 | 공정선거시민행동',
-  description: '공정선거시민행동의 활동가와 시민 중심 운영 구조를 소개합니다.',
+  title: '조직과 운영 | 경기우파청년들',
+  description: '경기우파청년들의 공개형 운영 구조와 시민 기반의 의사결정 방식을 소개합니다.',
 };
 
 export default function OrganizationPage() {

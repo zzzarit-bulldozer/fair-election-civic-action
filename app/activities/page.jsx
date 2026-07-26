@@ -6,8 +6,8 @@ import SiteHeader from '../_components/SiteHeader';
 import { actions, olgongTwoCut } from '../_data/content';
 
 export const metadata = {
-  title: '주요 활동 | 공정선거시민행동',
-  description: '공정선거시민행동의 현장 기록, 자료 검증, 시민행동과 연대 활동을 소개합니다.',
+  title: '주요 활동 | 경기우파청년들',
+  description: '현장을 감시하고 검증하고 참여를 연결하는 경기우파청년들의 활동을 소개합니다.',
 };
 
 export default function ActivitiesPage() {
@@ -42,8 +42,8 @@ export default function ActivitiesPage() {
               ))}
             </ul>
             <div className="field-content-links" aria-label="올공두컷 링크">
-              <a className="detail-link" href={olgongTwoCut.appUrl} target="_blank" rel="noreferrer">올공두컷 찍기 <span>↗</span></a>
-              <a className="detail-link" href={olgongTwoCut.sourceUrl} target="_blank" rel="noreferrer">원문 보기 <span>↗</span></a>
+              <a className="detail-link" href={olgongTwoCut.appUrl} target="_blank" rel="noreferrer">올공두컷 현장 시작하기 <span>↗</span></a>
+              <a className="detail-link" href={olgongTwoCut.sourceUrl} target="_blank" rel="noreferrer">올공두컷 현장 기록 보기 <span>↗</span></a>
               <a className="detail-link" href={olgongTwoCut.stepsUrl} target="_blank" rel="noreferrer">사용법 보기 <span>↗</span></a>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function ActivitiesPage() {
             <li className="reveal"><span>01</span><div><h3>듣습니다</h3><p>현장과 시민의 질문을 먼저 모읍니다.</p></div></li>
             <li className="reveal"><span>02</span><div><h3>확인합니다</h3><p>공개 자료와 언론 보도를 교차 확인합니다.</p></div></li>
             <li className="reveal"><span>03</span><div><h3>기록합니다</h3><p>누가 보아도 이해할 수 있는 기록을 남깁니다.</p></div></li>
-            <li className="reveal"><span>04</span><div><h3>함께 움직입니다</h3><p>평화로운 집회와 콘텐츠로 참여의 문을 엽니다.</p></div></li>
+            <li className="reveal"><span>04</span><div><h3>함께 확산합니다</h3><p>행동과 기록을 시민이 다시 열어 쓰게 만드는 공유 구조로 만듭니다.</p></div></li>
           </ol>
         </section>
 

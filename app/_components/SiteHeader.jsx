@@ -63,12 +63,11 @@ export default function SiteHeader() {
 
   return (
     <header className={`site-header${scrolled || !isHome ? ' is-scrolled' : ''}`}>
-      <Link className="brand" href="/" aria-label="공정선거시민행동 홈">
+      <Link className="brand" href="/" aria-label="경기우파청년들 홈">
         <LogoMark />
         <span className="brand-text">
-          공정선거
-          <br />
-          시민행동
+          <strong>경기우파청년들</strong>
+          <small>GYEONGGI RIGHT-WING YOUTH</small>
         </span>
       </Link>
 
@@ -80,9 +79,9 @@ export default function SiteHeader() {
         ))}
       </nav>
 
-      <a className="header-cta" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer">
-        공식 Threads 보기
-      </a>
+      <button className="header-cta" type="button" aria-label="오픈 카톡방 입장하기(준비중)">
+        오픈 카톡방 입장하기
+      </button>
 
       <button
         ref={toggleRef}
@@ -104,9 +103,9 @@ export default function SiteHeader() {
               {label}
             </Link>
           ))}
-          <a className="mobile-join" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
-            공식 Threads 보기
-          </a>
+          <button className="mobile-join" type="button" onClick={() => setMenuOpen(false)}>
+            오픈 카톡방 입장하기
+          </button>
         </nav>
       </div>
     </header>

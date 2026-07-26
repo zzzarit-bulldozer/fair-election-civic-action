@@ -5,8 +5,8 @@ import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
 
 export const metadata = {
-  title: '단체 소개 | 공정선거시민행동',
-  description: '수원에서 시작한 공정선거시민행동의 지향점과 활동 원칙을 소개합니다.',
+  title: '단체 소개 | 경기우파청년들',
+  description: '수원에서 시작한 공정한 선거의 가치를 지키기 위한 시민행동의 지향점을 소개합니다.',
 };
 
 const principles = [
@@ -28,10 +28,10 @@ export default function AboutPage() {
         <section className="detail-section intro-statement">
           <p className="detail-kicker reveal">WHY WE ACT</p>
           <div className="intro-statement-copy reveal">
-            <h2>선거는 결과만이 아니라 <em>과정으로 신뢰받아야 합니다.</em></h2>
+            <h2>공정한 한 표가 <em>국민의 권리입니다.</em></h2>
             <div>
-              <p>우리는 막연한 의심을 확산하는 대신 현장을 보고, 공개 자료를 확인하고, 설명이 필요한 지점을 시민의 언어로 질문합니다.</p>
-              <p>한 사람의 목소리가 광장의 기록이 되고, 그 기록이 더 투명한 제도를 만드는 근거가 되도록 행동합니다.</p>
+              <p>우리는 의심보다 확인을, 침묵보다 질문을 선택합니다. 시민이 쉽게 접근할 수 있는 공개 기록을 쌓습니다.</p>
+              <p>한 사람의 목소리를 기록의 기반으로 삼아, 더 투명한 제도와 책임 있는 선거가 되도록 행동합니다.</p>
             </div>
           </div>
         </section>
