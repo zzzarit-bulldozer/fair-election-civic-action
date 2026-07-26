@@ -256,7 +256,7 @@ a:focus-visible {
 
 .hero-media img {
   object-fit: cover;
-  object-position: center;
+  object-position: 50% center;
 }
 
 .hero::before {
@@ -1596,7 +1596,7 @@ a:focus-visible {
   }
 
   .hero-media img {
-    object-position: 61% center;
+    object-position: 42% center;
   }
 
   .hero::before {

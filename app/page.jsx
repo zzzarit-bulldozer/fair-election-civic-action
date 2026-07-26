@@ -21,7 +21,7 @@ export default function HomePage() {
       <main id="main">
         <section className="hero" id="top" aria-labelledby="hero-title">
           <div className="hero-media" aria-hidden="true">
-            <Image src={assetPath('/images/civic-action-hero.jpg')} alt="" fill priority sizes="100vw" quality={82} />
+            <Image src={assetPath('/images/civic-action-hero.webp')} alt="" fill priority sizes="100vw" quality={84} />
           </div>
           <div className="hero-scrim" />
           <div className="hero-grid" aria-hidden="true" />
