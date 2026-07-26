@@ -531,6 +531,17 @@ a:focus-visible {
   letter-spacing: 0;
 }
 
+.principle-message .message-line {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.principle-message .message-ending {
+  display: inline;
+}
+
 .manifesto h2 em {
   position: relative;
   z-index: 0;
@@ -3281,7 +3292,16 @@ body.is-gallery-open {
     padding-bottom: 90px;
   }
 
-  .intro-statement-copy h2,
+  .manifesto h2,
+  .intro-statement-copy h2 {
+    font-size: clamp(31px, 8.6vw, 35px);
+    line-height: 1.16;
+  }
+
+  .principle-message .message-ending {
+    display: block;
+  }
+
   .history-note h2,
   .source-policy h2 {
     font-size: 43px;

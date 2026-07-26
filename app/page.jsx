@@ -62,8 +62,10 @@ export default function HomePage() {
           <SectionLabel number="01">우리의 행동 / 공정선거시민행동</SectionLabel>
           <div className="manifesto-copy reveal">
             <p className="kicker">아직 한 표를 행사하지 못한 유권자가 있습니다.</p>
-            <h2>
-              좌우가 아닌 <em>원칙</em>을, 의혹이 아닌 <em>대안</em>을, 침묵이 아닌 <em>행동</em>을 향합니다.
+            <h2 className="principle-message">
+              <span className="message-line">좌우가 아닌 <em>원칙</em>을,</span>
+              <span className="message-line">의혹이 아닌 <em>대안</em>을,</span>
+              <span className="message-line">침묵이 아닌 <em>행동</em>을 <span className="message-ending">향합니다.</span></span>
             </h2>
             <div className="manifesto-detail">
               <p>공정선거. 이를 위해 시민들과 함께 거리로 나섭니다. 현장에서 시민들의 목소리를 듣고, 모으고, 키웁니다. 누구나 참여할 수 있는 열린 행동으로, 공정한 대한민국을 함께 만들어갑니다.</p>

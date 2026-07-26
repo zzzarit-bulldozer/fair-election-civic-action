@@ -28,7 +28,11 @@ export default function AboutPage() {
         <section className="detail-section intro-statement">
           <p className="detail-kicker reveal">WHY WE ACT</p>
           <div className="intro-statement-copy reveal">
-            <h2>좌우가 아닌 원칙을, <em>침묵이 아닌 행동을 향합니다.</em></h2>
+            <h2 className="principle-message">
+              <span className="message-line">좌우가 아닌 <em>원칙</em>을,</span>
+              <span className="message-line">의혹이 아닌 <em>대안</em>을,</span>
+              <span className="message-line">침묵이 아닌 <em>행동</em>을 <span className="message-ending">향합니다.</span></span>
+            </h2>
             <div>
               <p>우리의 첫 행동은 공정선거시민행동입니다. 아직 한 표를 행사하지 못한 유권자의 목소리를 듣고, 현장을 기록하고, 설명과 대안을 요구합니다.</p>
               <p>한 사람의 목소리가 시민의 참여로 이어지고, 그 참여가 자유민주주의를 더 단단하게 만들도록 움직입니다.</p>
