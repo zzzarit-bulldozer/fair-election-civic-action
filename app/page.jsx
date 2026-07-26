@@ -32,7 +32,7 @@ export default function HomePage() {
               <span>자유로운 선택. <em>끝까지 지킵니다.</em></span>
             </h1>
             <p className="hero-copy">
-              듣고, 묻고, 확인하고, 뛰겠습니다.
+              듣고, 묻고, 확인하고, 함께 뛰겠습니다.
             </p>
             <ul className="hero-proof" aria-label="활동 원칙">
               <li>근거 기반</li>
