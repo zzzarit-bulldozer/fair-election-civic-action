@@ -2644,6 +2644,7 @@ body.is-gallery-open {
   display: grid;
   place-items: center;
   padding: 24px;
+  color: #fff;
 }
 
 .poster-lightbox-backdrop {
@@ -3455,6 +3456,7 @@ body.is-gallery-open {
 
   .poster-lightbox-nav {
     gap: 10px;
+    padding-inline: 12px;
   }
 
   .poster-lightbox-nav p {

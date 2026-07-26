@@ -16,6 +16,22 @@ test('모든 회차와 16장 포스터가 연결된다', async () => {
   ))));
 });
 
+test('모든 회차와 선별한 현장 사진 23장이 연결된다', async () => {
+  const photos = timeline.flatMap((item) => item.photos ?? []);
+
+  assert.equal(photos.length, 23);
+  assert.equal(new Set(photos.map((photo) => photo.src)).size, photos.length);
+  photos.forEach((photo) => {
+    assert.match(photo.src, /^\/images\/history\/session-\d{2}\/field-\d{2}\.webp$/);
+    assert.ok(photo.alt);
+    assert.ok(photo.label);
+    assert.ok(photo.width > 0);
+    assert.ok(photo.height > 0);
+  });
+
+  await Promise.all(photos.map((photo) => access(`${projectRoot}public${photo.src}`)));
+});
+
 test('언론 링크는 중복 없이 유효한 URL 형식이다', () => {
   for (const collection of [historyEvidence, reports]) {
     const links = collection.map((item) => item.href);

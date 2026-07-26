@@ -5,16 +5,23 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { assetPath } from '../_lib/site';
 
-export default function PosterGallery({ posters, session }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+export default function PosterGallery({ posters, photos = [], session }) {
+  const [posterIndex, setPosterIndex] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [archiveType, setArchiveType] = useState('posters');
   const [isOpen, setIsOpen] = useState(false);
   const closeButtonRef = useRef(null);
   const lightboxRef = useRef(null);
   const openerRef = useRef(null);
-  const active = posters[activeIndex];
+  const poster = posters[posterIndex];
+  const archive = archiveType === 'photos' ? photos : posters;
+  const active = archive[lightboxIndex] ?? archive[0];
+  const archiveLabel = archiveType === 'photos' ? 'FIELD PHOTO ARCHIVE' : 'POSTER ARCHIVE';
 
-  const openGallery = (event) => {
+  const openGallery = (event, type) => {
     openerRef.current = event.currentTarget;
+    setArchiveType(type);
+    setLightboxIndex(type === 'posters' ? posterIndex : 0);
     setIsOpen(true);
   };
 
@@ -23,8 +30,8 @@ export default function PosterGallery({ posters, session }) {
     const focusFrame = window.requestAnimationFrame(() => closeButtonRef.current?.focus());
     const onKeyDown = (event) => {
       if (event.key === 'Escape') setIsOpen(false);
-      if (event.key === 'ArrowRight') setActiveIndex((index) => (index + 1) % posters.length);
-      if (event.key === 'ArrowLeft') setActiveIndex((index) => (index - 1 + posters.length) % posters.length);
+      if (event.key === 'ArrowRight') setLightboxIndex((index) => (index + 1) % archive.length);
+      if (event.key === 'ArrowLeft') setLightboxIndex((index) => (index - 1 + archive.length) % archive.length);
       if (event.key === 'Tab') {
         const focusable = [...lightboxRef.current.querySelectorAll('button:not([tabindex="-1"])')];
         const first = focusable[0];
@@ -46,7 +53,7 @@ export default function PosterGallery({ posters, session }) {
       window.removeEventListener('keydown', onKeyDown);
       openerRef.current?.focus();
     };
-  }, [isOpen, posters.length]);
+  }, [archive.length, isOpen]);
 
   return (
     <div className="poster-gallery">
@@ -55,18 +62,22 @@ export default function PosterGallery({ posters, session }) {
           <b>ORIGINAL POSTERS</b>
           <span>{session} · {posters.length}장</span>
         </div>
-        <button type="button" onClick={openGallery}>사진 보기 ↗</button>
+        {photos.length > 0 ? (
+          <button type="button" onClick={(event) => openGallery(event, 'photos')}>현장 사진 {photos.length}장 ↗</button>
+        ) : (
+          <button type="button" onClick={(event) => openGallery(event, 'posters')}>포스터 크게 보기 ↗</button>
+        )}
       </div>
 
-      <button className="poster-gallery-feature" type="button" onClick={openGallery} aria-label={`${session} ${active.label} 크게 보기`}>
-        <Image src={assetPath(active.src)} alt={active.alt} width={active.width} height={active.height} sizes="(max-width: 760px) 82vw, 320px" priority={session === '1회차'} />
-        <span>{String(activeIndex + 1).padStart(2, '0')} / {String(posters.length).padStart(2, '0')} · {active.label}</span>
+      <button className="poster-gallery-feature" type="button" onClick={(event) => openGallery(event, 'posters')} aria-label={`${session} ${poster.label} 크게 보기`}>
+        <Image src={assetPath(poster.src)} alt={poster.alt} width={poster.width} height={poster.height} sizes="(max-width: 760px) 82vw, 320px" priority={session === '1회차'} />
+        <span>{String(posterIndex + 1).padStart(2, '0')} / {String(posters.length).padStart(2, '0')} · {poster.label}</span>
       </button>
 
       {posters.length > 1 && (
         <div className="poster-gallery-thumbs" aria-label={`${session} 포스터 시안 선택`}>
           {posters.map((poster, index) => (
-            <button className={index === activeIndex ? 'is-active' : ''} type="button" key={poster.src} onClick={() => setActiveIndex(index)} aria-label={`${poster.label} 선택`} aria-pressed={index === activeIndex}>
+            <button className={index === posterIndex ? 'is-active' : ''} type="button" key={poster.src} onClick={() => setPosterIndex(index)} aria-label={`${poster.label} 선택`} aria-pressed={index === posterIndex}>
               <Image src={assetPath(poster.src)} alt="" width={poster.width} height={poster.height} sizes="72px" />
               <span>{String(index + 1).padStart(2, '0')}</span>
             </button>
@@ -79,17 +90,17 @@ export default function PosterGallery({ posters, session }) {
           <button className="poster-lightbox-backdrop" type="button" tabIndex={-1} onClick={() => setIsOpen(false)} aria-label="사진 보기 닫기" />
           <div className="poster-lightbox-panel" ref={lightboxRef}>
             <div className="poster-lightbox-head">
-              <div><b id={`poster-lightbox-${session}`}>{session} POSTER ARCHIVE</b><span>{active.label} · {activeIndex + 1} / {posters.length}</span></div>
+              <div><b id={`poster-lightbox-${session}`}>{session} {archiveLabel}</b><span>{active.label} · {lightboxIndex + 1} / {archive.length}</span></div>
               <button ref={closeButtonRef} type="button" onClick={() => setIsOpen(false)} aria-label="닫기">×</button>
             </div>
             <div className="poster-lightbox-stage">
               <Image src={assetPath(active.src)} alt={active.alt} width={active.width} height={active.height} sizes="(max-width: 760px) 92vw, 70vh" priority />
             </div>
-            {posters.length > 1 && (
+            {archive.length > 1 && (
               <div className="poster-lightbox-nav">
-                <button type="button" onClick={() => setActiveIndex((activeIndex - 1 + posters.length) % posters.length)}>← 이전</button>
+                <button type="button" onClick={() => setLightboxIndex((lightboxIndex - 1 + archive.length) % archive.length)}>← 이전</button>
                 <p>{active.alt}</p>
-                <button type="button" onClick={() => setActiveIndex((activeIndex + 1) % posters.length)}>다음 →</button>
+                <button type="button" onClick={() => setLightboxIndex((lightboxIndex + 1) % archive.length)}>다음 →</button>
               </div>
             )}
           </div>

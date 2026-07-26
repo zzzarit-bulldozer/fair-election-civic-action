@@ -38,6 +38,11 @@ export const timeline = [
     posters: [
       { src: '/images/posters/suwon-action-01-main.jpeg', width: 360, height: 540, alt: '올림픽공원 1회차 집회 포스터', label: '첫 집회 포스터' },
     ],
+    photos: [
+      { src: '/images/history/session-01/field-01.webp', width: 1600, height: 1200, alt: '수원 올림픽공원에 모인 1회차 시민행동 참가자들', label: '올림픽공원 전경' },
+      { src: '/images/history/session-01/field-02.webp', width: 1600, height: 1200, alt: '태극기를 든 시민들이 함께한 수원 올림픽공원 집회 현장', label: '시민 참여 현장' },
+      { src: '/images/history/session-01/field-03.webp', width: 1600, height: 1200, alt: '수원 올림픽공원 산책로를 따라 선 1회차 참가자들', label: '첫 행동의 광장' },
+    ],
   },
   {
     date: '2026. 06. 20',
@@ -56,6 +61,12 @@ export const timeline = [
       { src: '/images/posters/suwon-action-02-red.jpeg', width: 360, height: 540, alt: '공정선거 시민행동 2회차 붉은 포스터', label: '공정선거' },
       { src: '/images/posters/suwon-action-02-pink.jpeg', width: 360, height: 540, alt: '수원 엄마들이 일어납니다 2회차 포스터', label: '수원 엄마들' },
     ],
+    photos: [
+      { src: '/images/history/session-02/field-01.webp', width: 1600, height: 746, alt: '비가 내리는 나혜석거리에서 현수막을 든 2회차 참가자들', label: '우중 시민행동' },
+      { src: '/images/history/session-02/field-02.webp', width: 1600, height: 746, alt: '천막 아래에서 이어진 수원 공정선거 시민행동 2회차', label: '천막 현장' },
+      { src: '/images/history/session-02/field-03.webp', width: 1600, height: 746, alt: '우비와 태극기를 준비한 나혜석거리 참가자들', label: '비를 맞은 광장' },
+      { src: '/images/history/session-02/field-04.webp', width: 1600, height: 901, alt: '비 오는 나혜석거리 천막 앞에 모인 시민들', label: '2회차 단체 기록' },
+    ],
   },
   {
     date: '2026. 06. 27',
@@ -69,6 +80,12 @@ export const timeline = [
     posters: [
       { src: '/images/posters/suwon-action-03-main.jpeg', width: 360, height: 540, alt: '엄마 아빠도 그때 함께 했어 공정선거 시민행동 3회차 포스터', label: '대표 포스터' },
       { src: '/images/posters/suwon-action-03-invitation.jpeg', width: 360, height: 510, alt: '공정선거 시민행동 3회차 흑백 초대장 포스터', label: '초대장' },
+    ],
+    photos: [
+      { src: '/images/history/session-03/field-01.webp', width: 1600, height: 746, alt: '나혜석거리 천막 앞에서 발언하는 3회차 참가자', label: '시민 발언' },
+      { src: '/images/history/session-03/field-02.webp', width: 1600, height: 746, alt: '태극기가 걸린 수원 공정선거 시민행동 부스', label: '시민행동 부스' },
+      { src: '/images/history/session-03/field-03.webp', width: 1600, height: 746, alt: '나혜석거리 천막 아래 모여 이야기를 나누는 시민들', label: '함께한 시민들' },
+      { src: '/images/history/session-03/field-04.webp', width: 1600, height: 1200, alt: '아이와 가족도 함께한 공정선거 시민행동 3회차 현장', label: '가족이 함께한 광장' },
     ],
   },
   {
@@ -84,6 +101,12 @@ export const timeline = [
       { src: '/images/posters/suwon-action-04-main.jpeg', width: 360, height: 510, alt: '6월 3일 이후 시간이 멈췄습니다 공정선거 시민행동 4회차 포스터', label: '대표 포스터' },
       { src: '/images/posters/suwon-action-04-sunset.jpeg', width: 360, height: 510, alt: '자유민주주의 시간이 멈췄습니다 공정선거 시민행동 4회차 포스터', label: '태극기 시안' },
     ],
+    photos: [
+      { src: '/images/history/session-04/field-01.webp', width: 1600, height: 746, alt: '공정선거 시민행동 4회차 현장에 준비된 물품 상자', label: '현장 준비' },
+      { src: '/images/history/session-04/field-02.webp', width: 1600, height: 746, alt: '여름 집회를 위해 준비한 음료와 간식', label: '시민을 위한 음료' },
+      { src: '/images/history/session-04/field-03.webp', width: 1600, height: 746, alt: '나혜석거리 천막 앞에 모인 4회차 참가자들', label: '4회차 광장' },
+      { src: '/images/history/session-04/field-04.webp', width: 1600, height: 746, alt: '태극기와 현수막이 놓인 공정선거 시민행동 4회차 현장', label: '거리의 기록' },
+    ],
   },
   {
     date: '2026. 07. 11',
@@ -98,6 +121,9 @@ export const timeline = [
       { src: '/images/posters/suwon-action-05-main.jpeg', width: 360, height: 540, alt: '무엇이든 말하고 싶습니다 공정선거 시민행동 5회차 포스터', label: '대표 포스터' },
       { src: '/images/posters/suwon-action-05-crowd.jpeg', width: 360, height: 540, alt: '공정선거 재선거 당일투표 수개표 시민행동 5회차 포스터', label: '현장 시안' },
     ],
+    photos: [
+      { src: '/images/history/session-05/field-01.webp', width: 1553, height: 1600, alt: '각자의 메시지와 태극기를 들고 선 공정선거 시민행동 5회차 참가자들', label: '각자의 목소리' },
+    ],
   },
   {
     date: '2026. 07. 18',
@@ -110,6 +136,12 @@ export const timeline = [
     source: '전시언 Threads 포스터',
     posters: [
       { src: '/images/posters/suwon-action-06-main.jpeg', width: 360, height: 510, alt: '공정선거 재선거 당일투표 수개표 시민행동 6회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-06/field-01.webp', width: 739, height: 1600, alt: '공정선거 시민행동 6회차 현장에 준비된 간식', label: '현장 간식' },
+      { src: '/images/history/session-06/field-02.webp', width: 1600, height: 1200, alt: '여름 광장을 위해 준비한 음료와 물', label: '여름 광장 준비' },
+      { src: '/images/history/session-06/field-03.webp', width: 1600, height: 1200, alt: '태극 문양 옷을 맞춰 입은 가족 참가자들', label: '가족 참가자' },
+      { src: '/images/history/session-06/field-04.webp', width: 1200, height: 1600, alt: '나혜석거리 분수 앞 시민행동 부스와 참가자들', label: '6회차 현장' },
     ],
   },
   {
@@ -124,6 +156,11 @@ export const timeline = [
     posters: [
       { src: '/images/posters/suwon-action-07-day.jpeg', width: 1024, height: 1535, alt: '가족이 수박을 나누는 공정선거 시민행동 7회차 낮 포스터', label: '낮 시안' },
       { src: '/images/posters/suwon-action-07-night.jpeg', width: 1024, height: 1536, alt: '시민들이 응원봉을 든 공정선거 시민행동 7회차 밤 포스터', label: '밤 시안' },
+    ],
+    photos: [
+      { src: '/images/history/session-07/field-01.webp', width: 1600, height: 1200, alt: '태극기와 손팻말을 든 공정선거 시민행동 7회차 참가자들', label: '7회차 광장' },
+      { src: '/images/history/session-07/field-02.webp', width: 1600, height: 1200, alt: '나혜석거리 천막 아래에서 시민과 대화하는 참가자들', label: '시민과의 대화' },
+      { src: '/images/history/session-07/field-03.webp', width: 1600, height: 1200, alt: '테이블에서 현장 참여 안내를 진행하는 모습', label: '참여 안내' },
     ],
   },
 ];
