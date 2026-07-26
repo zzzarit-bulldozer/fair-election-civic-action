@@ -10,7 +10,7 @@ import {
   timeline,
 } from '../app/_data/content.js';
 import { toIsoDate } from '../app/_lib/date.js';
-import { openChatUrl } from '../app/_lib/site.js';
+import { officialThreadsUrl, openChatUrl } from '../app/_lib/site.js';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 
@@ -101,6 +101,10 @@ test('창립 회의 자료의 임원진과 운영계획이 정확히 반영된�
 
 test('오픈 카톡 링크는 공식 초대 주소를 사용한다', () => {
   assert.equal(openChatUrl, 'https://invite.kakao.com/tc/MqzolmVhza');
+});
+
+test('메인 Threads CTA는 공식 계정 주소를 사용한다', () => {
+  assert.equal(officialThreadsUrl, 'https://www.threads.com/@fairly_evenly?igshid=NTc4MTIwNjQ2YQ==');
 });
 
 test('표시 날짜를 ISO 날짜로 변환한다', () => {

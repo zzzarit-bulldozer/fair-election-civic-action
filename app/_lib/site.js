@@ -2,6 +2,7 @@ const deploymentHost = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.
 
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 export const openChatUrl = 'https://invite.kakao.com/tc/MqzolmVhza';
+export const officialThreadsUrl = 'https://www.threads.com/@fairly_evenly?igshid=NTc4MTIwNjQ2YQ==';
 
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL

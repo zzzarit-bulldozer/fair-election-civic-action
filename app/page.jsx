@@ -6,7 +6,7 @@ import SiteFooter from './_components/SiteFooter';
 import SiteHeader from './_components/SiteHeader';
 import { actions, olgongTwoCut, reports, timeline } from './_data/content';
 import { toIsoDate } from './_lib/date';
-import { assetPath, openChatUrl } from './_lib/site';
+import { assetPath, officialThreadsUrl, openChatUrl } from './_lib/site';
 
 export default function HomePage() {
   const civicReport = reports.find((item) => item.media === '뉴시스') ?? reports[0];
@@ -171,10 +171,15 @@ export default function HomePage() {
               <em>누리는 것이 아니라</em>
               <span>함께 만드는 것입니다.</span>
             </h2>
-            <p>행동과 기록은 공식 Thread와 팀채팅방에서 가장 먼저 확인하실 수 있습니다.</p>
-            <a className="button button-dark" href={openChatUrl} target="_blank" rel="noreferrer">
-              오픈 카톡방 입장하기 <span>↗</span>
-            </a>
+            <p>행동과 기록은 공식 Threads와 팀채팅방에서 가장 먼저 확인하실 수 있습니다.</p>
+            <div className="join-actions">
+              <a className="button button-dark" href={openChatUrl} target="_blank" rel="noreferrer">
+                오픈 카톡방 입장하기 <span>↗</span>
+              </a>
+              <a className="button button-thread" href={officialThreadsUrl} target="_blank" rel="noreferrer">
+                Threads 구경하기 <span>↗</span>
+              </a>
+            </div>
           </div>
           <div className="join-word" aria-hidden="true">ACTION</div>
         </section>

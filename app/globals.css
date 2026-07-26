@@ -1348,6 +1348,23 @@ a:focus-visible {
   background: var(--ink);
 }
 
+.join-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button-thread {
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+}
+
+.button-thread:hover {
+  color: #fff;
+  background: var(--ink);
+}
+
 .join-content small {
   display: block;
   margin-top: 17px;
@@ -1878,6 +1895,11 @@ a:focus-visible {
     margin: 28px 0 26px;
     font-size: 15px;
     line-height: 1.65;
+  }
+
+  .join-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .site-footer {
