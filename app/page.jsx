@@ -77,7 +77,9 @@ export default function HomePage() {
             <SectionLabel number="02" inverse>우리의 행동 방식</SectionLabel>
             <div className="actions-heading reveal">
               <p className="eyebrow"><span /> WHAT WE DO</p>
-              <h2 id="action-title">공정과 자유의 가치를 바탕으로 질문을 하고, 답을 요구하고, 기록으로 남깁니다.</h2>
+              <h2 id="action-title">
+                공정과 자유의 가치를 바탕으로 질문을 하고, <em>답을 요구하고, 기록으로 남깁니다.</em>
+              </h2>
             </div>
           </div>
           <div className="action-list section-pad">
