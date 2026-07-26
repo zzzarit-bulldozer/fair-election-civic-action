@@ -18,10 +18,10 @@ export default function PosterGallery({ posters, photos = [], session }) {
   const active = archive[lightboxIndex] ?? archive[0];
   const archiveLabel = archiveType === 'photos' ? 'FIELD PHOTO ARCHIVE' : 'POSTER ARCHIVE';
 
-  const openGallery = (event, type) => {
+  const openGallery = (event, type, index = 0) => {
     openerRef.current = event.currentTarget;
     setArchiveType(type);
-    setLightboxIndex(type === 'posters' ? posterIndex : 0);
+    setLightboxIndex(type === 'posters' ? posterIndex : index);
     setIsOpen(true);
   };
 
@@ -85,6 +85,23 @@ export default function PosterGallery({ posters, photos = [], session }) {
         </div>
       )}
 
+      {photos.length > 0 && (
+        <div className="field-gallery">
+          <div className="field-gallery-head">
+            <b>FIELD ARCHIVE</b>
+            <span>{photos.length} PHOTOS</span>
+          </div>
+          <div className="field-gallery-grid">
+            {photos.slice(0, 4).map((photo, index) => (
+              <button type="button" key={photo.src} onClick={(event) => openGallery(event, 'photos', index)} aria-label={`${session} ${photo.label} 크게 보기`}>
+                <Image src={assetPath(photo.src)} alt="" width={photo.width} height={photo.height} sizes="(max-width: 760px) 42vw, 160px" />
+                <span>{index === 3 && photos.length > 4 ? `+${photos.length - 4}` : String(index + 1).padStart(2, '0')}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {isOpen ? createPortal(
         <div className="poster-lightbox" role="dialog" aria-modal="true" aria-labelledby={`poster-lightbox-${session}`}>
           <button className="poster-lightbox-backdrop" type="button" tabIndex={-1} onClick={() => setIsOpen(false)} aria-label="사진 보기 닫기" />
@@ -96,6 +113,15 @@ export default function PosterGallery({ posters, photos = [], session }) {
             <div className="poster-lightbox-stage">
               <Image src={assetPath(active.src)} alt={active.alt} width={active.width} height={active.height} sizes="(max-width: 760px) 92vw, 70vh" priority />
             </div>
+            {archive.length > 1 && (
+              <div className="poster-lightbox-thumbs" aria-label={`${session} ${archiveLabel} 전체 목록`}>
+                {archive.map((item, index) => (
+                  <button className={index === lightboxIndex ? 'is-active' : ''} type="button" key={item.src} onClick={() => setLightboxIndex(index)} aria-label={`${item.label} 보기`} aria-pressed={index === lightboxIndex}>
+                    <Image src={assetPath(item.src)} alt="" width={item.width} height={item.height} sizes="64px" />
+                  </button>
+                ))}
+              </div>
+            )}
             {archive.length > 1 && (
               <div className="poster-lightbox-nav">
                 <button type="button" onClick={() => setLightboxIndex((lightboxIndex - 1 + archive.length) % archive.length)}>← 이전</button>

@@ -16,10 +16,11 @@ test('모든 회차와 16장 포스터가 연결된다', async () => {
   ))));
 });
 
-test('모든 회차와 선별한 현장 사진 23장이 연결된다', async () => {
+test('모든 회차와 회차별 현장 사진 48장이 연결된다', async () => {
   const photos = timeline.flatMap((item) => item.photos ?? []);
 
-  assert.equal(photos.length, 23);
+  assert.deepEqual(timeline.map((item) => item.photos.length), [4, 10, 14, 8, 2, 6, 4]);
+  assert.equal(photos.length, 48);
   assert.equal(new Set(photos.map((photo) => photo.src)).size, photos.length);
   photos.forEach((photo) => {
     assert.match(photo.src, /^\/images\/history\/session-\d{2}\/field-\d{2}\.webp$/);
