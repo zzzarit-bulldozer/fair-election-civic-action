@@ -10,6 +10,7 @@ import {
   timeline,
 } from '../app/_data/content.js';
 import { toIsoDate } from '../app/_lib/date.js';
+import { openChatUrl } from '../app/_lib/site.js';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 
@@ -96,6 +97,10 @@ test('창립 회의 자료의 임원진과 운영계획이 정확히 반영된�
     '단체 명의 통장 개설',
     '회원 및 후원회원 모집',
   ]);
+});
+
+test('오픈 카톡 링크는 공식 초대 주소를 사용한다', () => {
+  assert.equal(openChatUrl, 'https://invite.kakao.com/tc/MqzolmVhza');
 });
 
 test('표시 날짜를 ISO 날짜로 변환한다', () => {

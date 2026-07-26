@@ -6,7 +6,7 @@ import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
 import { reports } from '../_data/content';
 import { toIsoDate } from '../_lib/date';
-import { assetPath } from '../_lib/site';
+import { assetPath, openChatUrl } from '../_lib/site';
 
 export const metadata = {
   title: '언론보도 | 경기우파청년들',
@@ -77,7 +77,7 @@ export default function NewsPage() {
             <a className="reveal" href="https://www.threads.com/@fairly_evenly?hl=ko" target="_blank" rel="noreferrer"><span>OFFICIAL THREADS</span><strong>전시언 · 공정선거 시민행동 공식 채널</strong><b>↗</b></a>
             <a className="reveal" href="https://www.threads.com/%40gibalza_" target="_blank" rel="noreferrer"><span>THREADS</span><strong>올공두컷 운영 기록</strong><b>↗</b></a>
             <a className="reveal" href="https://revotemapkr.netlify.app/" target="_blank" rel="noreferrer"><span>PUBLIC MAP</span><strong>전국 시민행동 일정 지도</strong><b>↗</b></a>
-            <button className="reveal" type="button" aria-label="오픈 카톡방(준비중)"><span>OPEN CHAT</span><strong>오픈 카톡방 입장하기</strong><b>↗</b></button>
+            <a className="reveal" href={openChatUrl} target="_blank" rel="noreferrer"><span>OPEN CHAT</span><strong>오픈 카톡방 입장하기</strong><b>↗</b></a>
           </div>
         </section>
 

@@ -3210,13 +3210,13 @@ body.is-gallery-open {
   color: #829b27;
 }
 
-.social-link-list button:hover,
-.social-link-list button:focus-visible {
+.social-link-list a:hover,
+.social-link-list a:focus-visible {
   color: var(--ink);
 }
 
-.social-link-list button:hover b,
-.social-link-list button:focus-visible b {
+.social-link-list a:hover b,
+.social-link-list a:focus-visible b {
   color: #4a5d19;
 }
 
