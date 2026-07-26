@@ -182,10 +182,10 @@ export const olgongTwoCut = {
 
 const pressVisuals = {
   'https://n.news.naver.com/article/003/0014004541': {
-    image: '/images/news/yna-families-main.png',
-    imageAlt: '수원 올림픽공원 집회 현장, 유모차와 가족 단위 참가자',
-    imageCredit: '뉴스1 · 연합뉴스',
-    imageFocus: 'speaker-center',
+    image: '/images/news/suwon-olympic-park-crowd.webp',
+    imageAlt: '수원 올림픽공원 산책로를 따라 함께한 공정선거 시민행동 참가자들',
+    imageCredit: '공정선거시민행동 제공',
+    imageFocus: 'field-crowd',
   },
   'https://news.tvchosun.com/site/data/html_dir/2026/06/13/2026061390047.html': {
     image: '/images/news/yna-suwon.jpg',
