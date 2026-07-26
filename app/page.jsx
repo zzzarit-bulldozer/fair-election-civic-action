@@ -95,10 +95,10 @@ export default function HomePage() {
         </section>
 
         <section className="news section-pad" id="news" aria-labelledby="news-title">
-          <SectionLabel number="03">언론보도 / 행동과 참여</SectionLabel>
+          <SectionLabel number="03">행동과 참여</SectionLabel>
           <div className="news-content">
             <div className="news-head reveal">
-              <h2 id="news-title">현장의 기록</h2>
+              <h2 id="news-title">언론보도</h2>
               <Link href="/news">언론보도 전체 보기 <span>↗</span></Link>
             </div>
 
