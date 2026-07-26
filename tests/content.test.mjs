@@ -38,6 +38,16 @@ test('모든 언론 기록에 출처가 표시된 로컬 이미지가 연결된�
   )));
 });
 
+test('올공두컷을 직접 다룬 고유 언론 원문이 별도 분류된다', () => {
+  const olgongReports = reports.filter((item) => item.project === 'olgong');
+
+  assert.equal(olgongReports.length, 3);
+  assert.deepEqual(
+    olgongReports.map((item) => item.media).sort(),
+    ['위키트리', '이데일리', '중앙일보'].sort(),
+  );
+});
+
 test('브라우저와 모바일용 아이콘 파일이 준비된다', async () => {
   await Promise.all([
     'favicon.svg',

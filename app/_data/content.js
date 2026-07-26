@@ -228,6 +228,11 @@ const pressVisuals = {
     imageCredit: '이데일리',
     imageFocus: 'speaker',
   },
+  'https://www.wikitree.co.kr/articles/1141627': {
+    image: '/images/news/wikitree-olgong.jpg',
+    imageAlt: '서울 올림픽공원 핸드볼경기장 앞에 모인 시민들',
+    imageCredit: '위키트리',
+  },
   'https://www.fnnews.com/news/202606101502443216': {
     image: '/images/news/fnnews-dashboard.png',
     imageAlt: '시민이 만든 디지털 상황판',
@@ -383,6 +388,7 @@ export const reports = [
   },
   {
     category: '단체·인물',
+    project: 'olgong',
     media: '중앙일보',
     date: '2026. 06. 14',
     title: '朴·尹 탄핵찬성했던 청년 ‘올공두컷’ 부스 차렸다…열흘째 체육단체는 마비',
@@ -399,11 +405,21 @@ export const reports = [
   },
   {
     category: '현장 콘텐츠',
+    project: 'olgong',
     media: '이데일리',
     date: '2026. 06. 14',
-    title: '가족이 함께한 광장, 올공두컷이 남긴 장면',
-    summary: '올공두컷 운영 과정과 시민 참여 포맷을 소개했습니다.',
+    title: '‘잠실 개표소 시위’서 무료 과외·올공네컷 등 이색 체험존 등장…경찰은 장기전 대비',
+    summary: 'AI로 프레임을 제작하고 현장 프린터로 사진을 제공한 올공두컷 체험존을 소개했습니다.',
     href: 'https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02145126645481720',
+  },
+  {
+    category: '현장 콘텐츠',
+    project: 'olgong',
+    media: '위키트리',
+    date: '2026. 06. 17',
+    title: '아기띠 둘러메고 커플끼리 손잡고…시민 발길 이어진 올림픽공원 속 목소리 [르포]',
+    summary: '가족·청년 참가자와 자원봉사 현장을 취재하며 즉석사진을 인화해 주는 올공두컷을 함께 소개했습니다.',
+    href: 'https://www.wikitree.co.kr/articles/1141627',
   },
   {
     category: '시민 기술',

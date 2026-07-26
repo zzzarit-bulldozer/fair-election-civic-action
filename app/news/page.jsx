@@ -14,9 +14,7 @@ export const metadata = {
 };
 
 export default function NewsPage() {
-  const olgongReports = reports.filter((item) => (
-    item.href.includes('25436607') || item.category === '현장 콘텐츠'
-  ));
+  const olgongReports = reports.filter((item) => item.project === 'olgong');
   const civicReports = reports.filter((item) => !olgongReports.includes(item));
   const reportGroups = [
     {
