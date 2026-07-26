@@ -1264,12 +1264,22 @@ a:focus-visible {
   background: var(--ink);
 }
 
+.join-content {
+  width: 100%;
+  min-width: 0;
+}
+
 .join h2 {
   margin: 0;
   font-size: clamp(52px, 7.2vw, 110px);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: 0;
+}
+
+.join h2 span,
+.join h2 em {
+  display: block;
 }
 
 .join h2 em {
@@ -1790,11 +1800,20 @@ a:focus-visible {
   }
 
   .join {
-    min-height: 780px;
+    min-height: 0;
+    padding-top: 100px;
+    padding-bottom: 96px;
   }
 
   .join h2 {
-    font-size: clamp(50px, 15vw, 76px);
+    font-size: clamp(40px, 11.5vw, 52px);
+    line-height: 1.04;
+  }
+
+  .join-content > p:not(.eyebrow) {
+    margin: 28px 0 26px;
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   .site-footer {
@@ -2243,7 +2262,13 @@ a:focus-visible {
   grid-template-columns: 0.85fr 1.15fr;
   gap: clamp(60px, 10vw, 170px);
   align-items: center;
+  min-width: 0;
   background: var(--lime);
+}
+
+.field-content-copy {
+  width: 100%;
+  min-width: 0;
 }
 
 .field-content-index {
@@ -3327,6 +3352,7 @@ body.is-gallery-open {
 
   .field-content {
     gap: 55px;
+    overflow: hidden;
   }
 
   .field-content-index {
@@ -3335,11 +3361,23 @@ body.is-gallery-open {
   }
 
   .field-content-index strong {
-    font-size: 100px;
+    font-size: clamp(62px, 18vw, 72px);
+    line-height: 0.9;
   }
 
   .field-content-copy h2 {
-    font-size: 46px;
+    max-width: 100%;
+    font-size: clamp(36px, 11vw, 46px);
+    overflow-wrap: anywhere;
+  }
+
+  .field-content-copy > p:not(.eyebrow) {
+    max-width: 100%;
+  }
+
+  .field-content-copy .eyebrow {
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .field-content-points li {

@@ -164,7 +164,11 @@ export default function HomePage() {
           <div className="join-noise" aria-hidden="true" />
           <div className="join-content reveal">
             <p className="eyebrow"><span /> JOIN US</p>
-            <h2 id="join-title">자유민주주의는 <em>누리는 것이 아니라</em> 함께 만드는 것입니다.</h2>
+            <h2 id="join-title">
+              <span>자유민주주의는</span>
+              <em>누리는 것이 아니라</em>
+              <span>함께 만드는 것입니다.</span>
+            </h2>
             <p>행동과 기록은 공식 Thread와 팀채팅방에서 가장 먼저 확인하실 수 있습니다.</p>
             <button className="button button-dark" type="button" aria-label="오픈 카톡방 입장하기(준비중)">
               오픈 카톡방 입장하기 <span>↗</span>
