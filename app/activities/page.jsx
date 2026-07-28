@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import DetailHero from '../_components/DetailHero';
+import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
-import { actions, olgongTwoCut } from '../_data/content';
+import { actions, olgongTwoCut, participationWays } from '../_data/content';
 
 export const metadata = {
   title: '주요 활동 | 경기우파청년들',
@@ -16,7 +16,7 @@ export default function ActivitiesPage() {
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />
-      <main id="main" className="detail-main">
+      <main id="main" className="detail-main detail-main-activities">
         <DetailHero index="02" eyebrow="FAIR ELECTION CIVIC ACTION" title="공정선거시민행동" description="공정과 자유의 가치를 바탕으로 질문하고, 답을 요구하고, 기록으로 남깁니다." word="ACTION" />
 
         <section className="activity-detail-list detail-section" aria-label="주요 활동">
@@ -36,6 +36,7 @@ export default function ActivitiesPage() {
             <h2>{olgongTwoCut.title}</h2>
             <p>{olgongTwoCut.summary}</p>
             <p>{olgongTwoCut.principle}</p>
+            <p className="field-content-relation">{olgongTwoCut.relationNote}</p>
             <ul className="field-content-points" aria-label="올공두컷 핵심 메시지">
               {olgongTwoCut.points.map(([label, text]) => (
                 <li key={label}><span>{label}</span><strong>{text}</strong></li>
@@ -49,6 +50,22 @@ export default function ActivitiesPage() {
           </div>
         </section>
 
+        <section className="participation-roles detail-section" aria-labelledby="participation-roles-title">
+          <div className="detail-section-head reveal">
+            <span>YOUR ROLE</span>
+            <h2 id="participation-roles-title">함께할 수 있는 역할</h2>
+          </div>
+          <div className="participation-role-list">
+            {participationWays.map((way) => (
+              <article className="participation-role-row reveal" key={way.id}>
+                <span>{way.number}</span>
+                <h3>{way.title}</h3>
+                <p>{way.summary}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="process-section detail-section" aria-labelledby="process-title">
           <div className="detail-section-head reveal"><span>HOW WE WORK</span><h2 id="process-title">행동하는 순서</h2></div>
           <ol className="process-list">
@@ -59,10 +76,10 @@ export default function ActivitiesPage() {
           </ol>
         </section>
 
-        <nav className="page-next section-pad" aria-label="다음 페이지">
-          <Link href="/history"><span>행동이 쌓인 기록</span><strong>발자취 보기 ↗</strong></Link>
-          <Link href="/news"><span>언론이 기록한 현장</span><strong>언론보도 보기 ↗</strong></Link>
-        </nav>
+        <PageActions
+          related={{ href: '/history', label: '발자취 보기' }}
+          action={{ href: '/join', label: '함께 참여하기' }}
+        />
       </main>
       <SiteFooter />
     </>

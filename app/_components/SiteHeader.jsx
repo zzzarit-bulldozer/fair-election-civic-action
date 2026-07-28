@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { openChatUrl } from '../_lib/site';
 import LogoMark from './LogoMark';
 
 const navigation = [
@@ -80,9 +79,9 @@ export default function SiteHeader() {
         ))}
       </nav>
 
-      <a className="header-cta" href={openChatUrl} target="_blank" rel="noreferrer">
-        오픈 카톡방 입장하기
-      </a>
+      <Link className="header-cta" href="/join" aria-current={pathname === '/join' ? 'page' : undefined}>
+        참여하기
+      </Link>
 
       <button
         ref={toggleRef}
@@ -104,9 +103,9 @@ export default function SiteHeader() {
               {label}
             </Link>
           ))}
-          <a className="mobile-join" href={openChatUrl} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
-            오픈 카톡방 입장하기
-          </a>
+          <Link className="mobile-join" href="/join" aria-current={pathname === '/join' ? 'page' : undefined} onClick={() => setMenuOpen(false)}>
+            참여하기
+          </Link>
         </nav>
       </div>
     </header>

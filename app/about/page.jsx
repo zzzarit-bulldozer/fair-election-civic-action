@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import DetailHero from '../_components/DetailHero';
+import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
@@ -22,7 +22,7 @@ export default function AboutPage() {
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />
-      <main id="main" className="detail-main">
+      <main id="main" className="detail-main detail-main-about">
         <DetailHero index="01" eyebrow="GYEONGGI RIGHT-WING YOUTH" title="경기우파청년들" description="공정과 자유의 가치를 바탕으로 듣고, 묻고, 확인하고, 행동하는 경기 청년 시민 네트워크입니다." word="ABOUT" />
 
         <section className="detail-section intro-statement">
@@ -34,7 +34,8 @@ export default function AboutPage() {
               <span className="message-line">침묵이 아닌 <em>행동</em>을 <span className="message-ending">향합니다.</span></span>
             </h2>
             <div>
-              <p>우리의 첫 행동은 공정선거시민행동입니다. 아직 한 표를 행사하지 못한 유권자의 목소리를 듣고, 현장을 기록하고, 설명과 대안을 요구합니다.</p>
+              <p>경기우파청년들은 상위 단체입니다. 공정선거시민행동은 그 첫 시민행동입니다.</p>
+              <p>아직 한 표를 행사하지 못한 유권자의 목소리를 듣고, 현장을 기록하고, 설명과 대안을 요구합니다.</p>
               <p>한 사람의 목소리가 시민의 참여로 이어지고, 그 참여가 자유민주주의를 더 단단하게 만들도록 움직입니다.</p>
             </div>
           </div>
@@ -58,10 +59,10 @@ export default function AboutPage() {
           <blockquote className="reveal">“의심을 키우는 단체가 아니라, <em>신뢰를 확인하는 시민</em>이 되겠습니다.”</blockquote>
         </section>
 
-        <nav className="page-next section-pad" aria-label="다음 페이지">
-          <Link href="/activities"><span>우리가 하는 일</span><strong>활동 보기 ↗</strong></Link>
-          <Link href="/organization"><span>함께 움직이는 방식</span><strong>조직 보기 ↗</strong></Link>
-        </nav>
+        <PageActions
+          related={{ href: '/activities', label: '활동 방식 보기' }}
+          action={{ href: '/join', label: '참여 방법 보기' }}
+        />
       </main>
       <SiteFooter />
     </>

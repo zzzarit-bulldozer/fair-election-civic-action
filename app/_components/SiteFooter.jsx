@@ -15,7 +15,10 @@ export default function SiteFooter() {
         <p>수원에서 시작하는 공정한 선거, 살아 숨쉬는 자유민주주의</p>
         <p>© {new Date().getFullYear()} 경기우파청년들</p>
       </div>
-      <Link className="back-top" href="#top">맨 위로 ↑</Link>
+      <div className="footer-actions">
+        <Link href="/join">다음 행동 ↗</Link>
+        <Link className="back-top" href="#top">맨 위로 ↑</Link>
+      </div>
     </footer>
   );
 }

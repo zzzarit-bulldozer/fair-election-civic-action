@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import DetailHero from '../_components/DetailHero';
+import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
@@ -16,7 +16,7 @@ export default function OrganizationPage() {
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />
-      <main id="main" className="detail-main">
+      <main id="main" className="detail-main detail-main-organization">
         <DetailHero index="04" eyebrow="ORGANIZATION" title="함께 책임지고, 투명하게 운영합니다" description="창립 의결을 바탕으로 상임대표와 임원진이 각자의 책임을 다합니다." word="PEOPLE" />
 
         <section className="leader-detail detail-section">
@@ -59,10 +59,10 @@ export default function OrganizationPage() {
           </div>
         </section>
 
-        <nav className="page-next section-pad" aria-label="다음 페이지">
-          <Link href="/about"><span>우리가 지키는 원칙</span><strong>단체 소개 ↗</strong></Link>
-          <Link href="/history"><span>함께 만든 기록</span><strong>발자취 보기 ↗</strong></Link>
-        </nav>
+        <PageActions
+          related={{ href: '/about', label: '단체 원칙 보기' }}
+          action={{ href: '/join', label: '회원·후원 참여 보기' }}
+        />
       </main>
       <SiteFooter />
     </>

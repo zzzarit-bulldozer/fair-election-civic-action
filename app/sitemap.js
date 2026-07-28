@@ -2,7 +2,7 @@ import { absoluteUrl } from './_lib/site';
 
 export const dynamic = 'force-static';
 
-const routes = ['/', '/about', '/activities', '/history', '/organization', '/news'];
+const routes = ['/', '/about', '/activities', '/history', '/organization', '/news', '/join'];
 
 export default function sitemap() {
   return routes.map((route) => ({

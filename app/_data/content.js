@@ -1,3 +1,42 @@
+export const brandRelationship = '경기우파청년들은 상위 단체이며, 공정선거시민행동은 경기우파청년들의 첫 시민행동입니다.';
+
+export const nextAction = {
+  status: 'preparing',
+  label: '다음 일정 준비 중',
+  title: '다음 현장 일정을 준비하고 있습니다.',
+  description: '새 일정은 공식 Threads와 팀채팅방에서 가장 먼저 안내합니다.',
+};
+
+export const participationWays = [
+  {
+    id: 'field',
+    number: '01',
+    title: '현장 참여',
+    summary: '집회, 캠페인, 공론장에서 질서 있는 참여의 장을 함께 만듭니다.',
+    forWhom: '현장에서 직접 목소리를 듣고 행동을 함께하고 싶은 시민',
+    preparation: '공지된 날짜와 장소를 확인하고 편한 복장으로 참여합니다.',
+    nextStep: '팀채팅방에서 다음 일정과 현장 안내를 확인합니다.',
+  },
+  {
+    id: 'operations',
+    number: '02',
+    title: '운영 지원',
+    summary: '현장 준비, 안내, 기록과 확산에 필요한 역할을 함께 나눕니다.',
+    forWhom: '준비와 운영, 기록을 자신의 방식으로 돕고 싶은 시민',
+    preparation: '가능한 시간과 맡고 싶은 역할을 정리합니다.',
+    nextStep: '팀채팅방에서 운영진에게 가능한 역할을 알립니다.',
+  },
+  {
+    id: 'updates',
+    number: '03',
+    title: '소식 확인',
+    summary: '행동과 기록을 확인하고 필요한 자료를 주변과 나눕니다.',
+    forWhom: '먼저 활동을 지켜보고 다음 기회를 확인하고 싶은 시민',
+    preparation: '공식 Threads의 활동 기록과 일정 공지를 확인합니다.',
+    nextStep: '참여할 준비가 되면 팀채팅방에서 다음 행동을 확인합니다.',
+  },
+];
+
 export const actions = [
   {
     number: '01',
@@ -33,8 +72,7 @@ export const timeline = [
     place: '수원 올림픽공원',
     title: '수원에서 시작된 첫 시민행동',
     body: '가족과 청년, 어르신이 함께한 첫 광장입니다. 오전 현장 약 40명, 하루 누적 약 300명으로 언론에 보도됐습니다.',
-    link: 'https://www.joongang.co.kr/article/25436607',
-    source: '중앙일보 현장 보도',
+    reportIds: ['joongang-olgong-20260614'],
     posters: [
       { src: '/images/posters/suwon-action-01-main.jpeg', width: 360, height: 540, alt: '올림픽공원 1회차 집회 포스터', label: '첫 집회 포스터' },
     ],
@@ -195,6 +233,7 @@ export const olgongTwoCut = {
   title: '사진을 찍는 순간만큼은 웃을 수 있게',
   summary: '올공두컷은 현장 부스에서 시작해, 누구나 휴대폰으로 찍을 수 있는 공개 포토부스로 확장된 시민 콘텐츠입니다.',
   principle: '사진값은 돈이 아니라 서로를 달래는 말 한마디입니다. 언성이 높아지는 순간에도 심판처럼 서기보다 "괜찮아, 그 마음 이해해"라고 다독이는 평화로운 참여를 요청합니다.',
+  relationNote: '공정선거시민행동 현장에서 함께 소개된 시민 참여형 콘텐츠로 기록합니다.',
   appUrl: 'https://photobooth-ecru-phi.vercel.app',
   sourceUrl: 'https://www.threads.com/@gibalza_/post/DZyjAFyj-Rw',
   stepsUrl: 'https://www.threads.com/@gibalza_/post/DZyjAazD7sX',
@@ -317,81 +356,6 @@ const pressVisuals = {
 
 const withPressVisual = (item) => ({ ...item, ...pressVisuals[item.href] });
 
-export const historyEvidence = [
-  {
-    date: '2026. 06. 13',
-    category: '현장 보도',
-    relation: '1회차 · 수원 현장',
-    media: '연합뉴스',
-    title: '‘유모차부터 3대 가족까지’…수원서도 ‘재선거 촉구’ 집회',
-    summary: '수원에서 열린 첫 집회와 가족 단위 참가자의 참여를 기록한 보도입니다.',
-    href: 'https://www.yna.co.kr/view/AKR20260613033400061',
-  },
-  {
-    date: '2026. 06. 13',
-    category: '현장 보도',
-    relation: '1회차 · 수원 현장',
-    media: 'JTBC',
-    title: '수원서도 재선거 촉구 집회…시민 40여명 “부정선거 규탄”',
-    summary: '수원 집회에 이어 규탄이 확산된 모습을 다뤘습니다.',
-    href: 'https://news.tvchosun.com/site/data/html_dir/2026/06/13/2026061390047.html',
-  },
-  {
-    date: '2026. 06. 13',
-    category: '현장 보도',
-    relation: '1회차 · 수원 올림픽공원',
-    media: '뉴시스',
-    title: '수원도 시민들 모여 [현장]',
-    summary: '다양한 세대가 함께한 현장 기록과 집회 장면을 보여줍니다.',
-    href: 'https://n.news.naver.com/article/003/0014004541',
-  },
-  {
-    date: '2026. 06. 14',
-    category: '시민 콘텐츠',
-    relation: '올공두컷',
-    media: '중앙일보',
-    title: '朴·尹 탄핵찬성했던 청년 ‘올공두컷’ 부스 차렸다…열흘째 체육단체는 마비',
-    summary: '수원 집회 현장에서 시작된 올공두컷을 중심으로 한 기록 기사입니다.',
-    href: 'https://www.joongang.co.kr/article/25436607',
-  },
-  {
-    date: '2026. 06. 25',
-    category: '인터뷰',
-    relation: '전시언 · 투표 연장 문제',
-    media: '중앙일보',
-    title: '[단독] 0분부터 240분까지…투표 멈춘 곳들 ‘연장시간 제각각’ 왜',
-    summary: '투표 중단과 연장 시간 차이를 지적하며 공정성 문제를 다룬 인터뷰 기사입니다.',
-    href: 'https://n.news.naver.com/article/025/0003532986',
-  },
-  {
-    date: '2026. 06. 09',
-    category: '선거 현장',
-    relation: '경기권 선거',
-    media: '경기일보',
-    title: '경기지역서도 투표용지 부족 36개 투표소에 추가 송부',
-    summary: '수원 장안·권선 포함 경기 내 추가 투표용지 송부 보도입니다.',
-    href: 'https://n.news.naver.com/article/666/0000110606',
-  },
-  {
-    date: '2026. 06. 09',
-    category: '선거 현장',
-    relation: '경기지역',
-    media: '경기신문',
-    title: '경기 36곳 투표지 비상…9년 전 고양서도 같은 혼선',
-    summary: '재발 우려가 큰 투표지 비상 상황을 정리한 기사입니다.',
-    href: 'https://www.kgnews.co.kr/news/article.html?no=899276',
-  },
-  {
-    date: '2026. 06. 09',
-    category: '선거 현장',
-    relation: '수원 장안·권선',
-    media: '연합뉴스',
-    title: '경기 36개 투표소에도 투표지 추가 송부…선거인 명부 누락도',
-    summary: '수원 장안 3곳·권선 1곳 사례를 포함한 추가 송부 및 누락 현황 보도입니다.',
-    href: 'https://n.news.naver.com/article/001/0016129186',
-  },
-].map(withPressVisual);
-
 export const organization = [
   ['01', '감사', '최문영'],
   ['02', '재무', '이철우'],
@@ -410,7 +374,10 @@ export const organizationPlans = [
 
 export const reports = [
   {
+    id: 'yna-suwon-20260613',
     category: '수원 현장',
+    relation: '1회차 · 수원 현장',
+    usage: 'direct',
     media: '연합뉴스',
     date: '2026. 06. 13',
     title: '‘유모차부터 3대 가족까지’…수원서도 ‘재선거 촉구’ 집회',
@@ -418,7 +385,10 @@ export const reports = [
     href: 'https://www.yna.co.kr/view/AKR20260613033400061',
   },
   {
+    id: 'newsis-suwon-20260613',
     category: '수원 현장',
+    relation: '1회차 · 수원 올림픽공원',
+    usage: 'direct',
     media: '뉴시스',
     date: '2026. 06. 13',
     title: '‘부정선거 재선거’ 유모차 끌고, 돗자리 깔고…수원도 시민들 모여[현장]',
@@ -426,15 +396,21 @@ export const reports = [
     href: 'https://n.news.naver.com/article/003/0014004541',
   },
   {
+    id: 'tvchosun-suwon-20260613',
     category: '수원 현장',
-    media: 'JTBC',
+    relation: '1회차 · 수원 현장',
+    usage: 'direct',
+    media: 'TV조선',
     date: '2026. 06. 13',
     title: '수원서도 재선거 촉구 집회…시민 40여명 규탄',
     summary: '현장 집회와 시민 참여 분위기를 다뤘습니다.',
     href: 'https://news.tvchosun.com/site/data/html_dir/2026/06/13/2026061390047.html',
   },
   {
+    id: 'jtbc-suwon-20260613',
     category: '수원 현장',
+    relation: '수원 시민행동 확산',
+    usage: 'direct',
     media: 'JTBC',
     date: '2026. 06. 13',
     title: '수원까지 번진 재선거 촉구 집회',
@@ -442,7 +418,10 @@ export const reports = [
     href: 'https://n.news.naver.com/article/437/0000496019',
   },
   {
+    id: 'herald-gyeonggi-20260613',
     category: '관련 보도',
+    relation: '경기권 시민행동',
+    usage: 'related',
     media: '헤럴드경제',
     date: '2026. 06. 13',
     title: '투표용지 부족 규탄 시위 경기까지 확산',
@@ -450,7 +429,10 @@ export const reports = [
     href: 'https://n.news.naver.com/article/016/0002656079',
   },
   {
+    id: 'yonhap-tv-election-20260613',
     category: '관련 보도',
+    relation: '투표지 부족 관련 발표',
+    usage: 'related',
     media: '연합뉴스',
     date: '2026. 06. 13',
     title: '[뉴스1번지] 투표지 부족 관련 발표와 규탄',
@@ -458,7 +440,10 @@ export const reports = [
     href: 'https://n.news.naver.com/article/422/0000874401',
   },
   {
+    id: 'joongang-olgong-20260614',
     category: '단체·인물',
+    relation: '현장에서 함께 소개된 시민 콘텐츠',
+    usage: 'citizen',
     project: 'olgong',
     media: '중앙일보',
     date: '2026. 06. 14',
@@ -467,7 +452,10 @@ export const reports = [
     href: 'https://www.joongang.co.kr/article/25436607',
   },
   {
+    id: 'joongang-interview-20260625',
     category: '인터뷰',
+    relation: '전시언 · 투표 연장 문제',
+    usage: 'interview',
     media: '중앙일보',
     date: '2026. 06. 25',
     title: '[단독] 0분부터 240분까지…투표 멈춘 곳들 시간 기준',
@@ -475,7 +463,10 @@ export const reports = [
     href: 'https://n.news.naver.com/article/025/0003532986',
   },
   {
+    id: 'edaily-olgong-20260614',
     category: '현장 콘텐츠',
+    relation: '현장에서 함께 소개된 시민 콘텐츠',
+    usage: 'citizen',
     project: 'olgong',
     media: '이데일리',
     date: '2026. 06. 14',
@@ -484,7 +475,10 @@ export const reports = [
     href: 'https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02145126645481720',
   },
   {
+    id: 'wikitree-olgong-20260617',
     category: '현장 콘텐츠',
+    relation: '현장에서 함께 소개된 시민 콘텐츠',
+    usage: 'citizen',
     project: 'olgong',
     media: '위키트리',
     date: '2026. 06. 17',
@@ -493,7 +487,10 @@ export const reports = [
     href: 'https://www.wikitree.co.kr/articles/1141627',
   },
   {
+    id: 'fnnews-dashboard-20260610',
     category: '시민 기술',
+    relation: '시민 제작 현장 정보',
+    usage: 'citizen',
     media: '파이낸셜뉴스',
     date: '2026. 06. 10',
     title: '시민이 직접 만든 디지털 상황판',
@@ -501,7 +498,10 @@ export const reports = [
     href: 'https://www.fnnews.com/news/202606101502443216',
   },
   {
+    id: 'naver-suwon-network-20260613',
     category: '수원 현장',
+    relation: '수원 집회 네트워킹',
+    usage: 'direct',
     media: '연합뉴스',
     date: '2026. 06. 13',
     title: '수원 집회 네트워킹 참여 안내(요약)',
@@ -509,7 +509,10 @@ export const reports = [
     href: 'https://naver.me/FjmwJ2Vn',
   },
   {
+    id: 'naver-suwon-growth-20260613',
     category: '수원 현장',
+    relation: '수원 시민 참여 확산',
+    usage: 'direct',
     media: 'JTBC',
     date: '2026. 06. 13',
     title: '수원 재선거 촉구 집회 참여 증가 현장 보도(요약)',
@@ -517,3 +520,15 @@ export const reports = [
     href: 'https://naver.me/5B0t3BHW',
   },
 ].map(withPressVisual);
+
+export const historyEvidenceIds = [
+  'yna-suwon-20260613',
+  'tvchosun-suwon-20260613',
+  'newsis-suwon-20260613',
+  'joongang-olgong-20260614',
+  'joongang-interview-20260625',
+];
+
+export const reportsById = Object.fromEntries(reports.map((report) => [report.id, report]));
+
+export const getReportsByIds = (ids) => ids.map((id) => reportsById[id]).filter(Boolean);
