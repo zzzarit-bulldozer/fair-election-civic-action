@@ -1,18 +1,22 @@
+import BreadcrumbJsonLd from '../_components/BreadcrumbJsonLd';
 import DetailHero from '../_components/DetailHero';
 import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
 import { actions, olgongTwoCut, participationWays } from '../_data/content';
+import { createPageMetadata } from '../_lib/seo';
 
-export const metadata = {
-  title: '주요 활동 | 경기우파청년들',
+export const metadata = createPageMetadata({
+  title: '주요 활동',
   description: '현장을 감시하고 검증하고 참여를 연결하는 경기우파청년들의 활동을 소개합니다.',
-};
+  path: '/activities',
+});
 
 export default function ActivitiesPage() {
   return (
     <>
+      <BreadcrumbJsonLd name="주요 활동" path="/activities" />
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />

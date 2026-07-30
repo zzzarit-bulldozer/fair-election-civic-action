@@ -1,18 +1,22 @@
+import BreadcrumbJsonLd from '../_components/BreadcrumbJsonLd';
 import DetailHero from '../_components/DetailHero';
 import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
 import { organization, organizationPlans } from '../_data/content';
+import { createPageMetadata } from '../_lib/seo';
 
-export const metadata = {
-  title: '조직과 운영 | 경기우파청년들',
+export const metadata = createPageMetadata({
+  title: '조직과 운영',
   description: '경기우파청년들의 상임대표와 임원진, 운영 계획을 소개합니다.',
-};
+  path: '/organization',
+});
 
 export default function OrganizationPage() {
   return (
     <>
+      <BreadcrumbJsonLd name="조직과 운영" path="/organization" />
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />

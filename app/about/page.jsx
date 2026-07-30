@@ -1,13 +1,16 @@
+import BreadcrumbJsonLd from '../_components/BreadcrumbJsonLd';
 import DetailHero from '../_components/DetailHero';
 import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
+import { createPageMetadata } from '../_lib/seo';
 
-export const metadata = {
-  title: '단체 소개 | 경기우파청년들',
+export const metadata = createPageMetadata({
+  title: '단체 소개',
   description: '수원에서 시작한 공정한 선거의 가치를 지키기 위한 시민행동의 지향점을 소개합니다.',
-};
+  path: '/about',
+});
 
 const principles = [
   ['01', '원칙', '정파보다 시민의 참정권과 투명한 절차를 먼저 봅니다.'],
@@ -19,6 +22,7 @@ const principles = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd name="단체 소개" path="/about" />
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />

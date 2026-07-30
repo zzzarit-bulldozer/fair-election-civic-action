@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import JsonLd from './_components/JsonLd';
 import RevealController from './_components/RevealController';
 import SectionLabel from './_components/SectionLabel';
 import SiteFooter from './_components/SiteFooter';
 import SiteHeader from './_components/SiteHeader';
 import { actions, brandRelationship, nextAction, reports, timeline } from './_data/content';
 import { toIsoDate } from './_lib/date';
+import { createHomeJsonLd } from './_lib/seo';
 import { assetPath } from './_lib/site';
 
 export default function HomePage() {
@@ -15,6 +17,7 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd id="home-json-ld" data={createHomeJsonLd()} />
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />

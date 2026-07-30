@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../_components/BreadcrumbJsonLd';
 import DetailHero from '../_components/DetailHero';
 import NewsArchive from '../_components/NewsArchive';
 import PageActions from '../_components/PageActions';
@@ -6,15 +7,18 @@ import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
 import { reports } from '../_data/content';
+import { createPageMetadata } from '../_lib/seo';
 
-export const metadata = {
-  title: '언론보도 | 경기우파청년들',
+export const metadata = createPageMetadata({
+  title: '언론보도',
   description: '수원 발언·집회·보도 기록을 공정선거시민행동 중심으로 분류해 모았습니다.',
-};
+  path: '/news',
+});
 
 export default function NewsPage() {
   return (
     <>
+      <BreadcrumbJsonLd name="언론보도" path="/news" />
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />

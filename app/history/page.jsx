@@ -1,3 +1,4 @@
+import BreadcrumbJsonLd from '../_components/BreadcrumbJsonLd';
 import DetailHero from '../_components/DetailHero';
 import PageActions from '../_components/PageActions';
 import PosterGallery from '../_components/PosterGallery';
@@ -6,11 +7,13 @@ import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
 import { getReportsByIds, historyEvidenceIds, timeline } from '../_data/content';
 import { toIsoDate } from '../_lib/date';
+import { createPageMetadata } from '../_lib/seo';
 
-export const metadata = {
-  title: '우리의 여정 | 경기우파청년들',
+export const metadata = createPageMetadata({
+  title: '우리의 여정',
   description: '수원 올림픽공원 첫 집회부터 이어진 공개 활동 기록과 포스터·보도를 정리합니다.',
-};
+  path: '/history',
+});
 
 export default function HistoryPage() {
   const posterCount = timeline.reduce((total, item) => total + item.posters.length, 0);
@@ -19,6 +22,7 @@ export default function HistoryPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd name="우리의 여정" path="/history" />
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />

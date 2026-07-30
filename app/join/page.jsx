@@ -1,19 +1,23 @@
+import BreadcrumbJsonLd from '../_components/BreadcrumbJsonLd';
 import DetailHero from '../_components/DetailHero';
 import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
 import { nextAction, participationWays } from '../_data/content';
+import { createPageMetadata } from '../_lib/seo';
 import { officialThreadsUrl, openChatUrl } from '../_lib/site';
 
-export const metadata = {
-  title: '참여하기 | 경기우파청년들',
+export const metadata = createPageMetadata({
+  title: '참여하기',
   description: '현장 참여, 운영 지원, 소식 확인 중 나에게 맞는 경기우파청년들 참여 방법을 확인합니다.',
-};
+  path: '/join',
+});
 
 export default function JoinPage() {
   return (
     <>
+      <BreadcrumbJsonLd name="참여하기" path="/join" />
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />
