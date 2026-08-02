@@ -12,7 +12,6 @@ export default function PosterGallery({ posters, photos = [], session }) {
   const closeButtonRef = useRef(null);
   const lightboxRef = useRef(null);
   const openerRef = useRef(null);
-  const poster = posters[0];
   const archive = archiveType === 'photos' ? photos : posters;
   const active = archive[lightboxIndex] ?? archive[0];
   const archiveLabel = archiveType === 'photos' ? 'FIELD PHOTO ARCHIVE' : 'POSTER ARCHIVE';
@@ -64,15 +63,17 @@ export default function PosterGallery({ posters, photos = [], session }) {
         </div>
       </div>
 
-      <div className="archive-media-grid">
-        <button className="archive-media-item is-poster" type="button" onClick={(event) => openGallery(event, 'posters')} aria-label={`${session} ${poster.label} 크게 보기`}>
-          <Image src={assetPath(poster.src)} alt={poster.alt} width={poster.width} height={poster.height} sizes="(max-width: 760px) 44vw, 260px" priority={session === '1회차'} />
-          <span>POSTER · {String(posters.length).padStart(2, '0')}</span>
-        </button>
+      <div className={`archive-media-grid${posters.length === 1 ? ' has-single-poster' : ''}${photos.length === 1 ? ' has-single-photo' : ''}`}>
+        {posters.slice(0, 2).map((poster, index) => (
+          <button className={`archive-media-item is-poster is-${index === 0 ? 'first' : 'second'}`} type="button" key={poster.src} onClick={(event) => openGallery(event, 'posters', index)} aria-label={`${session} ${poster.label} 크게 보기`}>
+            <Image src={assetPath(poster.src)} alt="" width={poster.width} height={poster.height} sizes="(max-width: 760px) 44vw, 250px" priority={session === '1회차'} />
+            <span>POSTER · {String(index + 1).padStart(2, '0')}</span>
+          </button>
+        ))}
         {photos.slice(0, 2).map((photo, index) => (
-          <button className="archive-media-item is-photo" type="button" key={photo.src} onClick={(event) => openGallery(event, 'photos', index)} aria-label={`${session} ${photo.label} 크게 보기`}>
+          <button className={`archive-media-item is-photo is-${index === 0 ? 'first' : 'second'}`} type="button" key={photo.src} onClick={(event) => openGallery(event, 'photos', index)} aria-label={`${session} ${photo.label} 크게 보기`}>
             <Image src={assetPath(photo.src)} alt="" width={photo.width} height={photo.height} sizes="(max-width: 760px) 38vw, 240px" />
-            <span>{index === 1 && photos.length > 2 ? `PHOTO · +${photos.length - 2}` : `PHOTO · ${String(index + 1).padStart(2, '0')}`}</span>
+            <span>PHOTO · {String(index + 1).padStart(2, '0')}</span>
           </button>
         ))}
       </div>
