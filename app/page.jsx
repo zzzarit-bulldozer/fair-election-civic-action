@@ -5,7 +5,7 @@ import RevealController from './_components/RevealController';
 import SectionLabel from './_components/SectionLabel';
 import SiteFooter from './_components/SiteFooter';
 import SiteHeader from './_components/SiteHeader';
-import { actions, brandRelationship, nextAction, reports, timeline } from './_data/content';
+import { actions, nextAction, reports, timeline } from './_data/content';
 import { toIsoDate } from './_lib/date';
 import { createHomeJsonLd } from './_lib/seo';
 import { assetPath } from './_lib/site';
@@ -64,7 +64,11 @@ export default function HomePage() {
           <SectionLabel number="01">정체성 / 경기우파청년들</SectionLabel>
           <div className="manifesto-copy identity-copy reveal">
             <p className="kicker">아직 한 표를 행사하지 못한 유권자가 있습니다.</p>
-            <h2>{brandRelationship}</h2>
+            <h2 className="principle-message">
+              <span className="message-line">좌우가 아닌 <em>원칙</em>을,</span>
+              <span className="message-line">의혹이 아닌 <em>대안</em>을,</span>
+              <span className="message-line">침묵이 아닌 <em>행동</em>을 향합니다.</span>
+            </h2>
             <div className="manifesto-detail">
               <p>공정선거. 이를 위해 시민들과 함께 거리로 나섭니다. 현장에서 시민들의 목소리를 듣고, 모으고, 키웁니다. 누구나 참여할 수 있는 열린 행동으로, 공정한 대한민국을 함께 만들어갑니다.</p>
               <Link className="detail-link" href="/about">정체성과 원칙 자세히 보기 <span>↗</span></Link>
