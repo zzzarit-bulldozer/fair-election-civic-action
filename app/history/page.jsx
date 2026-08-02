@@ -27,7 +27,7 @@ export default function HistoryPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main detail-main-history">
-        <DetailHero index="03" eyebrow="OUR JOURNEY" title="수원의 광장을 잇는 일곱 번의 기록" description="날짜, 장소, 포스터와 사진을 기준으로 정리한 공정선거시민행동의 자체 활동 기록입니다." word="JOURNEY" />
+        <DetailHero index="03" eyebrow="OUR JOURNEY" title="수원의 광장을 잇는 여덟 번의 기록" description="날짜, 장소, 포스터와 사진을 기준으로 정리한 공정선거시민행동의 자체 활동 기록입니다." word="JOURNEY" />
 
         <section className="history-detail detail-section" aria-label="활동 연혁">
           <div className="history-rail" aria-hidden="true" />

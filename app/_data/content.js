@@ -226,6 +226,23 @@ export const timeline = [
       { src: '/images/history/session-07/field-04.webp', width: 768, height: 230, alt: '광장과 천막, 시민 참여 안내를 함께 담은 7회차 현장 사진 모음', label: '7회차 모아보기' },
     ],
   },
+  {
+    date: '2026. 08. 01',
+    session: '8회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '태극기와 함께 이어진 여덟 번째 현장',
+    body: '태극기와 손팻말을 든 시민들이 나혜석거리 광장을 채웠고, 현장에서 준비한 음료와 간식을 함께 나누며 여덟 번째 행동을 이어갔습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-08-main.webp', width: 1024, height: 1536, alt: '푸른 하늘과 나혜석거리를 담은 공정선거 시민행동 8회차 대표 포스터', label: '대표 포스터' },
+      { src: '/images/posters/suwon-action-08-schedule.webp', width: 1024, height: 1536, alt: '8월 1일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 포스터', label: '일정 시안' },
+    ],
+    photos: [
+      { src: '/images/history/session-08/field-01.webp', width: 1650, height: 2200, alt: '큰 태극기와 시민행동 천막이 함께 보이는 나혜석거리 8회차 현장', label: '태극기가 선 광장' },
+      { src: '/images/history/session-08/field-02.webp', width: 1920, height: 1081, alt: '태극기와 손팻말을 들고 나혜석거리 천막 앞에 선 8회차 참가자들', label: '태극기와 시민 발언' },
+      { src: '/images/history/session-08/field-03.webp', width: 1920, height: 897, alt: '공정선거 시민행동 8회차 현장에 준비한 음료와 간식', label: '현장 음료와 간식' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
