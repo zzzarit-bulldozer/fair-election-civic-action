@@ -146,6 +146,15 @@ test('브랜드 관계와 참여 상태가 한 데이터 원천에서 관리된�
   assert.equal(nextAction.label, '다음 일정 준비 중');
 });
 
+test('메인 정체성 영역은 세 가지 행동 원칙을 강조한다', async () => {
+  const home = await readFile(`${projectRoot}app/page.jsx`, 'utf8');
+
+  assert.match(
+    home,
+    /좌우가 아닌 <em>원칙<\/em>을, 의혹이 아닌 <em>대안<\/em>을, 침묵이 아닌 <em>행동<\/em>을 향합니다\./,
+  );
+});
+
 test('모든 주요 페이지에 참여 CTA가 하나 있고 join 라우트가 연결된다', async () => {
   const pages = [
     ['app/page.jsx', 'data-primary-cta'],
