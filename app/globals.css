@@ -2665,7 +2665,7 @@ a:focus-visible {
   cursor: pointer;
 }
 
-.archive-media-item.is-cover {
+.archive-media-item.is-poster {
   grid-row: 1 / 3;
 }
 

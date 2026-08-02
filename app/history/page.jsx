@@ -33,10 +33,9 @@ export default function HistoryPage() {
           <div className="history-rail" aria-hidden="true" />
           {timeline.map((item, index) => {
             const reportSources = getReportsByIds(item.reportIds ?? []);
-            const hasMedia = (item.posters?.length ?? 0) > 0 || (item.photos?.length ?? 0) > 0;
 
             return (
-              <article className={`history-detail-row reveal${hasMedia ? ' has-poster' : ''}`} key={`${item.date}-${item.title}`}>
+              <article className={`history-detail-row reveal${item.posters?.length ? ' has-poster' : ''}`} key={`${item.date}-${item.title}`}>
                 <div className="history-year">
                   <span>{String(index + 1).padStart(2, '0')} · {item.session}</span>
                   <time dateTime={toIsoDate(item.date)}>{item.date}</time>
@@ -50,7 +49,7 @@ export default function HistoryPage() {
                     <a href={report.href} key={report.id} target="_blank" rel="noreferrer">{report.media} 현장 보도 확인 ↗</a>
                   ))}
                 </div>
-                {hasMedia ? <PosterGallery posters={item.posters} photos={item.photos} session={item.session} /> : null}
+                {item.posters?.length ? <PosterGallery posters={item.posters} photos={item.photos} session={item.session} /> : null}
               </article>
             );
           })}

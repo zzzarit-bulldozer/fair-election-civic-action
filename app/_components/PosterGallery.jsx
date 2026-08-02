@@ -5,17 +5,14 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { assetPath } from '../_lib/site';
 
-export default function PosterGallery({ posters = [], photos = [], session }) {
+export default function PosterGallery({ posters, photos = [], session }) {
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [archiveType, setArchiveType] = useState(posters.length > 0 ? 'posters' : 'photos');
+  const [archiveType, setArchiveType] = useState('posters');
   const [isOpen, setIsOpen] = useState(false);
   const closeButtonRef = useRef(null);
   const lightboxRef = useRef(null);
   const openerRef = useRef(null);
-  const hasPosters = posters.length > 0;
-  const coverType = hasPosters ? 'posters' : 'photos';
-  const cover = hasPosters ? posters[0] : photos[0];
-  const photoPreviews = photos.slice(hasPosters ? 0 : 1, hasPosters ? 2 : 3);
+  const poster = posters[0];
   const archive = archiveType === 'photos' ? photos : posters;
   const active = archive[lightboxIndex] ?? archive[0];
   const archiveLabel = archiveType === 'photos' ? 'FIELD PHOTO ARCHIVE' : 'POSTER ARCHIVE';
@@ -62,25 +59,22 @@ export default function PosterGallery({ posters = [], photos = [], session }) {
       <div className="archive-strip-head">
         <div><b>SESSION ARCHIVE</b><span>{session}</span></div>
         <div className="archive-strip-actions">
-          {hasPosters && <button type="button" onClick={(event) => openGallery(event, 'posters')}>포스터 {posters.length}장</button>}
+          <button type="button" onClick={(event) => openGallery(event, 'posters')}>포스터 {posters.length}장</button>
           {photos.length > 0 && <button type="button" onClick={(event) => openGallery(event, 'photos')}>현장 사진 {photos.length}장 ↗</button>}
         </div>
       </div>
 
       <div className="archive-media-grid">
-        <button className={`archive-media-item is-cover ${hasPosters ? 'is-poster' : 'is-photo'}`} type="button" onClick={(event) => openGallery(event, coverType)} aria-label={`${session} ${cover.label} 크게 보기`}>
-          <Image src={assetPath(cover.src)} alt={cover.alt} width={cover.width} height={cover.height} sizes="(max-width: 760px) 44vw, 260px" priority={session === '1회차'} />
-          <span>{hasPosters ? `POSTER · ${String(posters.length).padStart(2, '0')}` : 'PHOTO · 01'}</span>
+        <button className="archive-media-item is-poster" type="button" onClick={(event) => openGallery(event, 'posters')} aria-label={`${session} ${poster.label} 크게 보기`}>
+          <Image src={assetPath(poster.src)} alt={poster.alt} width={poster.width} height={poster.height} sizes="(max-width: 760px) 44vw, 260px" priority={session === '1회차'} />
+          <span>POSTER · {String(posters.length).padStart(2, '0')}</span>
         </button>
-        {photoPreviews.map((photo, index) => {
-          const photoIndex = index + (hasPosters ? 0 : 1);
-          return (
-            <button className="archive-media-item is-photo" type="button" key={photo.src} onClick={(event) => openGallery(event, 'photos', photoIndex)} aria-label={`${session} ${photo.label} 크게 보기`}>
-              <Image src={assetPath(photo.src)} alt="" width={photo.width} height={photo.height} sizes="(max-width: 760px) 38vw, 240px" />
-              <span>{index === 1 && photos.length > photoIndex + 1 ? `PHOTO · +${photos.length - photoIndex - 1}` : `PHOTO · ${String(photoIndex + 1).padStart(2, '0')}`}</span>
-            </button>
-          );
-        })}
+        {photos.slice(0, 2).map((photo, index) => (
+          <button className="archive-media-item is-photo" type="button" key={photo.src} onClick={(event) => openGallery(event, 'photos', index)} aria-label={`${session} ${photo.label} 크게 보기`}>
+            <Image src={assetPath(photo.src)} alt="" width={photo.width} height={photo.height} sizes="(max-width: 760px) 38vw, 240px" />
+            <span>{index === 1 && photos.length > 2 ? `PHOTO · +${photos.length - 2}` : `PHOTO · ${String(index + 1).padStart(2, '0')}`}</span>
+          </button>
+        ))}
       </div>
 
       {isOpen ? createPortal(
