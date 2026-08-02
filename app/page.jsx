@@ -5,15 +5,18 @@ import RevealController from './_components/RevealController';
 import SectionLabel from './_components/SectionLabel';
 import SiteFooter from './_components/SiteFooter';
 import SiteHeader from './_components/SiteHeader';
-import { actions, nextAction, reports, timeline } from './_data/content';
+import { actions, nextAction, olgongTwoCut, reports, timeline } from './_data/content';
 import { toIsoDate } from './_lib/date';
 import { createHomeJsonLd } from './_lib/seo';
 import { assetPath } from './_lib/site';
 
 export default function HomePage() {
   const civicReport = reports.find((item) => item.id === 'newsis-suwon-20260613') ?? reports[0];
-  const latestAction = timeline.at(-1);
-  const latestPhoto = latestAction.photos[0];
+  const olgongReport = reports.find((item) => item.id === 'joongang-olgong-20260614')
+    ?? reports.find((item) => item.project === 'olgong');
+  const supportingReports = reports
+    .filter((item) => item.id !== civicReport.id && item.project !== 'olgong')
+    .slice(0, 2);
 
   return (
     <>
@@ -98,65 +101,92 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="evidence-preview section-pad" aria-labelledby="evidence-title">
-          <SectionLabel number="03">자체 기록과 외부 검증</SectionLabel>
-          <div className="evidence-head reveal">
-            <p className="eyebrow"><span /> PROOF & RECORDS</p>
-            <h2 id="evidence-title">우리가 남긴 기록과 언론이 확인한 현장을 함께 봅니다.</h2>
-          </div>
-          <div className="evidence-grid">
-            <article className="evidence-panel evidence-panel-history reveal">
-              <Link href="/history">
-                <figure>
-                  <Image
-                    src={assetPath(latestPhoto.src)}
-                    alt={latestPhoto.alt}
-                    fill
-                    sizes="(max-width: 760px) 100vw, 50vw"
-                  />
-                </figure>
-                <div className="evidence-panel-copy">
-                  <p>자체 활동 기록 · {latestAction.session}</p>
-                  <time dateTime={toIsoDate(latestAction.date)}>{latestAction.date} · {latestAction.place}</time>
-                  <h3>{latestAction.title}</h3>
-                  <span>발자취 보기 ↗</span>
+        <section className="news section-pad" id="news" aria-labelledby="news-title">
+          <SectionLabel number="03">언론보도 / 행동과 참여</SectionLabel>
+          <div className="news-content">
+            <div className="news-head reveal">
+              <div>
+                <p className="eyebrow"><span /> PRESS & ACTION</p>
+                <h2 id="news-title">현장의 기록</h2>
+              </div>
+              <Link href="/news">언론보도 전체 보기 <span>↗</span></Link>
+            </div>
+
+            <article className="featured-news reveal">
+              <a href={civicReport.href} target="_blank" rel="noreferrer" aria-label={`${civicReport.media} 공정선거시민행동 기사 새 창으로 보기`}>
+                <div className="featured-visual" data-image-focus={civicReport.imageFocus}>
+                  <Image src={assetPath(civicReport.image)} alt={civicReport.imageAlt} fill sizes="(max-width: 760px) 100vw, 50vw" quality={82} />
+                  <small className="news-image-credit">{civicReport.imageCredit}</small>
+                  <span className="news-badge">공정선거시민행동</span>
+                  <span className="view-arrow" aria-hidden="true">↗</span>
                 </div>
-              </Link>
-            </article>
-            <article className="evidence-panel evidence-panel-press reveal">
-              <a href={civicReport.href} target="_blank" rel="noreferrer">
-                <figure data-image-focus={civicReport.imageFocus}>
-                  <Image
-                    src={assetPath(civicReport.image)}
-                    alt={civicReport.imageAlt}
-                    fill
-                    sizes="(max-width: 760px) 100vw, 50vw"
-                    quality={82}
-                  />
-                  <figcaption>{civicReport.imageCredit}</figcaption>
-                </figure>
-                <div className="evidence-panel-copy">
-                  <p>외부 검증 자료 · {civicReport.media}</p>
-                  <time dateTime={toIsoDate(civicReport.date)}>{civicReport.date}</time>
+                <div className="featured-copy">
+                  <p className="project-kicker">공정선거시민행동</p>
+                  <div className="news-meta"><span>{civicReport.media}</span><time dateTime={toIsoDate(civicReport.date)}>{civicReport.date}</time></div>
                   <h3>{civicReport.title}</h3>
-                  <span>기사 원문 보기 ↗</span>
+                  <p>{civicReport.summary}</p>
                 </div>
               </a>
-              <Link className="evidence-all-link" href="/news">언론보도 전체 보기 ↗</Link>
             </article>
+
+            {olgongReport ? (
+              <article className="campaign-feature reveal">
+                <a href={olgongReport.href} target="_blank" rel="noreferrer" aria-label={`${olgongReport.media} 올공두컷 기사 새 창으로 보기`}>
+                  <div className="campaign-index"><span>CONTENT</span><strong>02</strong></div>
+                  <div className="campaign-visual">
+                    <Image src={assetPath(olgongReport.image)} alt={olgongReport.imageAlt} fill sizes="(max-width: 760px) 100vw, 360px" quality={82} />
+                    <small className="news-image-credit">{olgongReport.imageCredit}</small>
+                  </div>
+                  <div className="campaign-copy">
+                    <p>행동과 참여 · 현장 콘텐츠</p>
+                    <h3>올공두컷</h3>
+                    <span>{olgongTwoCut.title}. 누구나 휴대폰으로 찍고 평화로운 현장 기록을 남기는 공개 포토부스입니다.</span>
+                  </div>
+                  <span className="view-arrow" aria-hidden="true">↗</span>
+                </a>
+              </article>
+            ) : null}
+
+            <div className="news-list">
+              {supportingReports.map((item) => (
+                <article className="news-row reveal" key={item.id}>
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    <div className="news-meta"><span>{item.media}</span><time dateTime={toIsoDate(item.date)}>{item.date}</time></div>
+                    <h3>{item.title}</h3><span className="view-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="journey-preview section-pad" aria-labelledby="journey-preview-title">
+          <SectionLabel number="04" inverse>우리의 여정</SectionLabel>
+          <div className="journey-preview-content">
+            <div className="journey-preview-copy reveal">
+              <p className="eyebrow"><span /> OUR JOURNEY</p>
+              <h2 id="journey-preview-title">우리의 행동이, <em>시민의 참여로 이어졌습니다.</em></h2>
+              <p>수원 올림픽공원 첫 행동부터 나혜석거리 {timeline.length}회차까지. 날짜, 장소, 포스터, 사진과 보도를 함께 남긴 공개 기록입니다.</p>
+              <Link className="button button-accent" href="/history">우리의 여정 보기 <span>↗</span></Link>
+            </div>
+            <div className="journey-numbers reveal" aria-label="활동 기록 요약">
+              <div><strong>{String(timeline.length).padStart(2, '0')}</strong><span>수원 행동 기록</span></div>
+              <div><strong>{timeline.reduce((total, item) => total + item.photos.length, 0)}</strong><span>선별한 현장 사진</span></div>
+              <div><strong>{timeline.reduce((total, item) => total + item.posters.length, 0)}</strong><span>공개 포스터 기록</span></div>
+            </div>
           </div>
         </section>
 
         <section className="join" id="join" aria-labelledby="join-title">
           <div className="join-noise" aria-hidden="true" />
           <div className="join-content reveal">
-            <p className="eyebrow"><span /> NEXT ACTION</p>
+            <p className="eyebrow"><span /> JOIN US</p>
             <h2 id="join-title">
               <span>자유민주주의는</span>
               <em>누리는 것이 아니라</em>
               <span>함께 만드는 것입니다.</span>
             </h2>
-            <p>현장 참여, 운영 지원, 소식 확인 중 나에게 맞는 다음 행동을 확인합니다.</p>
+            <p>행동과 기록, 다음 현장 일정은 공식 Threads와 팀채팅방에서 가장 먼저 안내합니다.</p>
             <div className="join-status"><span>{nextAction.label}</span><p>{nextAction.description}</p></div>
             <Link className="button button-dark" data-primary-cta href="/join">
               참여 방법 보기 <span>↗</span>

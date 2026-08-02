@@ -1,44 +1,49 @@
 # Design QA
 
-- Source visual truth: `/var/folders/pl/w3zs5sd10wd56dnb0l7vzpf80000gn/T/codex-clipboard-228b4291-8cae-4eea-926a-c67ab0f381fa.png`
-- Implementation screenshot: `/Users/jangdongjae/Documents/GitHub/gjsg/.omx/tmp/home-principles-restored.png`
-- Viewport: 1720 × 1000 CSS px, desktop
-- Source pixels: 3024 × 1964, macOS Retina capture with Arc chrome
-- Implementation pixels: 1703 × 990, density 1 browser capture
-- Normalization: compared the identity-section content region and proportions; excluded source browser chrome and unrelated copy changes
-- State: home page scrolled to the identity section
+- Source visual truth: `/Users/jangdongjae/Desktop/의견_경우청 (1).pdf`, pages 4-6
+- Reference captures: `.omx/tmp/feedback-home/reference-4.png`, `reference-5.png`, `reference-6.png`
+- Implementation captures: `.omx/tmp/feedback-home/news-desktop.png`, `journey-desktop.png`, `news-mobile.png`, `journey-mobile.png`
+- Desktop viewport: 1440 × 1000 CSS px; capture: 1426 × 990 px; density 1
+- Mobile viewport: 390 × 844 CSS px; capture: 386 × 835 px; density 1
+- Reference captures: 1867 × 1050 px per PDF page
+- Normalization: compared the same home-page regions rather than the PDF annotation canvas and speech bubbles
+- State: home page scrolled to the press/action, journey, and join sections
 
 ## Full-view comparison evidence
 
-The current section retains the reference composition: left section index, centered kicker, oversized black statement, supporting copy below, and right-aligned detail link on the warm paper background.
+The implementation restores the requested sequence and hierarchy: `현장의 기록`, a prominent civic-action report, a large lime `올공두컷` feature with photography, a dark `OUR JOURNEY` block, and the lime `JOIN US` block. The established paper/ink/lime palette, oversized Korean display type, asymmetric grid, and index rail remain consistent with the reference.
 
 ## Focused region comparison evidence
 
-The requested statement uses the exact historical markup from commit `f8c75a1`: one naturally wrapping heading with `em` around `원칙`, `대안`, and `행동`. The existing lime highlight token and underline block are visible behind all three emphasized words. Forced line wrappers were removed.
+- Press/action: `공정선거시민행동` and `올공두컷` are distinct, bold sections with real source images and working article links.
+- Journey: the reference layout and highlighted headline are preserved; stale sample numbers are replaced with verified current totals: 8 sessions, 51 photos, and 18 posters.
+- Join: `JOIN US`, the outlined emphasis treatment, parent-brand footer, current participation status, and internal participation CTA render correctly.
+- Mobile: the two project features stack without horizontal overflow; the journey metrics and join headline remain legible.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: existing display family, weight, size, line height, and natural wrapping preserved.
-- Spacing and layout rhythm: identity grid, heading width, supporting-copy offset, and link alignment preserved.
-- Colors and visual tokens: paper background, ink text, and lime highlight token preserved.
-- Image quality and asset fidelity: no image assets occur in the compared identity section.
-- Copy and content: requested sentence matches exactly; highlighted words are `원칙`, `대안`, `행동`.
+- Fonts and typography: existing display family, heavy weight, tight heading rhythm, outlined join emphasis, and monospace metadata preserved.
+- Spacing and layout rhythm: reference section index, wide desktop content track, stacked mobile cards, and dark-to-lime transition preserved.
+- Colors and visual tokens: paper, ink, lime, gray metadata, borders, and monochrome press-image treatment use existing tokens.
+- Image quality and asset fidelity: all visible report images are existing credited source assets; no placeholders or code-drawn substitutes were introduced.
+- Copy and content: requested project grouping, `OUR JOURNEY`, and `JOIN US` copy are present; current verified totals and participation route replace stale mock values.
 
 ## Findings
 
-No actionable P0, P1, or P2 mismatch in the requested identity statement.
+No actionable P0, P1, or P2 mismatch remains.
 
 ## Comparison history
 
-- Earlier implementation forced each phrase into a separate nowrap span, drifting from the historical natural wrapping and highlight behavior.
-- Fix: restored the single flowing heading and historical emphasis markup from `f8c75a1`.
-- Post-fix evidence: all three lime highlights render, the heading wraps naturally, and no horizontal overflow is present at the checked mobile width.
+- Before: the home page had a two-card evidence preview, no large `올공두컷` feature, no `OUR JOURNEY` section, and `NEXT ACTION` instead of `JOIN US`.
+- Fix: restored the richer feedback-driven press/action layout, the two project identities, the journey block, and the join label while retaining current data and routes.
+- Post-fix evidence: desktop and mobile captures match the intended hierarchy; no horizontal overflow or console errors were found.
 
 ## Verification
 
-- Primary interaction checked: home navigation and identity-section rendering.
+- Primary interactions: the journey CTA navigates to `/history/`; the featured civic-action article is a unique external link opening in a new tab.
 - Browser console errors: none.
-- Automated tests: 23 passed.
+- Automated tests: 24 passed.
 - Production build: passed.
+- Visual verdict: 95/100, passed.
 
 final result: passed

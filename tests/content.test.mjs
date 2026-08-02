@@ -155,6 +155,17 @@ test('메인 정체성 영역은 세 가지 행동 원칙을 강조한다', asyn
   );
 });
 
+test('메인은 두 시민행동과 여정·참여 흐름을 함께 보여준다', async () => {
+  const home = await readFile(`${projectRoot}app/page.jsx`, 'utf8');
+
+  assert.match(home, /className="featured-news reveal"/);
+  assert.match(home, /className="campaign-feature reveal"/);
+  assert.match(home, /<h3>올공두컷<\/h3>/);
+  assert.match(home, /className="journey-preview section-pad"/);
+  assert.match(home, /<span \/> JOIN US/);
+  assert.equal(reports.filter((report) => report.project === 'olgong').length, 3);
+});
+
 test('모든 주요 페이지에 참여 CTA가 하나 있고 join 라우트가 연결된다', async () => {
   const pages = [
     ['app/page.jsx', 'data-primary-cta'],
