@@ -27,15 +27,16 @@ export default function HistoryPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main detail-main-history">
-        <DetailHero index="03" eyebrow="OUR JOURNEY" title="수원의 광장을 잇는 일곱 번의 기록" description="날짜, 장소, 포스터와 사진을 기준으로 정리한 공정선거시민행동의 자체 활동 기록입니다." word="JOURNEY" />
+        <DetailHero index="03" eyebrow="OUR JOURNEY" title="수원의 광장을 잇는 여덟 번의 기록" description="날짜, 장소, 포스터와 사진을 기준으로 정리한 공정선거시민행동의 자체 활동 기록입니다." word="JOURNEY" />
 
         <section className="history-detail detail-section" aria-label="활동 연혁">
           <div className="history-rail" aria-hidden="true" />
           {timeline.map((item, index) => {
             const reportSources = getReportsByIds(item.reportIds ?? []);
+            const hasMedia = (item.posters?.length ?? 0) > 0 || (item.photos?.length ?? 0) > 0;
 
             return (
-              <article className={`history-detail-row reveal${item.posters?.length ? ' has-poster' : ''}`} key={`${item.date}-${item.title}`}>
+              <article className={`history-detail-row reveal${hasMedia ? ' has-poster' : ''}`} key={`${item.date}-${item.title}`}>
                 <div className="history-year">
                   <span>{String(index + 1).padStart(2, '0')} · {item.session}</span>
                   <time dateTime={toIsoDate(item.date)}>{item.date}</time>
@@ -49,7 +50,7 @@ export default function HistoryPage() {
                     <a href={report.href} key={report.id} target="_blank" rel="noreferrer">{report.media} 현장 보도 확인 ↗</a>
                   ))}
                 </div>
-                {item.posters?.length ? <PosterGallery posters={item.posters} photos={item.photos} session={item.session} /> : null}
+                {hasMedia ? <PosterGallery posters={item.posters} photos={item.photos} session={item.session} /> : null}
               </article>
             );
           })}

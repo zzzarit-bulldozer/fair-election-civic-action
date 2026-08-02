@@ -226,6 +226,18 @@ export const timeline = [
       { src: '/images/history/session-07/field-04.webp', width: 768, height: 230, alt: '광장과 천막, 시민 참여 안내를 함께 담은 7회차 현장 사진 모음', label: '7회차 모아보기' },
     ],
   },
+  {
+    date: '2026. 08. 01',
+    session: '8회차',
+    time: '시간 확인 중',
+    place: '인계동 나혜석거리',
+    title: '태극기와 함께 이어진 여덟 번째 현장',
+    body: '큰 태극기와 시민행동 천막이 나혜석거리에 다시 섰습니다. 직접 제공된 현장 사진으로 여덟 번째 기록을 먼저 남깁니다.',
+    posters: [],
+    photos: [
+      { src: '/images/history/session-08/field-01.webp', width: 1650, height: 2200, alt: '큰 태극기와 시민행동 천막이 함께 보이는 나혜석거리 8회차 현장', label: '태극기가 선 광장' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
