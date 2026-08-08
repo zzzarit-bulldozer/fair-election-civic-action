@@ -203,6 +203,21 @@ export const timeline = [
       { src: '/images/history/session-08/field-02.webp', width: 1920, height: 1081, alt: '태극기와 손팻말을 들고 나혜석거리 천막 앞에 선 8회차 참가자들', label: '태극기와 시민 발언' },
     ],
   },
+  {
+    date: '2026. 08. 08',
+    session: '9회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '큰 태극기 아래 이어진 아홉 번째 목소리',
+    body: '큰 태극기를 든 시민들과 선명한 손팻말의 메시지가 나혜석거리 광장을 채우며 아홉 번째 행동을 이어갔습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-09-main.webp', width: 1024, height: 1536, alt: '8월 8일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 9회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-09/field-01.webp', width: 1440, height: 1080, alt: '큰 태극기 여러 장과 시민 발언자가 함께 보이는 나혜석거리 9회차 현장', label: '큰 태극기 아래의 광장' },
+      { src: '/images/history/session-09/field-02.webp', width: 1920, height: 1440, alt: '부정선거 재선거와 당일투표 수개표를 요구하는 손팻말을 든 9회차 참가자', label: '시민의 메시지' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
