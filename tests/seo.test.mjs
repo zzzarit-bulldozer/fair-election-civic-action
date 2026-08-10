@@ -9,6 +9,7 @@ import {
   createHomeJsonLd,
   createPageMetadata,
   serializeJsonLd,
+  siteKeywords,
   siteName,
 } from '../app/_lib/seo.js';
 
@@ -26,6 +27,18 @@ test('상세 페이지 메타데이터가 canonical과 공유 정보를 함께 �
   assert.equal(metadata.openGraph.url, metadata.alternates.canonical);
   assert.equal(new URL(metadata.alternates.canonical).pathname.endsWith('/join/'), true);
   assert.equal(metadata.twitter.card, 'summary_large_image');
+  assert.deepEqual(metadata.keywords, siteKeywords);
+});
+
+test('사이트 검색 주제가 경기도 정치 연관 검색어를 포함한다', () => {
+  assert.ok(siteKeywords.includes('경기도 좌파'));
+  assert.ok(siteKeywords.includes('경기도 민주당'));
+
+  const organization = createHomeJsonLd()['@graph']
+    .find((item) => item['@type'] === 'Organization');
+
+  assert.match(organization.keywords, /경기도 좌파/);
+  assert.match(organization.keywords, /경기도 민주당/);
 });
 
 test('홈 구조화 데이터가 단체와 웹사이트의 관계를 연결한다', () => {

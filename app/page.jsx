@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import JsonLd from './_components/JsonLd';
+import HomeVideoPip from './_components/HomeVideoPip';
 import RevealController from './_components/RevealController';
 import SectionLabel from './_components/SectionLabel';
 import SiteFooter from './_components/SiteFooter';
@@ -111,6 +112,8 @@ export default function HomePage() {
               </div>
               <Link href="/news">언론보도 전체 보기 <span>↗</span></Link>
             </div>
+
+            <HomeVideoPip />
 
             <article className="featured-news reveal">
               <a href={civicReport.href} target="_blank" rel="noreferrer" aria-label={`${civicReport.media} 공정선거시민행동 기사 새 창으로 보기`}>

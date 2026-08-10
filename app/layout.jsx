@@ -1,6 +1,6 @@
 import './globals.css';
 import GoogleAnalytics from './_components/GoogleAnalytics';
-import { pageUrl, siteDescription, siteName } from './_lib/seo';
+import { pageUrl, siteDescription, siteKeywords, siteName } from './_lib/seo';
 import { absoluteUrl, assetPath, siteUrl } from './_lib/site';
 
 export const metadata = {
@@ -10,6 +10,7 @@ export const metadata = {
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
+  keywords: siteKeywords,
   applicationName: siteName,
   authors: [{ name: siteName, url: pageUrl('/about') }],
   creator: siteName,
