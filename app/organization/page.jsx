@@ -38,7 +38,7 @@ export default function OrganizationPage() {
 
         <section className="org-detail detail-section" aria-labelledby="org-structure-title">
           <div className="detail-section-head reveal"><span>OFFICIAL LEADERSHIP</span><h2 id="org-structure-title">조직도</h2></div>
-          <div className="org-chart reveal" role="img" aria-label="상임대표 전유섭·윤문진과 감사 최문영, 재무 이철우, 사무국장 김민섭, 특별위원장 한동원, 조직위원장 박보환, 청년위원장 박장훈, 기획위원장 장동재로 구성된 조직도">
+          <div className="org-chart reveal" role="img" aria-label="상임대표 전유섭·윤문진과 감사 최문영, 재무 이철우, 사무국장 김민섭, 특별위원장 한동원, 청년위원장 박장훈, 기획위원장 장동재로 구성된 조직도">
             <div className="org-node org-root">
               <small>상임대표 · 공동 선출</small>
               <div className="org-representative-names"><strong>전유섭</strong><i aria-hidden="true">×</i><strong>윤문진</strong></div>
