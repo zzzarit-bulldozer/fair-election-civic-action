@@ -4581,6 +4581,221 @@ body.is-gallery-open {
   }
 }
 
+/* Responsive content polish */
+
+.hero h1 span,
+.manifesto-copy h2,
+.actions-heading h2,
+.news-head h2,
+.campaign-copy h3,
+.journey-preview-copy h2,
+.join h2,
+.detail-hero-copy h1,
+.intro-statement-copy h2,
+.detail-section-head h2,
+.activity-detail-row h2,
+.field-content-copy h2,
+.history-detail-copy h2,
+.leader-detail-copy h2,
+.report-copy h2,
+.next-action-copy h2,
+.join-option-title h3,
+.join-channel-list h3 {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.skip-link,
+.brand,
+.footer-brand,
+.desktop-nav a,
+.header-cta,
+.text-link,
+.detail-link,
+.detail-breadcrumb a,
+.news-head > a,
+.history-detail-copy a,
+.footer-actions > a,
+.join-channel-list a {
+  min-height: 44px;
+  align-items: center;
+}
+
+.skip-link,
+.footer-brand,
+.desktop-nav a,
+.header-cta,
+.text-link,
+.detail-breadcrumb a,
+.news-head > a,
+.history-detail-copy a,
+.footer-actions > a,
+.join-channel-list a {
+  display: inline-flex;
+}
+
+.desktop-nav a {
+  margin-inline: -10px;
+  padding-inline: 10px;
+}
+
+.detail-breadcrumb a {
+  min-width: 44px;
+  margin-inline-start: -8px;
+  padding-inline: 8px;
+}
+
+.view-arrow {
+  width: 44px;
+  height: 44px;
+}
+
+.archive-strip-actions button {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-lightbox-head > button {
+  width: 44px;
+  height: 44px;
+}
+
+@media (min-width: 1081px) {
+  .history-detail-row.has-poster {
+    grid-template-columns: minmax(110px, 0.28fr) minmax(340px, 1.08fr) minmax(360px, 1fr);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1080px) {
+  .journey-preview-content {
+    grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+    gap: clamp(36px, 6vw, 70px);
+    align-items: end;
+  }
+
+  .detail-main-organization .org-branches {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1080px) {
+  .detail-main-activities .field-content {
+    gap: clamp(42px, 6vw, 64px);
+  }
+
+  .detail-main-activities .field-content-index {
+    min-height: clamp(280px, 34vw, 330px);
+  }
+
+  .detail-main-join .join-option-row {
+    grid-template-columns: 52px minmax(190px, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(20px, 3vw, 28px);
+  }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .report-row > a {
+    grid-template-columns: 42px minmax(0, 1fr) 44px;
+    gap: 14px;
+    min-height: 0;
+    padding: 28px var(--interactive-inset);
+  }
+
+  .report-meta {
+    grid-column: 2;
+  }
+
+  .report-visual,
+  .report-copy {
+    grid-column: 1 / -1;
+  }
+
+  .report-row .view-arrow {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 820px) {
+  .campaign-feature > a {
+    grid-template-columns: 48px minmax(0, 1fr) 44px;
+    align-items: start;
+    gap: 16px;
+  }
+
+  .campaign-index {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .campaign-visual {
+    grid-column: 2 / 4;
+    min-height: 0;
+    aspect-ratio: 1.35;
+  }
+
+  .campaign-copy {
+    grid-column: 1 / 4;
+    padding: 22px 0 0;
+    border-top: 1px solid rgba(16, 17, 15, 0.3);
+    border-left: 0;
+  }
+
+  .campaign-feature .view-arrow {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 13.4vw, 52px);
+    line-height: 1.08;
+  }
+
+  .actions-heading h2 {
+    font-size: clamp(36px, 10.8vw, 42px);
+    line-height: 1.14;
+  }
+
+  .detail-section-head h2 {
+    font-size: clamp(36px, 10.5vw, 44px);
+  }
+
+  .history-note h2,
+  .source-policy h2 {
+    font-size: clamp(36px, 10.5vw, 43px);
+  }
+
+  .report-copy {
+    grid-column: 1 / -1;
+  }
+
+  .report-filters button {
+    min-height: 44px;
+    padding-block: 10px;
+  }
+
+  .detail-main-join .join-option-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+    column-gap: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
