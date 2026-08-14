@@ -3243,7 +3243,7 @@ body.is-gallery-open {
   font-size: 10px;
 }
 
-.report-copy h2 {
+.report-copy h3 {
   margin: 0 0 13px;
   font-size: clamp(22px, 2.6vw, 38px);
   font-weight: 800;
@@ -3786,7 +3786,7 @@ body.is-gallery-open {
     grid-column: 2 / -1;
   }
 
-  .report-copy h2 {
+  .report-copy h3 {
     font-size: 23px;
   }
 
@@ -4597,7 +4597,7 @@ body.is-gallery-open {
 .field-content-copy h2,
 .history-detail-copy h2,
 .leader-detail-copy h2,
-.report-copy h2,
+.report-copy h3,
 .next-action-copy h2,
 .join-option-title h3,
 .join-channel-list h3 {

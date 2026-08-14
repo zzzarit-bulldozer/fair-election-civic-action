@@ -51,7 +51,7 @@ export default function NewsArchive({ reports }) {
               </figure>
               <div className="report-copy">
                 <p>{item.relation}</p>
-                <h2>{item.title}</h2>
+                <h3>{item.title}</h3>
                 <p>{item.summary}</p>
               </div>
               <span className="view-arrow" aria-hidden="true">↗</span>

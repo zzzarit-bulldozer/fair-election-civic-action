@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "test": "node --test",
-    "check": "npm run test && npm run build"
+    "test:headings": "node scripts/check-headings.mjs",
+    "check": "npm run test && npm run build && npm run test:headings"
   },
   "dependencies": {
     "next": "16.2.10",
