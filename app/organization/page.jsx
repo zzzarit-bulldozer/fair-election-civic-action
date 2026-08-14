@@ -13,6 +13,13 @@ export const metadata = createPageMetadata({
   path: '/organization',
 });
 
+const organizationGap = 10;
+const organizationGridStyle = {
+  '--org-count': organization.length,
+  '--org-gap': `${organizationGap}px`,
+  '--org-line-inset': `calc((100% - ${(organization.length - 1) * organizationGap}px) / ${organization.length * 2})`,
+};
+
 export default function OrganizationPage() {
   return (
     <>
@@ -45,7 +52,10 @@ export default function OrganizationPage() {
             </div>
             <div className="org-line vertical" />
             <div className="org-node org-core"><small>임원 구성</small><strong>임원진</strong></div>
-            <div className="org-branches">
+            <div
+              className="org-branches"
+              style={organizationGridStyle}
+            >
               {organization.map(([number, role, name]) => (
                 <div className="org-node" key={number}><span>{number}</span><small>{role}</small><strong>{name}</strong></div>
               ))}

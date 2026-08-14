@@ -1285,8 +1285,8 @@ a:focus-visible {
   position: relative;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(var(--org-count), minmax(0, 1fr));
+  gap: var(--org-gap);
   padding-top: 62px;
 }
 
@@ -1294,8 +1294,8 @@ a:focus-visible {
   content: '';
   position: absolute;
   top: 30px;
-  left: calc(100% / 14);
-  right: calc(100% / 14);
+  left: var(--org-line-inset);
+  right: var(--org-line-inset);
   height: 1px;
   background: var(--ink);
 }
@@ -1912,12 +1912,6 @@ a:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     padding-top: 28px;
-  }
-
-  .org-branches .org-node:last-child {
-    width: calc(50% - 4px);
-    grid-column: 1 / -1;
-    justify-self: center;
   }
 
   .org-node {
