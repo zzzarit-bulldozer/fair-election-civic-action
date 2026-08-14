@@ -137,7 +137,7 @@ export default function HomePage() {
                 <a href={olgongReport.href} target="_blank" rel="noreferrer" aria-label={`${olgongReport.media} 올공두컷 기사 새 창으로 보기`}>
                   <div className="campaign-index"><span>CONTENT</span><strong>02</strong></div>
                   <div className="campaign-visual">
-                    <Image src={assetPath(olgongReport.image)} alt={olgongReport.imageAlt} fill sizes="(max-width: 760px) 100vw, 360px" quality={82} />
+                    <Image src={assetPath(olgongReport.image)} alt={olgongReport.imageAlt} fill sizes="(max-width: 760px) 100vw, 360px" quality={82} loading="eager" />
                     <small className="news-image-credit">{olgongReport.imageCredit}</small>
                   </div>
                   <div className="campaign-copy">
