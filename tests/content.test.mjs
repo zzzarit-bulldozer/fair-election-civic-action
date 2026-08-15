@@ -20,9 +20,9 @@ import { officialThreadsUrl, openChatUrl } from '../app/_lib/site.js';
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 
 test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () => {
-  assert.equal(timeline.length, 9);
-  assert.deepEqual(timeline.map((item) => item.posters.length), [1, 2, 2, 2, 2, 1, 2, 2, 1]);
-  assert.equal(timeline.reduce((total, item) => total + item.posters.length, 0), 15);
+  assert.equal(timeline.length, 10);
+  assert.deepEqual(timeline.map((item) => item.posters.length), [1, 2, 2, 2, 2, 1, 2, 2, 1, 1]);
+  assert.equal(timeline.reduce((total, item) => total + item.posters.length, 0), 16);
 
   await Promise.all(timeline.flatMap((item) => item.posters.map((poster) => (
     access(`${projectRoot}public${poster.src}`)
@@ -32,8 +32,8 @@ test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () =
 test('모든 회차에 베스트 현장 사진이 최대 2장 연결된다', async () => {
   const photos = timeline.flatMap((item) => item.photos ?? []);
 
-  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2]);
-  assert.equal(photos.length, 17);
+  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2]);
+  assert.equal(photos.length, 19);
   assert.equal(new Set(photos.map((photo) => photo.src)).size, photos.length);
   photos.forEach((photo) => {
     assert.match(photo.src, /^\/images\/history\/session-\d{2}\/field-\d{2}\.webp$/);

@@ -218,6 +218,23 @@ export const timeline = [
       { src: '/images/history/session-09/field-02.webp', width: 1920, height: 1440, alt: '부정선거 재선거와 당일투표 수개표를 요구하는 손팻말을 든 9회차 참가자', label: '시민의 메시지' },
     ],
   },
+  {
+    date: '2026. 08. 15',
+    session: '10회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '광복절에 이어진 열 번째 시민행동',
+    body: '광복절인 8월 15일, 수원 나혜석거리에서 공정선거 시민행동 10회차를 진행했습니다. 태극기와 안내물을 설치하고 시민 참여를 이어갔습니다.',
+    link: 'https://www.threads.com/@fairly_evenly/post/DcBnoBjEkzH',
+    source: '전시언 Threads 공지',
+    posters: [
+      { src: '/images/posters/suwon-action-10-main.webp', width: 1024, height: 1536, alt: '광복절인 8월 15일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 10회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-10/field-01.webp', width: 1600, height: 1200, alt: '나혜석거리 상점가와 태극기, 시민행동 천막이 함께 보이는 10회차 현장', label: '나혜석거리의 열 번째 광장' },
+      { src: '/images/history/session-10/field-02.webp', width: 1920, height: 897, alt: '나혜석거리 시민행동 천막에서 현장 기록에 참여하는 시민들', label: '시민 참여 현장' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
