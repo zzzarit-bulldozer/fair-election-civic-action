@@ -27,7 +27,7 @@ export default function HistoryPage() {
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main detail-main-history">
-        <DetailHero index="03" eyebrow="OUR JOURNEY" title="수원의 광장을 잇는 열 번의 기록" description="날짜, 장소, 포스터와 사진을 기준으로 정리한 공정선거시민행동의 자체 활동 기록입니다." word="JOURNEY" />
+        <DetailHero index="03" eyebrow="OUR JOURNEY" title="수원의 광장을 잇는 열한 번의 기록" description="날짜, 장소, 포스터와 사진을 기준으로 정리한 공정선거시민행동의 자체 활동 기록입니다." word="JOURNEY" />
 
         <section className="history-detail detail-section" aria-label="활동 연혁">
           <div className="history-rail" aria-hidden="true" />
@@ -76,7 +76,7 @@ export default function HistoryPage() {
 
         <section className="history-note detail-section">
           <p className="reveal">기록의 기준</p>
-          <div className="reveal"><h2>포스터와 사진, 기사까지 함께 봅니다.</h2><p>1~{timeline.length}회차의 날짜·시간·장소는 전시언의 공식 Threads 게시물과 직접 제공된 원본 자료를 기준으로 정리했습니다. 회차별 대표 포스터와 현장 사진은 각각 최대 2장의 베스트컷만 선별해 총 {posterCount}장의 포스터와 {photoCount}장의 사진으로 구성했습니다. 첫날 참가 인원은 보도 시점별로 약 40명·50명, 하루 누적 약 300명으로 집계 기준이 달라 출처와 함께 밝힙니다.</p></div>
+          <div className="reveal"><h2>포스터와 사진, 기사까지 함께 봅니다.</h2><p>공개된 각 회차의 날짜·시간·장소는 전시언의 공식 Threads 게시물과 직접 제공된 원본 자료를 기준으로 정리했습니다. 회차별 대표 포스터와 현장 사진은 각각 최대 2장의 베스트컷만 선별해 총 {posterCount}장의 포스터와 {photoCount}장의 사진으로 구성했습니다. 첫날 참가 인원은 보도 시점별로 약 40명·50명, 하루 누적 약 300명으로 집계 기준이 달라 출처와 함께 밝힙니다.</p></div>
         </section>
 
         <PageActions

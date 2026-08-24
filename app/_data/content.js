@@ -235,6 +235,21 @@ export const timeline = [
       { src: '/images/history/session-10/field-02.webp', width: 1920, height: 897, alt: '나혜석거리 시민행동 천막에서 현장 기록에 참여하는 시민들', label: '시민 참여 현장' },
     ],
   },
+  {
+    date: '2026. 08. 22',
+    session: '11회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '폭우 속에서도 지켜낸 열한 번째 광장',
+    body: '거센 비가 쏟아지는 가운데 우비와 우산을 챙긴 시민들이 태극기를 들고 자리를 지켰습니다. 함께 목소리를 내준 시민들에게 감사의 간식을 나누며 열한 번째 행동을 마쳤습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-11-main.webp', width: 1024, height: 1536, alt: '8월 22일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 11회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-11/field-01.webp', width: 1920, height: 1440, alt: '거센 비 속에서 우산과 우비를 갖추고 태극기를 든 나혜석거리 11회차 참가자들', label: '폭우 속의 광장' },
+      { src: '/images/history/session-11/field-02.webp', width: 1600, height: 1200, alt: '함께 외쳐준 수원 시민들에게 감사 인사를 담아 준비한 간식', label: '시민에게 전한 감사' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
