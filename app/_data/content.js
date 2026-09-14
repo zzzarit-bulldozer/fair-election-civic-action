@@ -250,6 +250,42 @@ export const timeline = [
       { src: '/images/history/session-11/field-02.webp', width: 1600, height: 1200, alt: '함께 외쳐준 수원 시민들에게 감사 인사를 담아 준비한 간식', label: '시민에게 전한 감사' },
     ],
   },
+  {
+    date: '2026. 08. 29',
+    session: '12회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '공정선거 시민행동 12회차',
+    body: '8월 29일 오후 5시부터 7시까지, 인계동 나혜석거리 일정으로 안내된 12회차 포스터입니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-12-main.webp', width: 1024, height: 1536, alt: '8월 29일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 12회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [],
+  },
+  {
+    date: '2026. 09. 05',
+    session: '13회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '공정선거 시민행동 13회차',
+    body: '9월 5일 오후 5시부터 7시까지, 인계동 나혜석거리 일정으로 안내된 13회차 포스터입니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-13-main.webp', width: 1024, height: 1536, alt: '9월 5일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 13회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [],
+  },
+  {
+    date: '2026. 09. 12',
+    session: '14회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '공정선거 시민행동 14회차',
+    body: '9월 12일 오후 5시부터 7시까지, 인계동 나혜석거리 일정으로 안내된 14회차 포스터입니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-14-main.webp', width: 1024, height: 1536, alt: '9월 12일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 14회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [],
+  },
 ];
 
 export const olgongTwoCut = {
