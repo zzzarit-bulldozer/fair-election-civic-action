@@ -33,8 +33,8 @@ test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () =
 test('회차별 현장 사진이 중복 없이 연결된다', async () => {
   const photos = timeline.flatMap((item) => item.photos ?? []);
 
-  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 0]);
-  assert.equal(photos.length, 26);
+  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 2]);
+  assert.equal(photos.length, 28);
   assert.equal(new Set(photos.map((photo) => photo.src)).size, photos.length);
   photos.forEach((photo) => {
     assert.match(photo.src, /^\/images\/history\/session-\d{2}\/field-\d{2}\.webp$/);

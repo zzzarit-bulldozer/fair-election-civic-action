@@ -287,11 +287,14 @@ export const timeline = [
     time: '17:00 — 19:00',
     place: '인계동 나혜석거리',
     title: '공정선거 시민행동 14회차',
-    body: '9월 12일 오후 5시부터 7시까지, 인계동 나혜석거리 일정으로 안내된 14회차 포스터입니다.',
+    body: '9월 12일, 나혜석거리에서 열네 번째 시민행동을 이어갔습니다. 분수와 표지석 곁에 마련한 천막 앞에서 참가자들이 태극기를 들고 함께했습니다.',
     posters: [
       { src: '/images/posters/suwon-action-14-main.webp', width: 1024, height: 1536, alt: '9월 12일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 14회차 포스터', label: '대표 포스터' },
     ],
-    photos: [],
+    photos: [
+      { src: '/images/history/session-14/field-01.webp', width: 1920, height: 897, alt: '나혜석거리 천막 앞에서 태극기를 들고 함께한 14회차 참가자들', label: '태극기와 함께한 14회차' },
+      { src: '/images/history/session-14/field-02.webp', width: 1920, height: 897, alt: '분수와 나혜석거리 표지석, 태극기와 천막이 함께 보이는 14회차 현장 전경', label: '나혜석거리 현장 전경' },
+    ],
   },
 ];
 
