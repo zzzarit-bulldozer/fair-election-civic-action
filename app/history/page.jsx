@@ -76,7 +76,7 @@ export default function HistoryPage() {
 
         <section className="history-note detail-section">
           <p className="reveal">기록의 기준</p>
-          <div className="reveal"><h2>포스터와 사진, 기사까지 함께 봅니다.</h2><p>공개된 각 회차의 날짜·시간·장소는 전시언의 공식 Threads 게시물과 직접 제공된 원본 자료를 기준으로 정리했습니다. 회차별 대표 포스터와 현장 사진은 각각 최대 2장의 베스트컷만 선별해 총 {posterCount}장의 포스터와 {photoCount}장의 사진으로 구성했습니다. 첫날 참가 인원은 보도 시점별로 약 40명·50명, 하루 누적 약 300명으로 집계 기준이 달라 출처와 함께 밝힙니다.</p></div>
+          <div className="reveal"><h2>포스터와 사진, 기사까지 함께 봅니다.</h2><p>공개된 각 회차의 날짜·시간·장소는 전시언의 공식 Threads 게시물과 직접 제공된 원본 자료를 기준으로 정리했습니다. 총 {posterCount}장의 포스터와 {photoCount}장의 현장 사진을 모았습니다. 목록에는 회차별 포스터와 사진을 각각 최대 2장씩 표시하며, 확대 보기에서 전체 자료를 확인할 수 있습니다. 첫날 참가 인원은 보도 시점별로 약 40명·50명, 하루 누적 약 300명으로 집계 기준이 달라 출처와 함께 밝힙니다.</p></div>
         </section>
 
         <PageActions

@@ -256,11 +256,15 @@ export const timeline = [
     time: '17:00 — 19:00',
     place: '인계동 나혜석거리',
     title: '공정선거 시민행동 12회차',
-    body: '8월 29일 오후 5시부터 7시까지, 인계동 나혜석거리 일정으로 안내된 12회차 포스터입니다.',
+    body: '8월 29일, 나혜석거리에서 열두 번째 시민행동을 이어갔습니다. 태극기와 천막이 놓인 현장에서 참가자들이 함께하고 음료와 간식을 준비했습니다.',
     posters: [
       { src: '/images/posters/suwon-action-12-main.webp', width: 1024, height: 1536, alt: '8월 29일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 12회차 포스터', label: '대표 포스터' },
     ],
-    photos: [],
+    photos: [
+      { src: '/images/history/session-12/field-01.webp', width: 1920, height: 897, alt: '나혜석거리 표지석과 태극기, 시민행동 천막이 함께 보이는 12회차 현장', label: '나혜석거리의 광장' },
+      { src: '/images/history/session-12/field-02.webp', width: 1920, height: 897, alt: '12회차 현장 테이블에서 준비하는 음료와 포장된 간식', label: '현장에서 준비한 음료와 간식' },
+      { src: '/images/history/session-12/field-03.webp', width: 1440, height: 1920, alt: '나혜석거리에서 큰 태극기를 들고 선 12회차 참가자들', label: '태극기와 참가자들' },
+    ],
   },
   {
     date: '2026. 09. 05',
