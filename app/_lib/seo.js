@@ -1,10 +1,14 @@
 import { absoluteUrl } from './site.js';
 
 export const siteName = '경기우파청년들';
+export const siteShortName = '경우청';
 export const siteDescription =
-  '공정한 한 표, 자유로운 선택. 끝까지 지키는 경기우파청년들의 시민 네트워크입니다.';
+  '공정한 한 표, 자유로운 선택. 끝까지 지키는 경기우파청년들(경우청)의 시민 네트워크입니다.';
 export const siteKeywords = [
   '경기우파청년들',
+  '경우청',
+  '경기 우파 청년들',
+  '경기우파청년들 경우청',
   '경기도 우파',
   '경기 청년 정치',
   '경기도 좌파',
@@ -78,7 +82,7 @@ export function createHomeJsonLd() {
         '@type': 'Organization',
         '@id': organizationId,
         name: siteName,
-        alternateName: 'GYEONGGI RIGHT-WING YOUTH',
+        alternateName: [siteShortName, '경기 우파 청년들', 'GYEONGGI RIGHT-WING YOUTH'],
         url: pageUrl('/'),
         logo: {
           '@type': 'ImageObject',
@@ -99,7 +103,7 @@ export function createHomeJsonLd() {
         '@type': 'WebSite',
         '@id': websiteId,
         name: siteName,
-        alternateName: '경기우파청년들 공식 홈페이지',
+        alternateName: [siteShortName, '경기우파청년들 공식 홈페이지'],
         url: pageUrl('/'),
         inLanguage: 'ko-KR',
         publisher: {

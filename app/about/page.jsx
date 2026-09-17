@@ -39,6 +39,7 @@ export default function AboutPage() {
               <span className="message-line">침묵이 아닌 <em>행동</em>을 <span className="message-ending">향합니다.</span></span>
             </h2>
             <div>
+              <p>경기우파청년들은 줄여서 <strong>경우청</strong>이라고 부릅니다.</p>
               <p>{brandRelationship}</p>
               <p>아직 한 표를 행사하지 못한 유권자의 목소리를 듣고, 현장을 기록하고, 설명과 대안을 요구합니다.</p>
               <p>한 사람의 목소리가 시민의 참여로 이어지고, 그 참여가 자유민주주의를 더 단단하게 만들도록 움직입니다.</p>

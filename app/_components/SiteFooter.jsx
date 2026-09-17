@@ -8,7 +8,7 @@ export default function SiteFooter() {
         <LogoMark />
         <span>
           <strong>경기우파청년들</strong>
-          <small>GYEONGGI RIGHT-WING YOUTH</small>
+          <small>경우청 · GYEONGGI RIGHT-WING YOUTH</small>
         </span>
       </Link>
       <div className="footer-info">

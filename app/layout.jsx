@@ -6,7 +6,7 @@ import { absoluteUrl, assetPath, siteUrl } from './_lib/site';
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: '경기우파청년들 | 공정한 한 표, 자유로운 선택',
+    default: '경기우파청년들(경우청) | 공정한 한 표, 자유로운 선택',
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
@@ -17,6 +17,11 @@ export const metadata = {
   publisher: siteName,
   alternates: {
     canonical: pageUrl('/'),
+  },
+  verification: {
+    other: {
+      'naver-site-verification': 'd640ef60ea6bcd34dd2aabaf60a3b44626258a2f',
+    },
   },
   manifest: assetPath('/manifest.webmanifest'),
   robots: {
