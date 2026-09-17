@@ -35,9 +35,9 @@ jobs:
 
       - name: Test and build static site
         env:
-          PAGES_BASE_PATH: /fair-election-civic-action
-          NEXT_PUBLIC_BASE_PATH: /fair-election-civic-action
-          NEXT_PUBLIC_SITE_URL: https://zzzarit-bulldozer.github.io/fair-election-civic-action
+          PAGES_BASE_PATH: ''
+          NEXT_PUBLIC_BASE_PATH: ''
+          NEXT_PUBLIC_SITE_URL: https://right-wing.co.kr
           NEXT_PUBLIC_GA_ID: ${{ vars.GA_MEASUREMENT_ID }}
         run: npm run check
 
