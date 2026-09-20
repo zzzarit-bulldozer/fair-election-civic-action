@@ -601,3 +601,29 @@ export const historyEvidenceIds = [
 export const reportsById = Object.fromEntries(reports.map((report) => [report.id, report]));
 
 export const getReportsByIds = (ids) => ids.map((id) => reportsById[id]).filter(Boolean);
+
+const [startYear, startMonth, startDay] = timeline[0].date.split('. ').map(Number);
+
+// Answer-shaped facts for search and AI answer engines. Keep every answer verifiable from this file.
+export const faqs = [
+  {
+    question: '경기우파청년들(경우청)은 어떤 단체인가요?',
+    answer: '경기우파청년들은 공정과 자유의 가치를 바탕으로 듣고, 묻고, 확인하고, 행동하는 경기도의 우파 청년 네트워크입니다. 줄여서 경우청이라고 부릅니다.',
+  },
+  {
+    question: '경기우파청년들은 언제, 어디에서 시작했나요?',
+    answer: `${startYear}년 ${startMonth}월 ${startDay}일 수원 올림픽공원에서 연 첫 시민행동에서 시작했습니다. 이후 수원 인계동 나혜석거리에서 매주 행동을 이어 지금까지 ${timeline.length}회차를 기록했습니다.`,
+  },
+  {
+    question: '공정선거시민행동과는 어떤 관계인가요?',
+    answer: brandRelationship,
+  },
+  {
+    question: '어떤 원칙으로 활동하나요?',
+    answer: '근거 기반, 공개 기록, 평화적 참여가 원칙입니다. 추측을 사실처럼 말하지 않고 확인 가능한 자료와 출처를 남기며, 비폭력 행동을 기본으로 합니다.',
+  },
+  {
+    question: '경기도에서 우파 청년 활동에 참여하려면 어떻게 하나요?',
+    answer: `${participationWays.map((way) => way.title).join(', ')} 세 가지 방법이 있습니다. 다음 일정은 공식 Threads(@fairly_evenly)와 팀채팅방에서 가장 먼저 안내합니다.`,
+  },
+];

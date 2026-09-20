@@ -4,7 +4,7 @@
 
 ## 웹사이트 미리보기
 
-<https://zzzarit-bulldozer.github.io/fair-election-civic-action/>
+<https://right-wing.co.kr/>
 
 ## 실행
 
@@ -24,6 +24,13 @@ npm run build
 ## Google Analytics 4
 
 저장소 설정의 Actions 변수 `GA_MEASUREMENT_ID`에 `G-`로 시작하는 GA4 측정 ID를 등록하면 다음 배포부터 페이지 조회가 수집됩니다. ID가 없거나 형식이 올바르지 않으면 분석 스크립트는 로드되지 않습니다.
+
+## 검색·AI 답변 엔진 최적화(GEO)
+
+- `app/_data/content.js`의 `faqs`: 단체의 시작·정체성·참여 방법을 질문-답변 형태로 정리한 단일 출처입니다. 단체 소개 페이지의 FAQ, `FAQPage` JSON-LD, `/llms.txt`가 모두 이 값을 씁니다.
+- `app/llms.txt/route.js`: AI 답변 엔진용 요약과 페이지·보도 링크를 `/llms.txt`로 내보냅니다.
+- `app/robots.js`: 일반 검색과 주요 AI 크롤러를 명시적으로 허용합니다.
+- 답변에는 이 저장소와 외부 보도로 확인되는 사실만 씁니다.
 
 ## 게시 전 교체할 정보
 

@@ -1,15 +1,16 @@
 import BreadcrumbJsonLd from '../_components/BreadcrumbJsonLd';
 import DetailHero from '../_components/DetailHero';
+import JsonLd from '../_components/JsonLd';
 import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
-import { brandRelationship } from '../_data/content';
-import { createPageMetadata } from '../_lib/seo';
+import { brandRelationship, faqs } from '../_data/content';
+import { createFaqJsonLd, createPageMetadata } from '../_lib/seo';
 
 export const metadata = createPageMetadata({
   title: '단체 소개',
-  description: '수원에서 시작한 공정한 선거의 가치를 지키기 위한 시민행동의 지향점을 소개합니다.',
+  description: '경기우파청년들(경우청)은 2026년 6월 수원 올림픽공원에서 시작한 경기도 우파 청년 네트워크입니다. 정체성과 원칙, 자주 묻는 질문을 정리했습니다.',
   path: '/about',
 });
 
@@ -24,11 +25,12 @@ export default function AboutPage() {
   return (
     <>
       <BreadcrumbJsonLd name="단체 소개" path="/about" />
+      <JsonLd id="faq-json-ld" data={createFaqJsonLd(faqs)} />
       <a className="skip-link" href="#main">본문 바로가기</a>
       <SiteHeader />
       <RevealController />
       <main id="main" className="detail-main detail-main-about">
-        <DetailHero index="01" eyebrow="GYEONGGI RIGHT-WING YOUTH" title="경기우파청년들" description="공정과 자유의 가치를 바탕으로 듣고, 묻고, 확인하고, 행동하는 경기 청년 시민 네트워크입니다." word="ABOUT" />
+        <DetailHero index="01" eyebrow="GYEONGGI RIGHT-WING YOUTH" title="경기우파청년들" description="공정과 자유의 가치를 바탕으로 듣고, 묻고, 확인하고, 행동하는 경기 청년 네트워크입니다." word="ABOUT" />
 
         <section className="detail-section intro-statement">
           <p className="detail-kicker reveal">WHY WE ACT</p>
@@ -56,6 +58,20 @@ export default function AboutPage() {
             {principles.map(([number, title, body]) => (
               <article className="principle-row reveal" key={number}>
                 <span>{number}</span><h3>{title}</h3><p>{body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="detail-section principles-section" aria-labelledby="faq-title">
+          <div className="detail-section-head reveal">
+            <span>FAQ</span>
+            <h2 id="faq-title">자주 묻는 질문</h2>
+          </div>
+          <div className="principles-list">
+            {faqs.map(({ question, answer }, index) => (
+              <article className="principle-row reveal" key={question}>
+                <span>{String(index + 1).padStart(2, '0')}</span><h3>{question}</h3><p>{answer}</p>
               </article>
             ))}
           </div>

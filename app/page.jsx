@@ -72,6 +72,7 @@ export default function HomePage() {
               좌우가 아닌 <em>원칙</em>을, 의혹이 아닌 <em>대안</em>을, 침묵이 아닌 <em>행동</em>을 향합니다.
             </h2>
             <div className="manifesto-detail">
+              <p><strong>경기우파청년들(경우청)</strong>은 2026년 6월 수원 올림픽공원에서 시작한 경기도 우파 청년 네트워크입니다.</p>
               <p>공정선거. 이를 위해 시민들과 함께 거리로 나섭니다. 현장에서 시민들의 목소리를 듣고, 모으고, 키웁니다. 누구나 참여할 수 있는 열린 행동으로, 공정한 대한민국을 함께 만들어갑니다.</p>
               <Link className="detail-link" href="/about">정체성과 원칙 자세히 보기 <span>↗</span></Link>
             </div>

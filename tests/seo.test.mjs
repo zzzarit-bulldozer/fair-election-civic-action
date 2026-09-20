@@ -2,10 +2,13 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { GET as llmsTxt } from '../app/llms.txt/route.js';
+import { faqs } from '../app/_data/content.js';
 import robots from '../app/robots.js';
 import sitemap from '../app/sitemap.js';
 import {
   createBreadcrumbJsonLd,
+  createFaqJsonLd,
   createHomeJsonLd,
   createPageMetadata,
   serializeJsonLd,
@@ -76,6 +79,7 @@ test('robots가 일반 검색과 AI 검색 접근을 허용한다', () => {
   assert.equal(rules.get('*').allow, '/');
   assert.equal(rules.get('OAI-SearchBot').allow, '/');
   assert.equal(rules.get('ChatGPT-User').allow, '/');
+  ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended'].forEach((agent) => assert.equal(rules.get(agent).allow, '/'));
   assert.equal(new URL(value.sitemap).pathname.endsWith('/sitemap.xml'), true);
 });
 
@@ -88,7 +92,7 @@ test('사이트맵이 모든 공개 페이지와 최신 수정일을 포함한�
   ['/about', '/activities', '/history', '/organization', '/news', '/join'].forEach((path) => {
     assert.ok(paths.some((entryPath) => entryPath.endsWith(path)));
   });
-  entries.forEach((entry) => assert.equal(entry.lastModified.toISOString().slice(0, 10), '2026-07-30'));
+  entries.forEach((entry) => assert.equal(entry.lastModified.toISOString().slice(0, 10), '2026-09-20'));
   assert.ok(entries.find((entry) => new URL(entry.url).pathname.endsWith('/join/')).priority > 0.8);
 });
 
@@ -104,4 +108,18 @@ test('모든 상세 페이지에 개별 메타데이터와 breadcrumb가 연결�
 
   const home = await readFile(`${projectRoot}app/page.jsx`, 'utf8');
   assert.match(home, /createHomeJsonLd\(\)/);
+});
+
+test('FAQ 구조화 데이터와 llms.txt가 같은 시작 사실을 담는다', async () => {
+  const data = createFaqJsonLd(faqs);
+  const body = await llmsTxt().text();
+
+  assert.equal(data['@type'], 'FAQPage');
+  assert.equal(data.mainEntity.length, faqs.length);
+  faqs.forEach(({ question, answer }) => {
+    assert.ok(body.includes(question));
+    assert.ok(body.includes(answer));
+  });
+  assert.match(body, /2026년 6월 13일 수원 올림픽공원/);
+  assert.match(body, /\/history\//);
 });

@@ -6,7 +6,7 @@ import { absoluteUrl, assetPath, siteUrl } from './_lib/site';
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: '경기우파청년들(경우청) | 공정한 한 표, 자유로운 선택',
+    default: '경기우파청년들(경우청) | 공정하고 자유로운 대한민국',
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
@@ -37,7 +37,7 @@ export const metadata = {
   },
   openGraph: {
     title: siteName,
-    description: '공정한 한 표, 자유로운 선택. 공개 자료와 현장 기록으로 질문하고, 확인하고, 함께 움직입니다.',
+    description: '공정하고 자유로운 대한민국. 공개 자료와 현장 기록으로 질문하고, 확인하고, 함께 움직입니다.',
     url: pageUrl('/'),
     siteName,
     type: 'website',
@@ -47,7 +47,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: siteName,
-    description: '공정한 한 표, 자유로운 선택. 공개 자료와 현장 기록으로 질문하고, 확인하고, 함께 움직입니다.',
+    description: '공정하고 자유로운 대한민국. 공개 자료와 현장 기록으로 질문하고, 확인하고, 함께 움직입니다.',
     images: [absoluteUrl('/images/civic-action-hero.webp')],
   },
   icons: {
