@@ -20,10 +20,10 @@ import { officialThreadsUrl, openChatUrl } from '../app/_lib/site.js';
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 
 test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () => {
-  assert.equal(timeline.length, 14);
-  assert.deepEqual(timeline.map((item) => item.session), ['1회차', '2회차', '3회차', '4회차', '5회차', '6회차', '7회차', '8회차', '9회차', '10회차', '11회차', '12회차', '13회차', '14회차']);
-  assert.deepEqual(timeline.map((item) => item.posters.length), [1, 2, 2, 2, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1]);
-  assert.equal(timeline.reduce((total, item) => total + item.posters.length, 0), 20);
+  assert.equal(timeline.length, 15);
+  assert.deepEqual(timeline.map((item) => item.session), ['1회차', '2회차', '3회차', '4회차', '5회차', '6회차', '7회차', '8회차', '9회차', '10회차', '11회차', '12회차', '13회차', '14회차', '15회차']);
+  assert.deepEqual(timeline.map((item) => item.posters.length), [1, 2, 2, 2, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1]);
+  assert.equal(timeline.reduce((total, item) => total + item.posters.length, 0), 21);
 
   await Promise.all(timeline.flatMap((item) => item.posters.map((poster) => (
     access(`${projectRoot}public${poster.src}`)
@@ -33,8 +33,8 @@ test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () =
 test('회차별 현장 사진이 중복 없이 연결된다', async () => {
   const photos = timeline.flatMap((item) => item.photos ?? []);
 
-  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 2]);
-  assert.equal(photos.length, 28);
+  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 2, 3]);
+  assert.equal(photos.length, 31);
   assert.equal(new Set(photos.map((photo) => photo.src)).size, photos.length);
   photos.forEach((photo) => {
     assert.match(photo.src, /^\/images\/history\/session-\d{2}\/field-\d{2}\.webp$/);
@@ -197,10 +197,11 @@ test('표시 날짜를 ISO 날짜로 변환한다', () => {
   });
 });
 
-test('12~14회차는 제공된 포스터 일정으로 등록된다', () => {
+test('12~15회차는 제공된 포스터 일정으로 등록된다', () => {
   assert.deepEqual(timeline.slice(11).map(({ date, time, place }) => ({ date, time, place })), [
     { date: '2026. 08. 29', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
     { date: '2026. 09. 05', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
     { date: '2026. 09. 12', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
+    { date: '2026. 09. 19', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
   ]);
 });

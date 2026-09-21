@@ -296,6 +296,22 @@ export const timeline = [
       { src: '/images/history/session-14/field-02.webp', width: 1920, height: 897, alt: '분수와 나혜석거리 표지석, 태극기와 천막이 함께 보이는 14회차 현장 전경', label: '나혜석거리 현장 전경' },
     ],
   },
+  {
+    date: '2026. 09. 19',
+    session: '15회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '대형 태극기가 모인 토요일',
+    body: '대형 태극기 기수들이 합류해 나혜석거리 분수 앞이 태극기로 가득 찼습니다. 지나던 시민들이 먼저 사진을 찍어 올렸고, 음료와 간식 후원도 여러 곳에서 들어왔습니다. 해가 지고 거리의 불빛이 켜질 때까지 이어진 열다섯 번째 현장입니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-15-main.webp', width: 1024, height: 1536, alt: '9월 19일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 15회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-15/field-01.webp', width: 1920, height: 1440, alt: '나혜석거리 분수 앞에 대형 태극기가 줄지어 선 15회차 현장', label: '태극기로 가득 찬 거리' },
+      { src: '/images/history/session-15/field-02.webp', width: 1920, height: 1440, alt: '불이 켜진 저녁 거리에서 대형 태극기와 함께 단체 사진을 찍은 15회차 참가자들', label: '저녁까지 이어진 행동' },
+      { src: '/images/history/session-15/field-03.webp', width: 1440, height: 1920, alt: '시민들이 후원한 음료와 간식이 놓인 15회차 현장 테이블', label: '시민들이 보내온 후원' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
