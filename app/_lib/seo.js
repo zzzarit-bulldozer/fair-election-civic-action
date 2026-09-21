@@ -23,7 +23,7 @@ export const siteKeywords = [
   '경기도 시민단체',
   '공정선거시민행동',
 ];
-export const defaultSocialImage = '/images/civic-action-hero.webp';
+export const defaultSocialImage = '/images/civic-action-hero.jpg';
 
 const officialThreadsProfileUrl = 'https://www.threads.com/@fairly_evenly';
 

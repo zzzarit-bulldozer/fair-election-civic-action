@@ -4,7 +4,7 @@ import { absoluteUrl } from './_lib/site.js';
 export const dynamic = 'force-static';
 
 const pages = [
-  { route: '/', changeFrequency: 'weekly', priority: 1, images: ['/images/civic-action-hero.webp'] },
+  { route: '/', changeFrequency: 'weekly', priority: 1, images: ['/images/civic-action-hero.jpg'] },
   { route: '/about', changeFrequency: 'monthly', priority: 0.9 },
   { route: '/activities', changeFrequency: 'monthly', priority: 0.8 },
   { route: '/history', changeFrequency: 'weekly', priority: 0.8 },

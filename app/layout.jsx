@@ -42,13 +42,13 @@ export const metadata = {
     siteName,
     type: 'website',
     locale: 'ko_KR',
-    images: [{ url: absoluteUrl('/images/civic-action-hero.webp'), width: 2560, height: 1440, alt: '수원 나혜석거리의 태극기와 공정선거 시민행동 현장' }],
+    images: [{ url: absoluteUrl('/images/civic-action-hero.jpg'), width: 2560, height: 1440, alt: '수원 나혜석거리의 태극기와 공정선거 시민행동 현장' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteName,
     description: '공정하고 자유로운 대한민국. 공개 자료와 현장 기록으로 질문하고, 확인하고, 함께 움직입니다.',
-    images: [absoluteUrl('/images/civic-action-hero.webp')],
+    images: [absoluteUrl('/images/civic-action-hero.jpg')],
   },
   icons: {
     icon: [
