@@ -312,6 +312,24 @@ export const timeline = [
       { src: '/images/history/session-15/field-03.webp', width: 1440, height: 1920, alt: '시민들이 후원한 음료와 간식이 놓인 15회차 현장 테이블', label: '시민들이 보내온 후원' },
     ],
   },
+  {
+    date: '2026. 09. 26',
+    session: '16회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '추석 연휴에도 선 토요일',
+    body: '추석 연휴에도 나혜석거리의 행동은 멈추지 않았습니다. 처음 얼굴을 보인 시민들이 여럿 함께했고, 지나던 행인들도 발걸음을 멈추고 응원을 건넸습니다. 두유와 커피, 손수 만든 간식까지 후원이 이어진 열여섯 번째 현장입니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-16-main.webp', width: 1024, height: 1536, alt: '9월 26일 오후 5시부터 7시까지 나혜석거리에서 열리는 공정선거 시민행동 16회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-16/field-01.webp', width: 1500, height: 2000, alt: '흐린 저녁 나혜석거리 분수 둘레에서 대형 태극기를 흔드는 16회차 참가자들', label: '분수 둘레의 대형 태극기' },
+      { src: '/images/history/session-16/field-02.webp', width: 1500, height: 2000, alt: '천막 앞에서 태극기를 들고 웃으며 함께한 16회차 참가자들', label: '처음 함께한 시민들' },
+      { src: '/images/history/session-16/field-03.webp', width: 1709, height: 2000, alt: '수원 애국단이라고 적힌 북과 태극기를 든 16회차 참가자들', label: '수원 애국단의 북' },
+      { src: '/images/history/session-16/field-04.webp', width: 1500, height: 2000, alt: '시민들이 후원한 두유와 수제 간식이 놓인 16회차 현장 테이블', label: '시민들이 보내온 두유와 간식' },
+      { src: '/images/history/session-16/field-05.webp', width: 1500, height: 2000, alt: '후원받은 아이스커피가 담긴 캐리어와 간식 쟁반', label: '후원 커피' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
