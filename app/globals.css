@@ -4809,3 +4809,154 @@ body.is-gallery-open {
     transition-duration: 0.01ms !important;
   }
 }
+
+.banner-callout {
+  padding: 22px var(--page-pad);
+  color: var(--ink);
+  background: var(--paper-strong);
+  border-bottom: 2px solid var(--ink);
+}
+
+.banner-callout-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(16px, 3vw, 44px);
+  align-items: center;
+}
+
+.banner-callout-kicker {
+  margin: 0;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  background: var(--lime);
+}
+
+.banner-callout h2 {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.banner-callout p:not(.banner-callout-kicker) {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.banner-callout-link {
+  display: inline-flex;
+  gap: 14px;
+  padding-bottom: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  border-bottom: 1px solid currentColor;
+}
+
+.street-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(40px, 6vw, 100px);
+  align-items: start;
+  color: #fff;
+  background: var(--ink);
+}
+
+.street-banner-copy h2 {
+  margin: 0;
+  font-size: clamp(40px, 5vw, 76px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.street-banner-copy > p:not(.eyebrow) {
+  max-width: 560px;
+  margin: 24px 0 0;
+  line-height: 1.85;
+}
+
+.street-banner-slogans {
+  display: grid;
+  gap: 0;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.street-banner-slogans li {
+  padding: 18px 0;
+  color: var(--lime);
+  font-size: clamp(19px, 1.8vw, 24px);
+  font-weight: 800;
+  line-height: 1.4;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.street-banner-slogans li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.street-banner-copy > p.street-banner-note {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 14px;
+}
+
+.street-banner-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.street-banner-photos figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #0c0d0b;
+}
+
+.street-banner-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.street-banner-photos figcaption {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 4px 8px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 800;
+  background: var(--lime);
+}
+
+@media (max-width: 1080px) {
+  .street-banner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .banner-callout-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .banner-callout-kicker {
+    width: max-content;
+  }
+
+  .street-banner-photos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

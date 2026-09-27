@@ -6,7 +6,7 @@ import RevealController from './_components/RevealController';
 import SectionLabel from './_components/SectionLabel';
 import SiteFooter from './_components/SiteFooter';
 import SiteHeader from './_components/SiteHeader';
-import { actions, nextAction, olgongTwoCut, reports, timeline } from './_data/content';
+import { actions, chuseokBanner, nextAction, olgongTwoCut, reports, timeline } from './_data/content';
 import { toIsoDate } from './_lib/date';
 import { createHomeJsonLd } from './_lib/seo';
 import { assetPath } from './_lib/site';
@@ -51,6 +51,17 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-index" aria-hidden="true"><span>01</span><span>SCROLL TO ACT</span></div>
+        </section>
+
+        <section className="banner-callout" aria-labelledby="banner-callout-title">
+          <div className="banner-callout-inner">
+            <p className="banner-callout-kicker">2026 추석 현수막</p>
+            <div>
+              <h2 id="banner-callout-title">현수막 보고 검색해서 오셨나요?</h2>
+              <p>“{chuseokBanner.slogans[0]}” — 수원 13곳에 건 경기우파청년들의 추석 현수막입니다.</p>
+            </div>
+            <Link className="banner-callout-link" href={`/activities#${chuseokBanner.id}`}>현수막 사진 보기 <span>↗</span></Link>
+          </div>
         </section>
 
         <section className="ticker" aria-label="핵심 가치">

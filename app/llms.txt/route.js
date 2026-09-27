@@ -5,7 +5,7 @@ export const dynamic = 'force-static';
 
 const pages = [
   ['/about', '단체 소개', '정체성, 원칙, 자주 묻는 질문'],
-  ['/activities', '활동', '감시·검증·행동·연대 활동 방식'],
+  ['/activities', '활동', '감시·검증·행동·연대 활동 방식, 2026 추석 수원 13곳 현수막 기록'],
   ['/history', '우리의 여정', `수원 올림픽공원 첫 행동부터 ${timeline.length}회차까지의 날짜·장소·포스터·사진 기록`],
   ['/organization', '조직과 운영', '상임대표와 임원진, 운영 계획'],
   ['/news', '언론보도', '활동을 다룬 외부 보도 모음'],

@@ -206,3 +206,17 @@ test('12~16회차는 제공된 포스터 일정으로 등록된다', () => {
     { date: '2026. 09. 26', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
   ]);
 });
+
+test('추석 현수막 기록은 문구와 사진 파일을 함께 가진다', async () => {
+  const { chuseokBanner } = await import('../app/_data/content.js');
+
+  assert.equal(chuseokBanner.slogans.length, 2);
+  assert.equal(chuseokBanner.photos.length, 8);
+  assert.equal(new Set(chuseokBanner.photos.map((photo) => photo.src)).size, 8);
+  chuseokBanner.photos.forEach((photo) => {
+    assert.ok(photo.alt);
+    assert.ok(photo.label);
+  });
+
+  await Promise.all(chuseokBanner.photos.map((photo) => access(`${projectRoot}public${photo.src}`)));
+});

@@ -348,6 +348,29 @@ export const olgongTwoCut = {
   ],
 };
 
+export const chuseokBanner = {
+  id: 'chuseok-banner',
+  eyebrow: 'STREET MESSAGE · 2026 추석',
+  title: '공정한 한가위 보내세요',
+  summary: '추석 연휴를 앞두고 경기우파청년들 이름으로 수원 13곳에 현수막을 걸었습니다. 명절에도 공정하길 바라는 마음으로 전시언이 문구를 골랐습니다.',
+  principle: '공정은 선거에서만 필요한 말이 아닙니다. 명절 밥상에서도 같습니다.',
+  searchNote: '현수막 속 검색창을 보고 찾아오셨다면, 이곳이 경기우파청년들입니다.',
+  slogans: [
+    '설날에 시댁 먼저 갔으면, 추석엔 친정 먼저',
+    '시댁 용돈 20만원이면 친정에도 20만원',
+  ],
+  photos: [
+    { src: '/images/banners/chuseok-2026/banner-01.webp', width: 1600, height: 1200, alt: '파란 하늘 아래 도로 위에 걸린 시댁 용돈 20만원이면 친정에도 20만원 현수막', label: '파란 하늘 아래' },
+    { src: '/images/banners/chuseok-2026/banner-02.webp', width: 1600, height: 1200, alt: '시몬스 수원권선점 앞 화단에 걸린 설날에 시댁 먼저 갔으면 추석엔 친정 먼저 현수막', label: '시몬스 수원권선점 앞' },
+    { src: '/images/banners/chuseok-2026/banner-03.webp', width: 1600, height: 1200, alt: '스타필드 수원 입구 앞 보도 위에 걸린 친정에도 20만원 현수막', label: '스타필드 수원 앞' },
+    { src: '/images/banners/chuseok-2026/banner-04.webp', width: 1600, height: 1200, alt: '불이 켜진 수원 KT위즈파크 앞에 걸린 친정에도 20만원 현수막', label: '수원 KT위즈파크 앞' },
+    { src: '/images/banners/chuseok-2026/banner-05.webp', width: 1600, height: 1200, alt: '서부로 표지판 옆 보도 위에 걸린 친정에도 20만원 현수막', label: '서부로' },
+    { src: '/images/banners/chuseok-2026/banner-06.webp', width: 1600, height: 1200, alt: '밤의 광장 입구 나무 사이에 걸린 추석엔 친정 먼저 현수막', label: '밤의 광장 입구' },
+    { src: '/images/banners/chuseok-2026/banner-07.webp', width: 1600, height: 1200, alt: '고층 아파트와 구름 아래 크레인 옆에 걸린 추석엔 친정 먼저 현수막', label: '크레인으로 올린 현수막' },
+    { src: '/images/banners/chuseok-2026/banner-08.webp', width: 1600, height: 1200, alt: '상가 앞 가로수 사이에 설치 중인 친정에도 20만원 현수막', label: '설치 작업' },
+  ],
+};
+
 const pressVisuals = {
   'https://n.news.naver.com/article/003/0014004541': {
     image: '/images/news/suwon-olympic-park-crowd.webp',

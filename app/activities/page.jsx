@@ -4,7 +4,9 @@ import PageActions from '../_components/PageActions';
 import RevealController from '../_components/RevealController';
 import SiteFooter from '../_components/SiteFooter';
 import SiteHeader from '../_components/SiteHeader';
-import { actions, olgongTwoCut, participationWays } from '../_data/content';
+import Image from 'next/image';
+import { actions, chuseokBanner, olgongTwoCut, participationWays } from '../_data/content';
+import { assetPath } from '../_lib/site';
 import { createPageMetadata } from '../_lib/seo';
 
 export const metadata = createPageMetadata({
@@ -31,6 +33,29 @@ export default function ActivitiesPage() {
               <strong aria-hidden="true">↗</strong>
             </article>
           ))}
+        </section>
+
+        <section className="street-banner detail-section" id={chuseokBanner.id} aria-labelledby="street-banner-title">
+          <div className="street-banner-copy reveal">
+            <p className="eyebrow"><span /> {chuseokBanner.eyebrow}</p>
+            <h2 id="street-banner-title">{chuseokBanner.title}</h2>
+            <p>{chuseokBanner.summary}</p>
+            <ul className="street-banner-slogans" aria-label="현수막 문구">
+              {chuseokBanner.slogans.map((slogan) => <li key={slogan}>{slogan}</li>)}
+            </ul>
+            <p>{chuseokBanner.principle}</p>
+            <p className="street-banner-note">{chuseokBanner.searchNote}</p>
+          </div>
+          <ul className="street-banner-photos" aria-label="수원 곳곳에 걸린 추석 현수막 사진">
+            {chuseokBanner.photos.map((photo) => (
+              <li className="reveal" key={photo.src}>
+                <figure>
+                  <Image src={assetPath(photo.src)} alt={photo.alt} width={photo.width} height={photo.height} sizes="(max-width: 760px) 100vw, (max-width: 1080px) 50vw, 25vw" />
+                  <figcaption>{photo.label}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="field-content detail-section">
