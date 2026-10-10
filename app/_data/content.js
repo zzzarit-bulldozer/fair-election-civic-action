@@ -330,6 +330,32 @@ export const timeline = [
       { src: '/images/history/session-16/field-05.webp', width: 1500, height: 2000, alt: '후원받은 아이스커피가 담긴 캐리어와 간식 쟁반', label: '후원 커피' },
     ],
   },
+  {
+    date: '2026. 10. 03',
+    session: '17회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '가을 저녁, 태극기가 펼쳐진 거리',
+    body: '10월 첫 토요일, 나혜석거리 분수 곁에 천막과 안내물을 설치하고 열일곱 번째 시민행동을 이어갔습니다. 참가자들은 대형 태극기와 공정선거를 요구하는 손팻말을 들었습니다. 노을이 지고 거리의 불빛이 켜진 저녁까지 현장 사진으로 기록했습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-17-main.webp', width: 1024, height: 1536, alt: '10월 3일 토요일 오후 5시부터 7시까지 수원 나혜석거리에서 열리는 공정선거 시민행동 17회차 포스터', label: '대표 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-17/field-12.webp', width: 1920, height: 1440, alt: '나혜석거리 표지석과 천막, 손팻말과 태극기를 든 17회차 참가자들', label: '나혜석거리의 열일곱 번째 광장' },
+      { src: '/images/history/session-17/field-13.webp', width: 1920, height: 1440, alt: '나혜석거리 천막 앞에서 태극기와 공정선거 손팻말을 들고 함께한 17회차 참가자들', label: '태극기와 시민의 메시지' },
+      { src: '/images/history/session-17/field-01.webp', width: 1920, height: 1440, alt: '나혜석거리 상점가 앞에서 대형 태극기를 흔드는 17회차 참가자', label: '거리의 불빛과 태극기' },
+      { src: '/images/history/session-17/field-02.webp', width: 1920, height: 1440, alt: '불이 켜진 나혜석거리 분수 곁에서 대형 태극기를 든 17회차 참가자', label: '저녁 거리의 태극기' },
+      { src: '/images/history/session-17/field-03.webp', width: 1920, height: 1440, alt: '나혜석거리 분수 양쪽에서 대형 태극기를 흔드는 17회차 참가자들', label: '분수 곁의 태극기' },
+      { src: '/images/history/session-17/field-04.webp', width: 1440, height: 1920, alt: '나혜석거리 상점가 앞에서 높이 펼친 대형 태극기와 17회차 참가자', label: '높이 펼친 태극기' },
+      { src: '/images/history/session-17/field-05.webp', width: 1440, height: 1920, alt: '해 질 무렵 나혜석거리에서 대형 태극기를 흔드는 17회차 참가자', label: '해 질 무렵의 행동' },
+      { src: '/images/history/session-17/field-06.webp', width: 1440, height: 1920, alt: '나혜석거리 분수 옆에서 태극기를 들고 선 17회차 참가자', label: '분수 옆의 참가자' },
+      { src: '/images/history/session-17/field-07.webp', width: 1920, height: 1440, alt: '노을이 진 나혜석거리 천막과 대형 태극기를 든 17회차 참가자들', label: '노을 아래의 광장' },
+      { src: '/images/history/session-17/field-08.webp', width: 1920, height: 1440, alt: '노을을 배경으로 나혜석거리 분수 앞에서 태극기를 흔드는 17회차 참가자', label: '노을과 대형 태극기' },
+      { src: '/images/history/session-17/field-09.webp', width: 1920, height: 1440, alt: '나혜석거리 분수 앞에서 대형 태극기를 펼친 17회차 참가자', label: '저녁 하늘의 태극기' },
+      { src: '/images/history/session-17/field-10.webp', width: 1920, height: 1440, alt: '나혜석거리 천막 앞에서 대형 태극기를 세워 든 17회차 참가자', label: '천막 앞의 태극기' },
+      { src: '/images/history/session-17/field-11.webp', width: 1920, height: 1440, alt: '나혜석거리 천막과 테이블 곁에서 태극기를 든 17회차 참가자들', label: '천막 곁의 시민들' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {

@@ -16,7 +16,7 @@ const pages = [
 export default function sitemap() {
   return pages.map(({ route, images = [], ...metadata }) => ({
     url: pageUrl(route),
-    lastModified: new Date('2026-09-20'),
+    lastModified: new Date('2026-10-10'),
     ...metadata,
     ...(images.length ? { images: images.map((image) => absoluteUrl(image)) } : {}),
   }));

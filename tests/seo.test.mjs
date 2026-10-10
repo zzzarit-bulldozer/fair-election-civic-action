@@ -92,7 +92,7 @@ test('사이트맵이 모든 공개 페이지와 최신 수정일을 포함한�
   ['/about', '/activities', '/history', '/organization', '/news', '/join'].forEach((path) => {
     assert.ok(paths.some((entryPath) => entryPath.endsWith(path)));
   });
-  entries.forEach((entry) => assert.equal(entry.lastModified.toISOString().slice(0, 10), '2026-09-20'));
+  entries.forEach((entry) => assert.equal(entry.lastModified.toISOString().slice(0, 10), '2026-10-10'));
   assert.ok(entries.find((entry) => new URL(entry.url).pathname.endsWith('/join/')).priority > 0.8);
 });
 
