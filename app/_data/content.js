@@ -356,6 +356,49 @@ export const timeline = [
       { src: '/images/history/session-17/field-11.webp', width: 1920, height: 1440, alt: '나혜석거리 천막과 테이블 곁에서 태극기를 든 17회차 참가자들', label: '천막 곁의 시민들' },
     ],
   },
+  {
+    date: '2026. 10. 10',
+    session: '18회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '10월 10일 일정 안내',
+    body: '10월 10일 일정 안내 포스터를 보관했습니다. 포스터는 썸네일 자료로 확대 시 화질에 한계가 있습니다. 현장 사진은 확보되지 않아 개최 여부는 확인되지 않았습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-18-main.webp', width: 426, height: 640, alt: '2026년 10월 10일 오후 5시부터 7시까지 인계동 나혜석거리 일정 포스터 미리보기', label: '일정 포스터 미리보기' },
+    ],
+    photos: [],
+  },
+  {
+    date: '2026. 10. 17',
+    session: '19회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '10월 17일 현장 사진 기록',
+    body: '일정 포스터와 나혜석거리 현장 사진 세 장을 함께 정리했습니다. 포스터는 썸네일 자료로 확대 시 화질에 한계가 있습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-19-main.webp', width: 426, height: 640, alt: '2026년 10월 17일 오후 5시부터 7시까지 인계동 나혜석거리 일정 포스터 미리보기', label: '일정 포스터 미리보기' },
+    ],
+    photos: [
+      { src: '/images/history/session-19/field-01.webp', width: 1920, height: 1440, alt: '나혜석거리 분수와 표지석, 태극기와 천막 전경', label: '분수와 천막 전경' },
+      { src: '/images/history/session-19/field-02.webp', width: 1920, height: 1440, alt: '분수 주변 태극기와 천막 전경', label: '태극기와 천막' },
+      { src: '/images/history/session-19/field-03.webp', width: 1440, height: 1920, alt: '나혜석거리 표지석 옆 천막과 피켓 현장', label: '표지석 옆 현장' },
+    ],
+  },
+  {
+    date: '2026. 10. 24',
+    session: '20회차',
+    time: '17:00 — 19:00',
+    place: '인계동 나혜석거리',
+    title: '10월 24일 앨범 미리보기',
+    body: '일정 포스터와 같은 날의 현장 사진 미리보기 두 장을 정리했습니다. 현장 사진은 화면 미리보기 자료이며 원본 파일은 확보하지 못했습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-20-main.webp', width: 1024, height: 1536, alt: '2026년 10월 24일 오후 5시부터 7시까지 인계동 나혜석거리 일정 포스터', label: '일정 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-20/field-01.webp', width: 1920, height: 918, alt: '앨범 화면 미리보기: 비 내린 나혜석거리의 천막과 태극기', label: '앨범 미리보기 3' },
+      { src: '/images/history/session-20/field-02.webp', width: 1920, height: 918, alt: '앨범 화면 미리보기: 태극기와 천막 곁에 선 사람들', label: '앨범 미리보기 4' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
@@ -695,7 +738,7 @@ export const faqs = [
   },
   {
     question: '경기우파청년들은 언제, 어디에서 시작했나요?',
-    answer: `${startYear}년 ${startMonth}월 ${startDay}일 수원 올림픽공원에서 연 첫 시민행동에서 시작했습니다. 이후 수원 인계동 나혜석거리에서 매주 행동을 이어 지금까지 ${timeline.length}회차를 기록했습니다.`,
+    answer: `${startYear}년 ${startMonth}월 ${startDay}일 수원 올림픽공원에서 연 첫 시민행동에서 시작했습니다. 포스터 일정과 현장 자료를 ${timeline.length}회차까지 정리했습니다.`,
   },
   {
     question: '공정선거시민행동과는 어떤 관계인가요?',

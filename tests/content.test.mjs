@@ -20,10 +20,18 @@ import { officialThreadsUrl, openChatUrl } from '../app/_lib/site.js';
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 
 test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () => {
-  assert.equal(timeline.length, 17);
-  assert.deepEqual(timeline.map((item) => item.session), ['1회차', '2회차', '3회차', '4회차', '5회차', '6회차', '7회차', '8회차', '9회차', '10회차', '11회차', '12회차', '13회차', '14회차', '15회차', '16회차', '17회차']);
-  assert.deepEqual(timeline.map((item) => item.posters.length), [1, 2, 2, 2, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
-  assert.equal(timeline.reduce((total, item) => total + item.posters.length, 0), 23);
+  assert.equal(timeline.length, 20);
+  assert.deepEqual(timeline.map((item) => item.session), ['1회차', '2회차', '3회차', '4회차', '5회차', '6회차', '7회차', '8회차', '9회차', '10회차', '11회차', '12회차', '13회차', '14회차', '15회차', '16회차', '17회차', '18회차', '19회차', '20회차']);
+  assert.deepEqual(timeline.map((item) => item.posters.length), [1, 2, 2, 2, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+  assert.equal(timeline.reduce((total, item) => total + item.posters.length, 0), 26);
+  assert.deepEqual(timeline.slice(17).map((item) => [item.date, item.time, item.place]), [
+    ['2026. 10. 10', '17:00 — 19:00', '인계동 나혜석거리'],
+    ['2026. 10. 17', '17:00 — 19:00', '인계동 나혜석거리'],
+    ['2026. 10. 24', '17:00 — 19:00', '인계동 나혜석거리'],
+  ]);
+  assert.equal(timeline[17].photos.length, 0);
+  assert.equal(timeline[18].photos.length, 3);
+  assert.equal(timeline[19].photos.length, 2);
 
   await Promise.all(timeline.flatMap((item) => item.posters.map((poster) => (
     access(`${projectRoot}public${poster.src}`)
@@ -33,8 +41,8 @@ test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () =
 test('회차별 현장 사진이 중복 없이 연결된다', async () => {
   const photos = timeline.flatMap((item) => item.photos ?? []);
 
-  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 2, 3, 5, 13]);
-  assert.equal(photos.length, 49);
+  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 2, 3, 5, 13, 0, 3, 2]);
+  assert.equal(photos.length, 54);
   assert.equal(new Set(photos.map((photo) => photo.src)).size, photos.length);
   photos.forEach((photo) => {
     assert.match(photo.src, /^\/images\/history\/session-\d{2}\/field-\d{2}\.webp$/);
@@ -197,7 +205,7 @@ test('표시 날짜를 ISO 날짜로 변환한다', () => {
   });
 });
 
-test('12~17회차는 제공된 포스터 일정으로 등록된다', () => {
+test('12~20회차는 확인된 포스터 일정으로 등록된다', () => {
   assert.deepEqual(timeline.slice(11).map(({ date, time, place }) => ({ date, time, place })), [
     { date: '2026. 08. 29', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
     { date: '2026. 09. 05', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
@@ -205,7 +213,13 @@ test('12~17회차는 제공된 포스터 일정으로 등록된다', () => {
     { date: '2026. 09. 19', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
     { date: '2026. 09. 26', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
     { date: '2026. 10. 03', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
+    { date: '2026. 10. 10', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
+    { date: '2026. 10. 17', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
+    { date: '2026. 10. 24', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
   ]);
+  assert.match(timeline[17].body, /개최 여부는 확인되지 않았습니다/);
+  assert.equal(timeline[17].photos.length, 0);
+  assert.ok(timeline[19].photos.every((photo) => /미리보기/.test(photo.alt) && /미리보기/.test(photo.label)));
 });
 
 test('추석 현수막 기록은 문구와 사진 파일을 함께 가진다', async () => {
