@@ -29,7 +29,7 @@ test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () =
     ['2026. 10. 17', '17:00 — 19:00', '인계동 나혜석거리'],
     ['2026. 10. 24', '17:00 — 19:00', '인계동 나혜석거리'],
   ]);
-  assert.equal(timeline[17].photos.length, 0);
+  assert.equal(timeline[17].photos.length, 6);
   assert.equal(timeline[18].photos.length, 3);
   assert.equal(timeline[19].photos.length, 2);
 
@@ -41,8 +41,8 @@ test('모든 회차에 대표 포스터가 최대 2장 연결된다', async () =
 test('회차별 현장 사진이 중복 없이 연결된다', async () => {
   const photos = timeline.flatMap((item) => item.photos ?? []);
 
-  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 2, 3, 5, 13, 0, 3, 2]);
-  assert.equal(photos.length, 54);
+  assert.deepEqual(timeline.map((item) => item.photos.length), [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 2, 3, 5, 13, 6, 3, 2]);
+  assert.equal(photos.length, 60);
   assert.equal(new Set(photos.map((photo) => photo.src)).size, photos.length);
   photos.forEach((photo) => {
     assert.match(photo.src, /^\/images\/history\/session-\d{2}\/field-\d{2}\.webp$/);
@@ -217,9 +217,8 @@ test('12~20회차는 확인된 포스터 일정으로 등록된다', () => {
     { date: '2026. 10. 17', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
     { date: '2026. 10. 24', time: '17:00 — 19:00', place: '인계동 나혜석거리' },
   ]);
-  assert.match(timeline[17].body, /개최 여부는 확인되지 않았습니다/);
-  assert.equal(timeline[17].photos.length, 0);
-  assert.ok(timeline[19].photos.every((photo) => /미리보기/.test(photo.alt) && /미리보기/.test(photo.label)));
+  assert.ok(timeline.slice(17).every((item) => item.photos.length > 0));
+  assert.doesNotMatch(timeline[17].body, /개최 여부는 확인되지 않았습니다/);
 });
 
 test('추석 현수막 기록은 문구와 사진 파일을 함께 가진다', async () => {
