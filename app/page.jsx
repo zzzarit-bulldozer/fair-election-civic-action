@@ -12,6 +12,8 @@ import { createHomeJsonLd } from './_lib/seo';
 import { assetPath } from './_lib/site';
 
 export default function HomePage() {
+  const march = timeline.find((item) => item.session === '21회차');
+  const marchGallery = march ? [0, 6, 4, 13].map((index) => march.photos[index]).filter(Boolean) : [];
   const civicReport = reports.find((item) => item.id === 'newsis-suwon-20260613') ?? reports[0];
   const olgongReport = reports.find((item) => item.id === 'joongang-olgong-20260614')
     ?? reports.find((item) => item.project === 'olgong');
@@ -29,7 +31,7 @@ export default function HomePage() {
       <main id="main">
         <section className="hero" id="top" aria-labelledby="hero-title">
           <div className="hero-media" aria-hidden="true">
-            <Image src={assetPath('/images/civic-action-hero.webp')} alt="" fill priority sizes="100vw" quality={82} />
+            <Image src={assetPath(march?.photos[10]?.src ?? '/images/civic-action-hero.webp')} alt="" fill priority sizes="100vw" quality={82} />
           </div>
           <div className="hero-scrim" />
           <div className="hero-grid" aria-hidden="true" />
@@ -46,12 +48,51 @@ export default function HomePage() {
               <li>평화적 참여</li>
             </ul>
             <div className="hero-actions">
-              <a className="text-link" href="#identity">우리는 누구인가 <span>↓</span></a>
+              <a className="text-link" href="#suwon-march">21회차 행진 기록 <span>↓</span></a>
               <Link className="text-link" href="/about">단체 소개 보기 <span>↗</span></Link>
             </div>
           </div>
           <div className="hero-index" aria-hidden="true"><span>01</span><span>SCROLL TO ACT</span></div>
         </section>
+
+        {march ? (
+          <section className="march-feature" id="suwon-march" aria-labelledby="march-feature-title">
+            <div className="march-feature-inner">
+              <div className="march-feature-intro">
+                <p className="march-feature-kicker"><span>FIELD RECORD / 21</span><time dateTime={toIsoDate(march.date)}>{march.session} 현장 기록 · {march.date}</time></p>
+                <div className="march-feature-heading">
+                  <span className="march-feature-number" aria-hidden="true">21</span>
+                  <div>
+                    <h2 id="march-feature-title">수원역에서 화홍문까지,<br />함께 걸었습니다.</h2>
+                    <p className="march-feature-route">수원역 → 팔달문 → 행궁 → 화홍문</p>
+                  </div>
+                </div>
+                <div className="march-feature-meta"><span>{march.time}</span><span>{march.place}</span></div>
+                <Link className="march-feature-cta" href="/history#session-21">행진 사진 {march.photos.length}장 보기 <span aria-hidden="true">↗</span></Link>
+              </div>
+
+              <figure className="march-feature-lead">
+                <Image src={assetPath(march.photos[1].src)} alt={march.photos[1].alt} fill sizes="(max-width: 760px) 100vw, 62vw" quality={82} />
+                <figcaption>{march.photos[1].label}</figcaption>
+              </figure>
+
+              <div className="march-feature-gallery" aria-label="21회차 행진 현장 사진">
+                {marchGallery.map((photo, index) => (
+                  <figure className={`march-feature-photo march-feature-photo-${index + 1}`} key={photo.src}>
+                    <Image src={assetPath(photo.src)} alt={photo.alt} fill sizes="(max-width: 760px) 48vw, 22vw" quality={82} />
+                    <figcaption>{photo.label}</figcaption>
+                  </figure>
+                ))}
+                {march.posters[0] ? (
+                  <figure className="march-feature-poster">
+                    <Image src={assetPath(march.posters[0].src)} alt={march.posters[0].alt} width={march.posters[0].width} height={march.posters[0].height} sizes="(max-width: 760px) 42vw, 190px" />
+                    <figcaption>{march.posters[0].label}</figcaption>
+                  </figure>
+                ) : null}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="banner-callout" aria-labelledby="banner-callout-title">
           <div className="banner-callout-inner">
@@ -181,7 +222,7 @@ export default function HomePage() {
             <div className="journey-preview-copy reveal">
               <p className="eyebrow"><span /> OUR JOURNEY</p>
               <h2 id="journey-preview-title">우리의 행동이, <em>시민의 참여로 이어졌습니다.</em></h2>
-              <p>수원 올림픽공원 첫 행동부터 나혜석거리 {timeline.length}회차까지. 날짜, 장소, 포스터, 사진과 보도를 함께 남긴 공개 기록입니다.</p>
+              <p>수원 올림픽공원 첫 행동부터 수원 도심 행진까지. {timeline.length}회차의 날짜, 장소, 포스터, 사진과 보도를 함께 남긴 공개 기록입니다.</p>
               <Link className="button button-accent" href="/history">우리의 여정 보기 <span>↗</span></Link>
             </div>
             <div className="journey-numbers reveal" aria-label="활동 기록 요약">

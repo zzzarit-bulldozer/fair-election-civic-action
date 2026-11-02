@@ -35,7 +35,7 @@ export default function HistoryPage() {
             const reportSources = getReportsByIds(item.reportIds ?? []);
 
             return (
-              <article className={`history-detail-row reveal${item.posters?.length ? ' has-poster' : ''}`} key={`${item.date}-${item.title}`}>
+              <article id={`session-${String(index + 1).padStart(2, '0')}`} className={`history-detail-row reveal${item.posters?.length ? ' has-poster' : ''}`} key={`${item.date}-${item.title}`}>
                 <div className="history-year">
                   <span>{String(index + 1).padStart(2, '0')} · {item.session}</span>
                   <time dateTime={toIsoDate(item.date)}>{item.date}</time>

@@ -406,6 +406,35 @@ export const timeline = [
       { src: '/images/history/session-20/field-02.webp', width: 1920, height: 918, alt: '가게 불빛이 비치는 저녁 나혜석거리의 태극기와 천막, 20회차 참가자들', label: '불빛 아래 이어진 광장' },
     ],
   },
+  {
+    date: '2026. 10. 31',
+    session: '21회차',
+    time: '17:00 집결',
+    place: '수원역 10번 출구 집결',
+    title: '수원역에서 화홍문까지, 스물한 번째 행진',
+    body: '수원역 10번 출구에 모여 스물한 번째 시민행동을 행진으로 이어갔습니다. 포스터에 안내한 경로는 수원역 → 팔달문 → 행궁 → 화홍문입니다. 수원역 앞 준비부터 북과 태극기를 든 행렬, 밤의 성곽 앞에서 함께 남긴 모습까지 현장 사진으로 기록했습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-21-main.webp', width: 1024, height: 1536, alt: '공정선거 시민행동 21회차 수원 행진 포스터: 2026년 10월 31일 토요일 17시 수원역 10번 출구 집결, 수원역에서 팔달문과 행궁을 거쳐 화홍문으로 이어지는 경로', label: '행진 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-21/field-01.webp', width: 1920, height: 1440, alt: '수원역 앞에서 태극기와 깃발을 세우고 21회차 행진을 준비하는 참가자들', label: '수원역 앞 집결' },
+      { src: '/images/history/session-21/field-02.webp', width: 1920, height: 1440, alt: '조명이 켜진 수원 성곽을 따라 태극기와 깃발을 들고 걷는 21회차 참가자들', label: '성곽을 따라 이어진 행진' },
+      { src: '/images/history/session-21/field-03.webp', width: 1920, height: 1440, alt: '수원역 앞 보도에서 깃발을 들고 모인 21회차 참가자들', label: '출발 전 모인 시민들' },
+      { src: '/images/history/session-21/field-04.webp', width: 1920, height: 1440, alt: '21회차 수원역 집결 현장에 마련된 간식과 안내 테이블', label: '함께 나누는 간식' },
+      { src: '/images/history/session-21/field-05.webp', width: 1920, height: 1440, alt: '수원역 앞 현장 테이블에서 참가자들이 간식을 준비하는 모습', label: '현장 준비의 손길' },
+      { src: '/images/history/session-21/field-06.webp', width: 1920, height: 1440, alt: '수원역 건물 앞에 늘어선 깃발과 21회차 참가자들', label: '수원역 앞의 깃발' },
+      { src: '/images/history/session-21/field-07.webp', width: 1920, height: 1440, alt: '수원역 10번 출구 앞에서 북을 메고 행진을 준비하는 21회차 참가자들', label: '10번 출구에서 시작한 행진' },
+      { src: '/images/history/session-21/field-08.webp', width: 1920, height: 1440, alt: '불이 켜진 상점가 앞에서 북과 깃발을 들고 모인 21회차 참가자들', label: '저녁 거리의 행렬' },
+      { src: '/images/history/session-21/field-09.webp', width: 1920, height: 897, alt: '차량이 지나는 수원 도로 옆 보도를 따라 걷는 21회차 행진 참가자들', label: '밤거리로 이어진 발걸음' },
+      { src: '/images/history/session-21/field-10.webp', width: 1920, height: 1440, alt: '야간 조명이 켜진 수원 성곽 길목에 깃발을 들고 모인 21회차 참가자들', label: '성곽 길목의 행렬' },
+      { src: '/images/history/session-21/field-11.webp', width: 1920, height: 1440, alt: '수원 성곽 앞 광장에 태극기와 깃발을 들고 모인 21회차 참가자들', label: '광장에 모인 깃발들' },
+      { src: '/images/history/session-21/field-12.webp', width: 1920, height: 1440, alt: '밤의 광장에서 태극기를 펼쳐 든 21회차 참가자들', label: '광장의 태극기' },
+      { src: '/images/history/session-21/field-13.webp', width: 1920, height: 897, alt: '높은 곳에서 바라본 수원 성곽 길목의 21회차 행진 행렬', label: '성곽 길목의 전체 풍경' },
+      { src: '/images/history/session-21/field-14.webp', width: 1920, height: 1440, alt: '조명이 비치는 성곽 앞에서 태극기와 깃발을 들고 함께 사진을 남긴 21회차 참가자들', label: '성곽 앞 단체 기록' },
+      { src: '/images/history/session-21/field-15.webp', width: 1920, height: 1440, alt: '수원 성곽 앞에서 나란히 서서 기념사진을 찍은 21회차 참가자들', label: '함께 남긴 기념사진' },
+      { src: '/images/history/session-21/field-16.webp', width: 1920, height: 1081, alt: '성곽 앞에 모인 21회차 참가자들과 높이 세운 깃발들', label: '행진 뒤 함께한 자리' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
