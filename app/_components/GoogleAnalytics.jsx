@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import {
   classifyLinkInteraction,
+  createAnalyticsSettings,
   createPageViewPayload,
   getLinkLocation,
   isValidMeasurementId,
@@ -22,21 +23,20 @@ export default function GoogleAnalytics() {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
 
+    const pageView = createPageViewPayload(window.location.origin, pathname);
+    const settings = createAnalyticsSettings(measurementId, window.location.origin, pathname);
+    if (!pageView || !settings) return undefined;
+
     if (!window.__gaInitialized) {
+      window.gtag('set', settings);
       window.gtag('js', new Date());
       window.__gaInitialized = true;
+    } else if (window.__gaLastPath !== pageView.page_path) {
+      window.gtag('set', settings);
     }
 
-    const pageView = createPageViewPayload(window.location.origin, pathname);
-    if (pageView && window.__gaLastPath !== pageView.page_path) {
-      window.gtag('config', measurementId, {
-        send_page_view: false,
-        page_location: pageView.page_location,
-        page_referrer: '',
-        page_title: '',
-        allow_google_signals: false,
-        allow_ad_personalization_signals: false,
-      });
+    if (window.__gaLastPath !== pageView.page_path) {
+      window.gtag('config', measurementId, settings);
       trackEvent('page_view', pageView, measurementId, window.gtag);
       window.__gaLastPath = pageView.page_path;
     }

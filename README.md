@@ -48,7 +48,7 @@ npm run build
 
 ### 맞춤 이벤트와 개인정보 최소화
 
-페이지 조회는 App Router의 pathname 변경 때만 수동으로 전송합니다. `page_location`은 현재 배포 origin과 공개 고정 pathname으로 만들고, `page_path`는 공개 고정 경로만 허용합니다. 쿼리·해시는 제거하며, pathname마다 GA 설정에서 `page_referrer`와 `page_title`을 빈 값으로 덮어씁니다. GA4의 자동 history 측정은 관리 화면에서 끈 상태를 유지하고, Google signals 및 광고 개인화 신호도 비활성화합니다.
+페이지 조회는 App Router의 pathname 변경 때만 수동으로 전송합니다. `page_location`은 현재 배포 origin과 공개 고정 pathname으로 만들고, `page_path`는 공개 고정 경로만 허용합니다. 쿼리·해시는 제거하며, pathname마다 GA 설정에서 `page_referrer`는 빈 값으로 덮어쓰고 `page_title`은 사용자·원문 제목이 아닌 고정 안전 경로명으로만 보냅니다. 맞춤 이벤트에도 같은 clean location과 설정을 명시해 전송합니다. GA4의 자동 history 측정은 관리 화면에서 끈 상태를 유지하고, Google signals 및 광고 개인화 신호도 비활성화합니다.
 
 | 이벤트 | 전송 시점 | 필드 |
 | --- | --- | --- |
@@ -58,7 +58,7 @@ npm run build
 | `gallery_image_view` | 확대 보기의 실제 이미지 선택 변경, 또는 열릴 때의 첫 이미지 | `activity_session`, `media_type`, `image_index`, `image_count`, `page_path` |
 | `news_filter_change` | 다른 언론보도 필터 선택 | `filter_id`, `result_count`, `page_path` |
 
-`location`은 `header`, `footer`, `home`, `content`, `menu` 중 하나이며, `destination`은 `/join`만 전송합니다. 이미지 URL·대체 텍스트·사용자 입력·링크 원문·쿼리 문자열은 전송하지 않습니다. 일반 외부 링크는 기존 GA4 향상된 측정의 자동 외부 클릭 수집(`link_url` 등)에 맡기며, 이 구현은 중복 맞춤 이벤트를 만들지 않습니다.
+`location`은 `header`, `footer`, `home`, `content`, `menu` 중 하나이며, `destination`은 `/join`만 전송합니다. 이미지 URL·대체 텍스트·사용자 입력·링크 원문·쿼리 문자열은 이 맞춤 이벤트로 전송하지 않습니다. 일반 외부 링크는 기존 GA4 향상된 측정의 자동 외부 클릭 수집(`link_url` 등)에 맡기며, 이 구현은 중복 맞춤 이벤트를 만들지 않습니다.
 
 `join_channel_click`은 **가입 또는 참여 완료가 아니라 공식 채널 링크 클릭**만 뜻합니다. 가입 완료율을 보려면 채널에서 별도의 동의된 전환 측정이 필요합니다.
 

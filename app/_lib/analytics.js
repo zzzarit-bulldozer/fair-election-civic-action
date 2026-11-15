@@ -4,6 +4,15 @@ export const ANALYTICS_ROUTES = new Set(['/', '/about', '/activities', '/history
 export const ANALYTICS_LOCATIONS = new Set(['header', 'footer', 'home', 'content', 'menu']);
 export const CTA_DESTINATIONS = new Set(['/join']);
 export const FILTER_IDS = new Set(['all', 'direct', 'related', 'interview', 'citizen']);
+export const PAGE_TITLES = new Map([
+  ['/', '홈'],
+  ['/about', '단체 소개'],
+  ['/activities', '활동'],
+  ['/history', '발자취'],
+  ['/news', '언론보도'],
+  ['/organization', '조직'],
+  ['/join', '참여하기'],
+]);
 export const CHANNEL_URLS = new Map([
   ['https://invite.kakao.com/tc/MqzolmVhza', 'kakao'],
   ['https://www.threads.com/@fairly_evenly', 'threads'],
@@ -81,9 +90,25 @@ export function isValidEventPayload(eventName, payload) {
     && payload.image_count >= payload.image_index;
 }
 
-export function trackEvent(eventName, payload, measurementId = process.env.NEXT_PUBLIC_GA_ID, gtag = globalThis.window?.gtag) {
+export function createAnalyticsSettings(measurementId, origin, pathname) {
+  const pageView = createPageViewPayload(origin, pathname);
+  const page_title = pageView ? PAGE_TITLES.get(pageView.page_path) : null;
+  if (!isValidMeasurementId(measurementId) || !pageView || !page_title) return null;
+  return {
+    send_page_view: false,
+    page_location: pageView.page_location,
+    page_referrer: '',
+    page_title,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  };
+}
+
+export function trackEvent(eventName, payload, measurementId = process.env.NEXT_PUBLIC_GA_ID, gtag = globalThis.window?.gtag, origin = globalThis.window?.location?.origin) {
   if (!isValidMeasurementId(measurementId) || !isValidEventPayload(eventName, payload) || typeof gtag !== 'function') return false;
-  gtag('event', eventName, payload);
+  const settings = createAnalyticsSettings(measurementId, origin, payload.page_path);
+  if (!settings) return false;
+  gtag('event', eventName, { ...payload, send_to: measurementId, ...settings });
   return true;
 }
 

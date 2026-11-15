@@ -5,6 +5,7 @@ import {
   classifyLinkInteraction,
   cleanCanonicalLocation,
   cleanPagePath,
+  createAnalyticsSettings,
   createGalleryPayload,
   createPageViewPayload,
   isValidEventPayload,
@@ -26,6 +27,18 @@ test('수동 page_view는 canonical origin과 pathname만 보낸다', () => {
   const payload = createPageViewPayload(origin, '/history?source=private#session-3');
   assert.deepEqual(payload, { page_location: 'https://right-wing.co.kr/history', page_path: '/history' });
   assert.equal(cleanCanonicalLocation(origin, '/news?email=a@example.com'), 'https://right-wing.co.kr/news');
+});
+
+test('페이지 설정은 고정 안전 제목과 clean location만 허용한다', () => {
+  assert.deepEqual(createAnalyticsSettings('G-MELD7012VE', origin, '/news?email=a@example.com'), {
+    send_page_view: false,
+    page_location: 'https://right-wing.co.kr/news',
+    page_referrer: '',
+    page_title: '언론보도',
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
+  assert.equal(createAnalyticsSettings('G-MELD7012VE', origin, '/unlisted'), null);
 });
 
 test('CTA와 공식 가입 채널만 고정 필드로 분류한다', () => {
@@ -69,7 +82,7 @@ test('갤러리와 필터 payload는 숫자와 허용 목록만 보낸다', () =
   }), false);
 });
 
-test('검증되지 않은 키, PII, 잘못된 ID는 gtag으로 전달하지 않는다', () => {
+test('고정 안전 페이지 설정을 모든 이벤트에 붙이고 검증되지 않은 값은 막는다', () => {
   const calls = [];
   const gtag = (...args) => calls.push(args);
   assert.equal(trackEvent('cta_click', {
@@ -80,24 +93,37 @@ test('검증되지 않은 키, PII, 잘못된 ID는 gtag으로 전달하지 않�
   }, 'G-not-valid', gtag), false);
   assert.equal(trackEvent('cta_click', {
     location: 'home', destination: '/join', page_path: '/',
-  }, 'G-MELD7012VE', gtag), true);
+  }, 'G-MELD7012VE', gtag, origin), true);
   assert.deepEqual(calls, [[
-    'event', 'cta_click', { location: 'home', destination: '/join', page_path: '/' },
+    'event', 'cta_click', {
+      location: 'home',
+      destination: '/join',
+      page_path: '/',
+      send_to: 'G-MELD7012VE',
+      send_page_view: false,
+      page_location: 'https://right-wing.co.kr/',
+      page_referrer: '',
+      page_title: '홈',
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+    },
   ]]);
 });
 
 test('문서 위임 리스너는 capture로 등록하고 cleanup하며 갤러리 선택을 단일 경로로 처리한다', async () => {
   const { readFile } = await import('node:fs/promises');
-  const [analyticsComponent, gallery] = await Promise.all([
+  const [analyticsComponent, analyticsLibrary, gallery] = await Promise.all([
     readFile(new URL('../app/_components/GoogleAnalytics.jsx', import.meta.url), 'utf8'),
+    readFile(new URL('../app/_lib/analytics.js', import.meta.url), 'utf8'),
     readFile(new URL('../app/_components/PosterGallery.jsx', import.meta.url), 'utf8'),
   ]);
 
   assert.match(analyticsComponent, /document\.addEventListener\('click', onDocumentClick, true\)/);
   assert.match(analyticsComponent, /document\.removeEventListener\('click', onDocumentClick, true\)/);
   assert.doesNotMatch(analyticsComponent, /preventDefault/);
-  assert.match(analyticsComponent, /page_referrer: ''/);
-  assert.match(analyticsComponent, /page_title: ''/);
+  assert.match(analyticsLibrary, /page_referrer: ''/);
+  assert.match(analyticsLibrary, /page_title,/);
+  assert.ok(analyticsComponent.includes("window.gtag('set', settings"));
   assert.ok(analyticsComponent.includes("window.gtag('config', measurementId"));
   assert.match(gallery, /current === index \? current : index/);
   assert.match(gallery, /trackGallery\('gallery_open'/);
