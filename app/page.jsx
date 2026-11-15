@@ -222,11 +222,11 @@ export default function HomePage() {
             <div className="journey-preview-copy reveal">
               <p className="eyebrow"><span /> OUR JOURNEY</p>
               <h2 id="journey-preview-title">우리의 행동이, <em>시민의 참여로 이어졌습니다.</em></h2>
-              <p>수원 올림픽공원 첫 행동부터 수원 도심 행진까지. {timeline.length}회차의 날짜, 장소, 포스터, 사진과 보도를 함께 남긴 공개 기록입니다.</p>
+              <p>수원 올림픽공원에서 시작해 수원과 서울에서 이어온 시민행동입니다. {timeline.length}회차의 날짜, 장소, 포스터, 사진과 보도를 모았습니다.</p>
               <Link className="button button-accent" href="/history">우리의 여정 보기 <span>↗</span></Link>
             </div>
             <div className="journey-numbers reveal" aria-label="활동 기록 요약">
-              <div><strong>{String(timeline.length).padStart(2, '0')}</strong><span>수원 행동 기록</span></div>
+              <div><strong>{String(timeline.length).padStart(2, '0')}</strong><span>시민행동 기록</span></div>
               <div><strong>{timeline.reduce((total, item) => total + item.photos.length, 0)}</strong><span>선별한 현장 사진</span></div>
               <div><strong>{timeline.reduce((total, item) => total + item.posters.length, 0)}</strong><span>공개 포스터 기록</span></div>
             </div>
