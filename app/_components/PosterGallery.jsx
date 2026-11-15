@@ -4,11 +4,13 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { assetPath } from '../_lib/site';
+import { createGalleryPayload, trackEvent } from '../_lib/analytics';
 
 export default function PosterGallery({ posters, photos = [], session }) {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [archiveType, setArchiveType] = useState('posters');
   const [isOpen, setIsOpen] = useState(false);
+  const lightboxIndexRef = useRef(lightboxIndex);
   const closeButtonRef = useRef(null);
   const lightboxRef = useRef(null);
   const openerRef = useRef(null);
@@ -16,20 +18,48 @@ export default function PosterGallery({ posters, photos = [], session }) {
   const active = archive[lightboxIndex] ?? archive[0];
   const archiveLabel = archiveType === 'photos' ? 'FIELD PHOTO ARCHIVE' : 'POSTER ARCHIVE';
 
+  const trackGallery = (eventName, type, index, count) => {
+    const payload = createGalleryPayload(eventName, session, type, index, count, window.location.pathname);
+    if (payload) trackEvent(eventName, payload);
+  };
+
+  const selectImage = (index) => {
+    setLightboxIndex((current) => {
+      const next = current === index ? current : index;
+      lightboxIndexRef.current = next;
+      return next;
+    });
+  };
+
   const openGallery = (event, type, index = 0) => {
     openerRef.current = event.currentTarget;
     setArchiveType(type);
+    lightboxIndexRef.current = index;
     setLightboxIndex(index);
     setIsOpen(true);
   };
 
   useEffect(() => {
     if (!isOpen) return undefined;
+    trackGallery('gallery_open', archiveType, lightboxIndex, archive.length);
+  // Open events are intentionally emitted once per open, before any image changes.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen || !active) return;
+    trackGallery('gallery_image_view', archiveType, lightboxIndex, archive.length);
+  // Selection changes from keyboard, thumbnails, and navigation share this effect.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active, archive.length, archiveType, isOpen, lightboxIndex]);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
     const focusFrame = window.requestAnimationFrame(() => closeButtonRef.current?.focus());
     const onKeyDown = (event) => {
       if (event.key === 'Escape') setIsOpen(false);
-      if (event.key === 'ArrowRight') setLightboxIndex((index) => (index + 1) % archive.length);
-      if (event.key === 'ArrowLeft') setLightboxIndex((index) => (index - 1 + archive.length) % archive.length);
+      if (event.key === 'ArrowRight') selectImage((lightboxIndexRef.current + 1) % archive.length);
+      if (event.key === 'ArrowLeft') selectImage((lightboxIndexRef.current - 1 + archive.length) % archive.length);
       if (event.key === 'Tab') {
         const focusable = [...lightboxRef.current.querySelectorAll('button:not([tabindex="-1"])')];
         const first = focusable[0];
@@ -92,7 +122,7 @@ export default function PosterGallery({ posters, photos = [], session }) {
             {archive.length > 1 && (
               <div className="poster-lightbox-thumbs" aria-label={`${session} ${archiveLabel} 전체 목록`}>
                 {archive.map((item, index) => (
-                  <button className={index === lightboxIndex ? 'is-active' : ''} type="button" key={item.src} onClick={() => setLightboxIndex(index)} aria-label={`${item.label} 보기`} aria-pressed={index === lightboxIndex}>
+                  <button className={index === lightboxIndex ? 'is-active' : ''} type="button" key={item.src} onClick={() => selectImage(index)} aria-label={`${item.label} 보기`} aria-pressed={index === lightboxIndex}>
                     <Image src={assetPath(item.src)} alt="" width={item.width} height={item.height} sizes="64px" />
                   </button>
                 ))}
@@ -100,9 +130,9 @@ export default function PosterGallery({ posters, photos = [], session }) {
             )}
             {archive.length > 1 && (
               <div className="poster-lightbox-nav">
-                <button type="button" onClick={() => setLightboxIndex((lightboxIndex - 1 + archive.length) % archive.length)}>← 이전</button>
+                <button type="button" onClick={() => selectImage((lightboxIndex - 1 + archive.length) % archive.length)}>← 이전</button>
                 <p>{active.alt}</p>
-                <button type="button" onClick={() => setLightboxIndex((lightboxIndex + 1) % archive.length)}>다음 →</button>
+                <button type="button" onClick={() => selectImage((lightboxIndex + 1) % archive.length)}>다음 →</button>
               </div>
             )}
           </div>

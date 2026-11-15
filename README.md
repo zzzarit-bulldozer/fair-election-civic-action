@@ -45,3 +45,21 @@ npm run build
 - `app/_components/`: 메뉴와 스크롤 모션 등 작은 클라이언트 컴포넌트
 - `app/globals.css`: 반응형 디자인 시스템
 - `public/`: 이미지와 파비콘
+
+### 맞춤 이벤트와 개인정보 최소화
+
+페이지 조회는 App Router의 pathname 변경 때만 수동으로 전송합니다. `page_location`은 현재 배포 origin과 공개 고정 pathname으로 만들고, `page_path`는 공개 고정 경로만 허용합니다. 쿼리·해시는 제거하며, pathname마다 GA 설정에서 `page_referrer`와 `page_title`을 빈 값으로 덮어씁니다. GA4의 자동 history 측정은 관리 화면에서 끈 상태를 유지하고, Google signals 및 광고 개인화 신호도 비활성화합니다.
+
+| 이벤트 | 전송 시점 | 필드 |
+| --- | --- | --- |
+| `cta_click` | 내부 `/join` 링크 또는 내부 기본 CTA 클릭 | `location`, `destination`, `page_path` |
+| `join_channel_click` | 공식 카카오 초대 또는 공식 Threads 프로필 클릭 | `channel` (`kakao`/`threads`), `location`, `page_path` |
+| `gallery_open` | 회차별 포스터·사진 확대 보기 열기 | `activity_session`, `media_type`, `image_index`, `image_count`, `page_path` |
+| `gallery_image_view` | 확대 보기의 실제 이미지 선택 변경, 또는 열릴 때의 첫 이미지 | `activity_session`, `media_type`, `image_index`, `image_count`, `page_path` |
+| `news_filter_change` | 다른 언론보도 필터 선택 | `filter_id`, `result_count`, `page_path` |
+
+`location`은 `header`, `footer`, `home`, `content`, `menu` 중 하나이며, `destination`은 `/join`만 전송합니다. 이미지 URL·대체 텍스트·사용자 입력·링크 원문·쿼리 문자열은 전송하지 않습니다. 일반 외부 링크는 기존 GA4 향상된 측정의 자동 외부 클릭 수집(`link_url` 등)에 맡기며, 이 구현은 중복 맞춤 이벤트를 만들지 않습니다.
+
+`join_channel_click`은 **가입 또는 참여 완료가 아니라 공식 채널 링크 클릭**만 뜻합니다. 가입 완료율을 보려면 채널에서 별도의 동의된 전환 측정이 필요합니다.
+
+GA4 관리 화면에서 `location`, `destination`, `channel`, `media_type`, `activity_session`, `filter_id`를 이벤트 범위 맞춤 측정기준으로 등록하고, 필요하면 `image_index`, `image_count`, `result_count`, `page_path`도 이벤트 매개변수 보고용 맞춤 측정기준으로 등록합니다. 탐색 보고서에서는 `cta_click`을 위치별로, `join_channel_click`을 채널별로, 갤러리 이벤트를 회차·매체별로, `news_filter_change`를 필터와 결과 수별로 비교합니다.

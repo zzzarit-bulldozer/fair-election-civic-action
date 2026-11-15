@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { toIsoDate } from '../_lib/date';
 import { assetPath } from '../_lib/site';
+import { trackEvent } from '../_lib/analytics';
 
 const filters = [
   ['all', '전체'],
@@ -19,6 +20,13 @@ export default function NewsArchive({ reports }) {
     ? reports
     : reports.filter((report) => report.usage === activeFilter);
 
+  const changeFilter = (filterId) => {
+    if (filterId === activeFilter) return;
+    const resultCount = filterId === 'all' ? reports.length : reports.filter((report) => report.usage === filterId).length;
+    trackEvent('news_filter_change', { filter_id: filterId, result_count: resultCount, page_path: '/news' });
+    setActiveFilter(filterId);
+  };
+
   return (
     <>
       <div className="report-filters reveal" aria-label="언론보도 분류">
@@ -26,7 +34,7 @@ export default function NewsArchive({ reports }) {
           <button
             aria-pressed={activeFilter === id}
             key={id}
-            onClick={() => setActiveFilter(id)}
+            onClick={() => changeFilter(id)}
             type="button"
           >
             {label}
