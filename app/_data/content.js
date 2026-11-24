@@ -497,6 +497,34 @@ export const timeline = [
       { src: '/images/history/session-23/field-34.webp', width: 1440, height: 1920, alt: '광장에 선 참가자 위로 태극기가 가로로 펼쳐진 세로 사진', label: '광장 위로 펄럭이는 태극기' },
     ],
   },
+  {
+    date: '2026. 11. 21',
+    session: '24회차',
+    time: '17:00',
+    place: '인계동 나혜석거리',
+    title: '수원 나혜석거리의 스물네 번째 시민행동',
+    body: '11월 21일 토요일 오후 5시, 수원 인계동 나혜석거리에서 24회차 시민행동이 열렸습니다. 참가자들은 표지석과 분수 곁에서 손팻말을 들고 태극기를 펼쳤습니다. 해 질 무렵부터 상점가에 불이 켜진 뒤까지의 모습을 사진으로 남겼습니다.',
+    posters: [
+      { src: '/images/posters/suwon-action-24-main.webp', width: 1055, height: 1491, alt: '공정선거시민행동 24회차 수원 포스터. 2026년 11월 21일 토요일 오후 5시, 인계동 나혜석거리', label: '대표 포스터' },
+    ],
+    photos: [
+      { src: '/images/history/session-24/field-01.webp', width: 1920, height: 1440, alt: '해 질 무렵 수원 나혜석거리 표지석과 분수 옆에서 태극기를 든 참가자들', label: '해 질 무렵 나혜석거리' },
+      { src: '/images/history/session-24/field-02.webp', width: 1920, height: 1440, alt: '나혜석거리 분수 옆 테이블과 손팻말, 양쪽에 펼쳐진 태극기', label: '분수 옆 현장 전경' },
+      { src: '/images/history/session-24/field-03.webp', width: 1920, height: 1440, alt: '상점가를 배경으로 오른쪽 하늘에 펼쳐진 태극기', label: '상점가 위 태극기' },
+      { src: '/images/history/session-24/field-04.webp', width: 1920, height: 1440, alt: '나혜석거리 표지석 앞에 펼쳐진 태극기와 테이블에 세운 손팻말', label: '표지석 앞의 태극기' },
+      { src: '/images/history/session-24/field-05.webp', width: 1920, height: 1440, alt: '나혜석거리 표지석 옆에서 대형 태극기와 손팻말을 든 참가자들', label: '분수 곁의 참가자들' },
+      { src: '/images/history/session-24/field-06.webp', width: 1920, height: 1440, alt: '광장 앞쪽에 커다란 태극기를 펼치고 손팻말을 든 참가자들', label: '광장에 펼쳐진 태극기' },
+      { src: '/images/history/session-24/field-07.webp', width: 1920, height: 1440, alt: '나혜석거리 상점 조명 앞으로 여러 태극기가 펄럭이는 모습', label: '거리 위로 펄럭이는 태극기' },
+      { src: '/images/history/session-24/field-08.webp', width: 1920, height: 1440, alt: '어둠이 내린 나혜석거리 분수 옆에서 깃대를 세운 참가자들', label: '어둠이 내린 나혜석거리' },
+      { src: '/images/history/session-24/field-09.webp', width: 1920, height: 1440, alt: '조명이 켜진 나혜석거리에서 태극기와 손팻말을 들고 나란히 선 참가자들', label: '밤거리의 태극기와 손팻말' },
+      { src: '/images/history/session-24/field-10.webp', width: 1920, height: 1440, alt: '분수 앞 테이블과 손팻말 뒤로 길게 세운 대형 태극기', label: '분수 앞 정면에서 본 현장' },
+      { src: '/images/history/session-24/field-11.webp', width: 1920, height: 1440, alt: '참가자가 깃대를 들어 올리고 다른 참가자들이 손팻말을 든 모습', label: '밤하늘로 올린 깃대' },
+      { src: '/images/history/session-24/field-12.webp', width: 1920, height: 1440, alt: '나혜석거리 표지석과 상점 조명 사이에 펼쳐진 태극기', label: '표지석과 밤거리 조명' },
+      { src: '/images/history/session-24/field-13.webp', width: 1920, height: 1440, alt: '나혜석거리 표지석 옆에서 손팻말과 태극기를 든 참가자', label: '표지석 곁의 손팻말' },
+      { src: '/images/history/session-24/field-14.webp', width: 1920, height: 1440, alt: '분수 둘레에서 손팻말을 들고 오른쪽으로 태극기를 펼친 참가자들', label: '분수 둘레의 현장' },
+      { src: '/images/history/session-24/field-15.webp', width: 1920, height: 1440, alt: '손팻말과 확성기를 놓은 테이블 뒤에서 대형 태극기를 들어 올린 참가자들', label: '현장 테이블과 대형 태극기' },
+    ],
+  },
 ];
 
 export const olgongTwoCut = {
